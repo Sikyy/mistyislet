@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -24,9 +24,84 @@ import {
 } from 'lucide-react';
 import './HomePage.css';
 
+// Custom hook for scroll animations
+const useScrollAnimation = () => {
+  const [visibleElements, setVisibleElements] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleElements(prev => new Set(Array.from(prev).concat(entry.target.id)));
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with data-animate attribute
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
+
+  return visibleElements;
+};
+
+// Custom hook for scroll spy navigation
+const useScrollSpy = () => {
+  const [activeSection, setActiveSection] = useState('hero');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i] as HTMLElement;
+        const sectionTop = section.offsetTop;
+        
+        if (scrollPosition >= sectionTop) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+    };
+
+    // Initial check
+    handleScroll();
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return activeSection;
+};
+
+// Smooth scroll function
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
+
 const HomePage: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const visibleElements = useScrollAnimation();
+  const activeSection = useScrollSpy();
+
+
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -42,8 +117,6 @@ const HomePage: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-
-
 
   const features = [
     {
@@ -144,7 +217,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="homepage">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section id="hero" className="hero-section">
         <div className="hero-background">
           <div 
             className="hero-orb" 
@@ -156,14 +229,44 @@ const HomePage: React.FC = () => {
           <div className="hero-grid-overlay"></div>
         </div>
 
+
+
         {/* Right Navigation Menu */}
         <div className="hero-right-nav">
           <nav className="vertical-nav">
-            <Link to="/" className="nav-item active">首页</Link>
-            <Link to="/products" className="nav-item">产品</Link>
-            <Link to="/brand-story" className="nav-item">品牌故事</Link>
-            <Link to="/partners" className="nav-item">合作伙伴</Link>
-            <Link to="/collaboration" className="nav-item">合作</Link>
+            <button 
+              className={`nav-item ${activeSection === 'hero' ? 'active' : ''}`}
+              onClick={() => scrollToSection('hero')}
+            >
+              首页
+            </button>
+            <button 
+              className={`nav-item ${activeSection === 'product-categories' ? 'active' : ''}`}
+              onClick={() => scrollToSection('product-categories')}
+            >
+              产品分类
+            </button>
+            <button 
+              className={`nav-item ${activeSection === 'features' ? 'active' : ''}`}
+              onClick={() => scrollToSection('features')}
+            >
+              核心优势
+            </button>
+            <button 
+              className={`nav-item ${activeSection === 'products' ? 'active' : ''}`}
+              onClick={() => scrollToSection('products')}
+            >
+              产品
+            </button>
+            <button 
+              className={`nav-item ${activeSection === 'partners' ? 'active' : ''}`}
+              onClick={() => scrollToSection('partners')}
+            >
+              合作伙伴
+            </button>
+            {/* <Link to="/collaboration" className="nav-item">
+              联系我们
+            </Link> */}
           </nav>
         </div>
 
@@ -171,31 +274,25 @@ const HomePage: React.FC = () => {
         <div className="hero-content-layout">
           {/* Left Side - Main Title */}
           <div className="hero-left-content">
-            <div className="hero-number">01 — 我们的使命</div>
             <h1 className="hero-main-title">
               让您的外设业务
               <br />
               卓越非凡 — 这是一门
               <br />
-              <span className="title-emphasis">科学</span>
+              <span className="title-emphasis">艺术</span>
             </h1>
           </div>
 
           {/* Bottom Left - Description and Buttons */}
           <div className="hero-bottom-left">
             <p className="hero-description-text">
-              我们致力于连接世界上最活跃的投资者和家族办公室，
-              让他们能够获得专业管理的外设产品投资策略。
+            我们致力于连接俄罗斯最具潜力的电竞渠道商、职业俱乐部与内容创作者，协同推广高性能外设品牌，推动俄罗斯电竞市场的专业化与商业化发展。
             </p>
             <div className="hero-actions-layout">
               <Link to="/collaboration" className="btn-modern primary">
                 讨论项目
                 <ArrowRight size={18} />
               </Link>
-              <button className="btn-modern secondary">
-                向下滚动
-                <span className="scroll-indicator">↓</span>
-              </button>
             </div>
           </div>
 
@@ -203,15 +300,76 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Product Category Selection Section */}
+      <section id="product-categories" className="product-category-section">
+        <div className="category-container">
+          <div className="category-header">
+            {/* <h2 className="category-main-title">选择您的产品类别</h2> */}
+            <p className="category-subtitle">探索我们丰富的产品生态系统</p>
+          </div>
+          
+          <div className="category-grid">
+            {productCategories.slice(0, 8).map((category, index) => {
+              const Icon = category.icon;
+              // Map Chinese category names to English category IDs
+              const categoryMap: { [key: string]: string } = {
+                '键盘': 'keyboard',
+                '鼠标': 'mouse',
+                '鼠标垫': 'mousepad',
+                '游戏手柄': 'gamepad',
+                '游戏耳机': 'headphones',
+                '键帽': 'keycaps',
+                '轴体': 'switches',
+                '配件': 'accessories'
+              };
+              const categoryId = categoryMap[category.title] || 'all';
+              
+              return (
+                <Link 
+                  key={index} 
+                  to={`/products?category=${categoryId}`}
+                  className="category-card" 
+                  data-category={category.title}
+                >
+                  <div className="category-inner">
+                    <div className="category-image-background">
+                      <div className="image-placeholder">
+                        <Icon size={64} className="category-icon" />
+                        <span className="placeholder-text">产品图片</span>
+                      </div>
+                    </div>
+                    <div className="category-title-overlay">
+                      <h3 className="category-title">{category.title}</h3>
+                    </div>
+                    <div className="category-overlay">
+                      <div className="overlay-gradient"></div>
+                      <div className="overlay-pattern"></div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="section features-section">
+      <section id="features" className="section features-section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge glass animate-fadeInUp">
+            <div 
+              className={`section-badge glass ${visibleElements.has('features-badge') ? 'animate-slide-down' : ''}`}
+              data-animate
+              id="features-badge"
+            >
               <Target size={16} />
               <span>核心优势</span>
             </div>
-            <h2 className="section-title animate-fadeInUp">
+            <h2 
+              className={`section-title ${visibleElements.has('features-title') ? 'animate-slide-down-delayed' : ''}`}
+              data-animate
+              id="features-title"
+            >
               为什么选择我们的
               <br />
               <span className="text-gradient">供应链解决方案</span>
@@ -228,9 +386,6 @@ const HomePage: React.FC = () => {
                   </div>
                   <h3 className="feature-title">{feature.title}</h3>
                   <p className="feature-description">{feature.description}</p>
-                  <div className="feature-arrow">
-                    <ChevronRight size={20} />
-                  </div>
                 </div>
               );
             })}
@@ -239,14 +394,22 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Products Section */}
-      <section className="section products-section">
+      <section id="products" className="section products-section">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge glass animate-fadeInUp">
+            <div 
+              className={`section-badge glass ${visibleElements.has('products-badge') ? 'animate-slide-down' : ''}`}
+              data-animate
+              id="products-badge"
+            >
               <Package size={16} />
               <span>产品生态</span>
             </div>
-            <h2 className="section-title animate-fadeInUp">
+            <h2 
+              className={`section-title ${visibleElements.has('products-title') ? 'animate-slide-down-delayed' : ''}`}
+              data-animate
+              id="products-title"
+            >
               丰富的产品矩阵
               <br />
               <span className="text-gradient">满足多元化需求</span>
@@ -285,7 +448,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Partners Section */}
-      <section className="partners-showcase">
+      <section id="partners" className="partners-showcase">
         <div className="container">
           <div className="partners-content">
             <h3 className="partners-title">合作伙伴生态</h3>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Handshake, 
   FileText, 
@@ -26,6 +26,8 @@ const CollaborationPage: React.FC = () => {
     businessType: '',
     message: ''
   });
+
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -248,7 +250,7 @@ const CollaborationPage: React.FC = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="section contact-section">
+      <section id="contact-form" className="section contact-section">
         <div className="container">
           <div className="contact-content">
             <div className="contact-info animate-fadeInLeft">

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { 
   Keyboard, 
   Mouse, 
@@ -21,12 +22,23 @@ import {
 import './ProductsPage.css';
 
 const ProductsPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<string>('all');
   const [minRating, setMinRating] = useState<number>(0);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+
+  // Handle URL parameters for category filtering
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam) {
+      setActiveCategory(categoryParam);
+    }
+    // Scroll to top when page loads or category changes
+    window.scrollTo(0, 0);
+  }, [searchParams]);
 
   const categories = [
     { id: 'all', name: '全部产品', icon: Monitor },
@@ -38,8 +50,6 @@ const ProductsPage: React.FC = () => {
     { id: 'keycaps', name: '键帽', icon: Settings },
     { id: 'switches', name: '轴体', icon: Cpu },
     { id: 'accessories', name: '配件', icon: Zap },
-    { id: 'furniture', name: '电竞桌椅', icon: Armchair },
-    { id: 'electronics', name: '其他电子产品', icon: Monitor },
   ];
 
   const brands = [

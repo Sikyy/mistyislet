@@ -8,11 +8,12 @@
 /* Hero Section - Kubric Style Layout */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--bg-primary);
+  background: url('/public/background.png') center/cover no-repeat;
+  box-sizing: border-box;
 }
 
 .hero-background {
@@ -71,36 +72,64 @@
 
 /* Right Navigation Menu */
 .hero-right-nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 60px;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 999999;
+  pointer-events: auto;
 }
 
 .vertical-nav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  position: relative;
+  z-index: 10000;
 }
 
 .vertical-nav .nav-item {
-  color: rgba(255, 255, 255, 0.7);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  padding: 12px 0;
-  border-left: 2px solid transparent;
-  padding-left: 20px;
-  transition: all 0.3s ease;
+  padding: 8px 0;
+  border-left: none;
+  padding-left: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
+  cursor: pointer;
+  display: block;
+  width: auto;
+  text-align: right;
+  font-family: inherit;
+  white-space: nowrap;
 }
 
-.vertical-nav .nav-item:hover,
+.vertical-nav .nav-item:hover {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateX(-5px);
+}
+
 .vertical-nav .nav-item.active {
   color: white;
-  border-left-color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transform: translateX(-10px);
+}
+
+.vertical-nav .nav-item.active::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+  border-radius: 2px;
 }
 
 /* Main Content Layout */
@@ -108,8 +137,9 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  padding: 80px;
+  padding: 180px 80px 80px 80px;
   z-index: 5;
+  box-sizing: border-box;
 }
 
 /* Left Side - Main Title */
@@ -148,7 +178,7 @@
 /* Bottom Left - Description and Buttons */
 .hero-bottom-left {
   position: absolute;
-  bottom: 120px;
+  bottom: 160px;
   left: 80px;
   max-width: 500px;
 }
@@ -243,12 +273,13 @@
 
 @media (max-width: 768px) {
   .hero-content-layout {
-    padding: 40px 20px;
-    height: auto;
-    min-height: 100vh;
+    padding: 140px 20px 40px 20px;
+    height: 90vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
   }
   
   .hero-left-content {
@@ -275,7 +306,19 @@
 
   
   .hero-right-nav {
-    display: none;
+    right: 20px;
+  }
+
+  .vertical-nav {
+    gap: 20px;
+  }
+
+  .vertical-nav .nav-item {
+    font-size: 12px;
+  }
+
+  .vertical-nav .nav-item.active {
+    font-size: 16px;
   }
 }
 
@@ -563,6 +606,9 @@
 
 .features-section {
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  min-height: 100vh;
+  padding: 8vh 0;
+  padding-top: calc(8vh + 50px);
 }
 
 .section-header {
@@ -1020,8 +1066,8 @@
   }
   
   .hero-section {
-    min-height: 90vh;
-    padding: 2rem 0;
+    height: 90vh;
+    box-sizing: border-box;
   }
 
   .hero-title {
@@ -1071,6 +1117,22 @@
     font-size: 1.1rem;
   }
 
+  .hero-right-nav {
+    right: 10px;
+  }
+
+  .vertical-nav {
+    gap: 15px;
+  }
+
+  .vertical-nav .nav-item {
+    font-size: 11px;
+  }
+
+  .vertical-nav .nav-item.active {
+    font-size: 14px;
+  }
+
   .feature-card,
   .product-card-modern {
     padding: var(--spacing-lg);
@@ -1105,5 +1167,462 @@
   .partners-scroll-container::before,
   .partners-scroll-container::after {
     width: 50px;
+  }
+}
+
+/* Scroll Triggered Animations */
+.animate-slide-down {
+  animation: slideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-slide-down-delayed {
+  animation: slideDownDelayed 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownDelayed {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state for animated elements */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* Badge specific styles */
+.section-badge.animate-slide-down {
+  animation-delay: 0.1s;
+}
+
+/* Title specific styles */
+.section-title.animate-slide-down-delayed {
+  animation-delay: 0.3s;
+}
+
+/* Product Category Selection Section */
+.product-category-section {
+  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    #0a0a0a 0%, 
+    #1a1a1a 50%, 
+    #0a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.product-category-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.1) 0%, transparent 70%),
+    radial-gradient(circle at 80% 70%, rgba(255, 154, 158, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.category-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 2rem 2rem 0 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.category-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 75px 0 0 0;
+  font-weight: 400;
+}
+
+.category-grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 800px;
+  flex: none;
+}
+
+.category-card {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.9);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  filter: grayscale(100%) brightness(0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scaleX(1.05);
+  background: rgba(40, 40, 40, 0.95);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.category-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.category-image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(40, 40, 40, 0.9) 0%,
+    rgba(60, 60, 60, 0.7) 100%);
+  transition: all 0.4s ease;
+}
+
+.image-placeholder {
+  display: none;
+}
+
+.placeholder-text {
+  display: none;
+}
+
+.category-card:hover .category-image-background {
+  /* Remove the color overlay to show original image colors */
+}
+
+.category-card:hover .placeholder-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.category-icon {
+  display: none;
+}
+
+.category-card:hover .category-icon {
+  color: #ffffff;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 30px rgba(120, 119, 198, 0.9));
+}
+
+.category-title-overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+  transition: all 0.4s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.05em;
+}
+
+.category-card:hover .category-title {
+  transform: translateY(-5px);
+  text-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+.overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(120, 119, 198, 0.2) 0%, 
+    rgba(255, 154, 158, 0.2) 100%);
+}
+
+.overlay-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+}
+
+/* Specific category styling with background images */
+.category-card[data-category="键盘"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/keyboard.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="键盘"]:hover {
+  border-color: rgba(120, 119, 198, 0.6);
+}
+
+.category-card[data-category="键盘"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/keyboard.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="鼠标"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/mouse.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="鼠标"]:hover {
+  border-color: rgba(255, 154, 158, 0.6);
+}
+
+.category-card[data-category="鼠标"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/mouse.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="鼠标垫"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/mousepad.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="鼠标垫"]:hover {
+  border-color: rgba(255, 193, 7, 0.6);
+}
+
+.category-card[data-category="鼠标垫"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/mousepad.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="游戏手柄"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/gamepad.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="游戏手柄"]:hover {
+  border-color: rgba(76, 175, 80, 0.6);
+}
+
+.category-card[data-category="游戏手柄"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/gamepad.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="游戏耳机"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/headphones.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="游戏耳机"]:hover {
+  border-color: rgba(244, 67, 54, 0.6);
+}
+
+.category-card[data-category="游戏耳机"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/headphones.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="键帽"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/keycaps.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="键帽"]:hover {
+  border-color: rgba(156, 39, 176, 0.6);
+}
+
+.category-card[data-category="键帽"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/keycaps.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="轴体"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/switches.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="轴体"]:hover {
+  border-color: rgba(255, 87, 34, 0.6);
+}
+
+.category-card[data-category="轴体"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/switches.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="配件"] .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
+    url('/public/accessories.jpg') center/cover no-repeat;
+}
+
+.category-card[data-category="配件"]:hover {
+  border-color: rgba(0, 188, 212, 0.6);
+}
+
+.category-card[data-category="配件"]:hover .category-image-background {
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
+    url('/public/accessories.jpg') center/cover no-repeat;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+  .category-title {
+    font-size: 1.2rem;
+  }
+  
+  .category-title-overlay {
+    bottom: 40px;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-category-section {
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .category-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .category-header {
+    padding: 1.5rem 1rem 0 1rem;
+  }
+  
+  .category-grid {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  
+  .category-card {
+    flex: 0 0 50%;
+    height: 200px;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+  }
+  
+  .category-title-overlay {
+    bottom: 30px;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    flex: 0 0 100%;
+    height: 120px;
+  }
+  
+  .category-title {
+    font-size: 1rem;
+  }
+  
+  .category-title-overlay {
+    bottom: 20px;
+    padding: 0 0.5rem;
   }
 } 

@@ -13,29 +13,29 @@ import './Footer.css';
 const Footer: React.FC = () => {
   const quickLinks = [
     { path: '/', label: '首页' },
-    { path: '/products', label: '产品分类' },
+    { path: '/products', label: '产品列表' },
+    { path: '/brand-story', label: '关于我们' },
     { path: '/partners', label: '合作伙伴' },
-    { path: '/brand-story', label: '品牌故事' },
-    { path: '/collaboration', label: '合作' },
+    { path: '/collaboration', label: '联系我们' },
   ];
 
   const contactInfo = [
     {
       icon: Mail,
       label: '邮箱',
-      value: 'contact@mistyislet.com',
-      href: 'mailto:contact@mistyislet.com'
+      value: 'info@mistyislet.com',
+      href: 'mailto:info@mistyislet.com'
     },
     {
       icon: Phone,
       label: '电话',
-      value: '+86 138-0013-8000',
-      href: 'tel:+8613800138000'
+      value: '+86 198-1689-1233',
+      href: 'tel:+8619816891233'
     },
     {
       icon: MapPin,
       label: '地址',
-      value: '中国深圳市南山区',
+      value: '中国浙江省杭州市滨江区',
       href: null
     },
     {
@@ -74,6 +74,11 @@ const Footer: React.FC = () => {
               专注于为俄罗斯商家提供高端外设设备供应链服务，
               致力于打造最专业、最可靠的跨境贸易桥梁。
             </p>
+            
+            <div className="company-info">
+              <h4 className="company-name">杭州烟渚科技有限公司</h4>
+              <p className="company-name-en">Hangzhou Yanzhu Technology Co., Ltd.</p>
+            </div>
             
             <div className="footer-highlight glass">
               <div className="highlight-content">
@@ -156,16 +161,16 @@ const Footer: React.FC = () => {
           <div className="footer-divider"></div>
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              <p>&copy; 2024 MistyIslet. 保留所有权利。</p>
-              <p className="footer-subtitle">专业外设供应链服务商</p>
+              <p>&copy; 2024 杭州烟渚科技有限公司. 保留所有权利。</p>
+              <p className="footer-subtitle">Hangzhou Yanzhu Technology Co., Ltd.</p>
             </div>
             
-            <div className="footer-actions">
+            {/* <div className="footer-actions">
               <Link to="/collaboration" className="btn btn-glass btn-small">
                 开始合作
                 <ArrowRight size={16} />
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

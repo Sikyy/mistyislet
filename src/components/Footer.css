@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   margin-top: auto;
+  z-index: 1;
 }
 
 .footer-background {
@@ -98,6 +99,49 @@
   line-height: 1.7;
   margin-bottom: var(--spacing-lg);
   font-size: 1rem;
+}
+
+/* Company Information */
+.company-info {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+}
+
+.company-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0 0 var(--spacing-xs) 0;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  position: relative;
+}
+
+.company-name::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(120, 119, 198, 0.8), rgba(255, 154, 158, 0.8));
+  border-radius: 2px;
+}
+
+.company-name-en {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .footer-highlight {
@@ -384,6 +428,24 @@
 
   .footer-highlight {
     padding: var(--spacing-md);
+  }
+
+  .company-info {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+  }
+
+  .company-name::after {
+    width: 40px;
+    height: 1.5px;
+  }
+
+  .company-name-en {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
   }
 
   .contact-item {

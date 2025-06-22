@@ -20,51 +20,41 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { path: '/products', label: 'Features' },
-    { path: '/brand-story', label: 'Team' },
-    { path: '/partners', label: 'Roadmap' },
-    { path: '/collaboration', label: 'Contact' },
+    { path: '/products', label: '产品列表' },
+    { path: '/brand-story', label: '关于我们' },
+    { path: '/partners', label: '合作伙伴' },
+    { path: '/collaboration', label: '联系我们' },
   ];
 
   return (
-    <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar kubric-style ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-content">
           {/* Logo */}
           <Link to="/" className="navbar-logo">
-            <div className="logo-icon">
-              <div className="logo-shape"></div>
-            </div>
             <span className="logo-text">MistyIslet</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="navbar-menu desktop-only">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* Center Navigation with Glass Container */}
+          <div className="navbar-center desktop-only">
+            <div className="nav-glass-container">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`nav-glass-link ${location.pathname === item.path ? 'active' : ''}`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Right Section */}
           <div className="navbar-actions">
-            {/* Theme Toggle */}
-            <button 
-              onClick={toggleTheme}
-              className="theme-toggle-btn glass"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-
             {/* CTA Button */}
-            <Link to="/collaboration" className="btn btn-primary desktop-only">
-              Book a call
+            <Link to="/collaboration#contact-form" className="btn btn-primary desktop-only">
+              开始合作
               <span className="arrow-icon">↗</span>
             </Link>
 
@@ -93,7 +83,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link 
-              to="/collaboration" 
+              to="/collaboration#contact-form" 
               className="btn btn-primary mobile-cta"
               onClick={() => setIsMenuOpen(false)}
             >
