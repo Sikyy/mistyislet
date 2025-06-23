@@ -123,7 +123,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 6,
       brand: 'PMO',
-      logo: 'https://www.pmolab.cn/static/media/logo.png',
+      logo: 'https://image.siky.me/mistyislet/PMO.jpg',
       description: '性能怪兽，电竞利器',
       categories: ['鼠标', '键盘', '配件'],
       productCount: '50+',
@@ -133,7 +133,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 7,
       brand: 'WOBKEY',
-      logo: 'https://wobkey.com/static/media/logo.png',
+      logo: 'https://image.siky.me/mistyislet/WOBKEY.jpg',
       description: '键盘专家，打字利器',
       categories: ['键盘', '轴体', '键帽'],
       productCount: '60+',
@@ -143,7 +143,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 8,
       brand: 'Razer',
-      logo: 'https://logos-world.net/wp-content/uploads/2021/10/Razer-Logo.png',
+      logo: 'https://image.siky.me/mistyislet/razer.png',
       description: '全球领先的游戏外设品牌',
       categories: ['键盘', '鼠标', '耳机', '鼠标垫'],
       productCount: '120+',
@@ -153,7 +153,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 9,
       brand: 'ROG',
-      logo: 'https://logos-world.net/wp-content/uploads/2021/08/Asus-ROG-Logo.png',
+      logo: 'https://image.siky.me/mistyislet/ROG.png',
       description: '华硕玩家国度，创新先锋',
       categories: ['键盘', '鼠标', '耳机'],
       productCount: '85+',
@@ -163,7 +163,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 10,
       brand: 'Sukisora',
-      logo: 'https://via.placeholder.com/200x100/ff6b9d/ffffff?text=SS',
+      logo: 'https://image.siky.me/mistyislet/Sukisora.jpg',
       description: '樱花设计，唯美体验',
       categories: ['键盘', '键帽', '配件'],
       productCount: '20+',
@@ -173,7 +173,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 11,
       brand: 'Zowie',
-      logo: 'https://logos-world.net/wp-content/uploads/2022/04/Zowie-Logo.png',
+      logo: 'https://image.siky.me/mistyislet/zowie.jpg',
       description: '电竞专用，职业选择',
       categories: ['鼠标', '鼠标垫', '配件'],
       productCount: '40+',
@@ -183,7 +183,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 12,
       brand: '戟创agkey',
-      logo: 'https://via.placeholder.com/200x100/c0392b/ffffff?text=戟创',
+      logo: 'https://image.siky.me/mistyislet/agkey.jpg',
       description: '国产精品，匠心制造',
       categories: ['键盘', '轴体', '配件'],
       productCount: '35+',
@@ -193,7 +193,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 13,
       brand: 'ANTICATER',
-      logo: 'https://via.placeholder.com/200x100/8e44ad/ffffff?text=AC',
+      logo: 'https://image.siky.me/mistyislet/anticater.png',
       description: '反传统设计，独特美学',
       categories: ['键盘', '配件'],
       productCount: '25+',
@@ -203,7 +203,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 14,
       brand: 'Logitech',
-      logo: 'https://logos-world.net/wp-content/uploads/2020/12/Logitech-Logo.png',
+      logo: 'https://image.siky.me/mistyislet/Logitech.png',
       description: '瑞士精工，全球信赖',
       categories: ['键盘', '鼠标', '耳机'],
       productCount: '100+',
@@ -213,27 +213,27 @@ const ProductsPage: React.FC = () => {
     {
       id: 15,
       brand: 'MoonDROP',
-      logo: 'https://via.placeholder.com/200x100/34495e/ffffff?text=MD',
+      logo: 'https://image.siky.me/mistyislet/Moondrop.jpg',
       description: '月之神韵，听觉盛宴',
       categories: ['耳机', '配件'],
       productCount: '30+',
       website: 'https://moondroplab.com/',
       status: 'preferred'
     },
-    {
-      id: 16,
-      brand: 'FUtureMatch',
-      logo: 'https://via.placeholder.com/200x100/1abc9c/ffffff?text=FM',
-      description: '未来科技，开放设计',
-      categories: ['配件', '电竞桌椅'],
-      productCount: '15+',
-      website: 'https://futurematch.cn',
-      status: 'preferred'
-    },
+    // {
+    //   id: 16,
+    //   brand: 'FUtureMatch',
+    //   logo: 'https://via.placeholder.com/200x100/1abc9c/ffffff?text=FM',
+    //   description: '未来科技，开放设计',
+    //   categories: ['配件', '电竞桌椅'],
+    //   productCount: '15+',
+    //   website: 'https://futurematch.cn',
+    //   status: 'preferred'
+    // },
     {
       id: 17,
       brand: 'DRUNKDEER',
-      logo: 'https://via.placeholder.com/200x100/d35400/ffffff?text=DD',
+      logo: 'https://image.siky.me/mistyislet/drunkdeer.png',
       description: '醉鹿科技，创新体验',
       categories: ['键盘', '轴体'],
       productCount: '25+',
@@ -243,7 +243,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 18,
       brand: 'GAMESIR',
-      logo: 'https://via.placeholder.com/200x100/2c3e50/ffffff?text=GS',
+      logo: 'https://image.siky.me/mistyislet/gamesir.jpg',
       description: '游戏手柄专家',
       categories: ['手柄', '配件'],
       productCount: '40+',
@@ -253,7 +253,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 19,
       brand: 'Mojhon',
-      logo: 'https://via.placeholder.com/200x100/16a085/ffffff?text=MJ',
+      logo: 'https://image.siky.me/mistyislet/Mojhon.jpg',
       description: '魔法设计，神奇体验',
       categories: ['鼠标', '键盘', '配件'],
       productCount: '35+',
@@ -263,7 +263,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 20,
       brand: 'MCHOSE',
-      logo: 'https://via.placeholder.com/200x100/27ae60/ffffff?text=MC',
+      logo: 'https://image.siky.me/mistyislet/mchose.jpg',
       description: '鼠标专家，精准操控',
       categories: ['鼠标', '鼠标垫', '配件'],
       productCount: '50+',
@@ -273,7 +273,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 21,
       brand: '8BitDo',
-      logo: 'https://via.placeholder.com/200x100/f1c40f/ffffff?text=8B',
+      logo: 'https://image.siky.me/mistyislet/8BitDo.png',
       description: '复古手柄，经典重现',
       categories: ['手柄', '配件'],
       productCount: '30+',
@@ -283,7 +283,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 22,
       brand: 'Flydigi',
-      logo: 'https://via.placeholder.com/200x100/e74c3c/ffffff?text=FD',
+      logo: 'https://image.siky.me/mistyislet/flydigi.png',
       description: '飞智科技，手游利器',
       categories: ['手柄', '配件'],
       productCount: '45+',
@@ -293,7 +293,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 23,
       brand: 'VGN',
-      logo: 'https://via.placeholder.com/200x100/9b59b6/ffffff?text=VGN',
+      logo: 'https://image.siky.me/mistyislet/VGN.png',
       description: '电竞装备，性能至上',
       categories: ['鼠标', '键盘', '耳机'],
       productCount: '60+',
@@ -303,7 +303,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 24,
       brand: 'ARTISAN',
-      logo: 'https://via.placeholder.com/200x100/95a5a6/ffffff?text=AT',
+      logo: 'https://image.siky.me/mistyislet/artisan.png',
       description: '手工艺人，极致鼠标垫',
       categories: ['鼠标垫', '配件'],
       productCount: '20+',
@@ -313,7 +313,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 25,
       brand: 'betop',
-      logo: 'https://via.placeholder.com/200x100/3498db/ffffff?text=BP',
+      logo: 'https://image.siky.me/mistyislet/betop.png',
       description: '北通科技，手柄专家',
       categories: ['手柄', '配件'],
       productCount: '40+',
