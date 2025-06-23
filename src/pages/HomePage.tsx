@@ -1,22 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
-  Play,
   Shield, 
   Globe2, 
   Truck, 
   Award, 
-  Users, 
   Keyboard,
   Mouse,
   Gamepad2,
   Headphones,
-  Star,
-  ChevronRight,
   Zap,
   Package,
-  Target,
   Settings,
   Cpu,
   Armchair,
@@ -24,35 +19,7 @@ import {
 } from 'lucide-react';
 import './HomePage.css';
 
-// Custom hook for scroll animations
-const useScrollAnimation = () => {
-  const [visibleElements, setVisibleElements] = useState<Set<string>>(new Set());
 
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisibleElements(prev => new Set(Array.from(prev).concat(entry.target.id)));
-        }
-      });
-    }, observerOptions);
-
-    // Observe all elements with data-animate attribute
-    const animatedElements = document.querySelectorAll('[data-animate]');
-    animatedElements.forEach(el => observer.observe(el));
-
-    return () => {
-      animatedElements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
-
-  return visibleElements;
-};
 
 // Custom hook for scroll spy navigation
 const useScrollSpy = () => {
@@ -96,24 +63,19 @@ const scrollToSection = (sectionId: string) => {
 };
 
 const HomePage: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const visibleElements = useScrollAnimation();
   const activeSection = useScrollSpy();
 
 
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     
-    window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);

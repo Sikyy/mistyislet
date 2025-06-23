@@ -9,16 +9,13 @@ import {
   Cpu,
   Search,
   Filter,
-  Star,
-  ArrowRight,
   Package,
   Zap,
   Settings,
   Armchair,
   ChevronDown,
   X,
-  SlidersHorizontal,
-  Target
+  SlidersHorizontal
 } from 'lucide-react';
 import './ProductsPage.css';
 
@@ -27,7 +24,6 @@ const ProductsPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState<string>('all');
 
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
@@ -54,20 +50,7 @@ const ProductsPage: React.FC = () => {
     { id: 'chair', name: '电竞桌椅', icon: Armchair },
   ];
 
-  const brands = [
-    'AngryMiao', 'ATK', 'Hachiware', 'MadLoon', 'MelGeek', 'PMO', 'WOBKEY', 
-    'Razer', 'ROG', 'Sukisora', 'Zowie', '戟创agkey', 'ANTICATER', 'Logitech', 
-    'MoonDROP', 'FUtureMatch', 'DRUNKDEER', 'GAMESIR', 'Mojhon', 
-    'MCHOSE', '8BitDo', 'Flydigi', 'VGN', 'ARTISAN', 'betop'
-  ];
 
-  const priceRanges = [
-    { id: 'all', name: '全部价格', min: 0, max: 9999 },
-    { id: 'budget', name: '¥0-299', min: 0, max: 299 },
-    { id: 'mid', name: '¥300-699', min: 300, max: 699 },
-    { id: 'premium', name: '¥700-1299', min: 700, max: 1299 },
-    { id: 'high', name: '¥1300+', min: 1300, max: 9999 },
-  ];
 
   const brandMatrix = [
     {

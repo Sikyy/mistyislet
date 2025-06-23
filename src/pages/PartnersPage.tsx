@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Building2, 
-  Users, 
   TrendingUp, 
-  Award, 
   Globe, 
   Heart,
   CheckCircle,
@@ -11,7 +9,6 @@ import {
   Star,
   Gamepad2,
   Store,
-  Factory,
   MapPin
 } from 'lucide-react';
 import './PartnersPage.css';
