@@ -586,7 +586,7 @@ const ProductsPage: React.FC = () => {
               <a href="mailto:contact@mistyislet.com" className="btn btn-primary">
                 咨询合作
               </a>
-              <a href="/collaboration" className="btn btn-secondary">
+                              <a href="/contact" className="btn btn-secondary">
                 了解详情
               </a>
             </div>

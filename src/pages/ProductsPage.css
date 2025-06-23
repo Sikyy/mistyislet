@@ -776,8 +776,8 @@
 /* Partner Card - New Design Based on Case Study */
 .partner-card {
   position: relative;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: Black;
+  border: 1px solidrgb(0, 0, 0);
   border-radius: 12px;
   padding: 16px;
   text-align: center;
@@ -795,7 +795,7 @@
 .partner-card:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
-  border-color: #d1d5db;
+  border-color:rgb(0, 0, 0);
   text-decoration: none;
 }
 
@@ -878,7 +878,7 @@
 .partner-name {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1f2937;
+  color:rgb(255, 255, 255);
   margin-bottom: 8px;
   line-height: 1.2;
 }

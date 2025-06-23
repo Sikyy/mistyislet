@@ -18,10 +18,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { path: '/products', label: '品牌列表' },
-    { path: '/brand-story', label: '关于我们' },
+    { path: '/brands', label: '品牌列表' },
+    { path: '/about', label: '关于我们' },
     { path: '/partners', label: '合作伙伴' },
-    { path: '/collaboration', label: '联系我们' },
+    { path: '/contact', label: '联系我们' },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
           {/* Right Section */}
           <div className="navbar-actions">
             {/* CTA Button */}
-            <Link to="/collaboration#contact-form" className="btn btn-primary desktop-only">
+            <Link to="/contact#contact-form" className="btn btn-primary desktop-only">
               开始合作
               <span className="arrow-icon">↗</span>
             </Link>
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link 
-              to="/collaboration#contact-form" 
+              to="/contact#contact-form" 
               className="btn btn-primary mobile-cta"
               onClick={() => setIsMenuOpen(false)}
             >

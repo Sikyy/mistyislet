@@ -6,8 +6,6 @@ import {
   Heart,
   CheckCircle,
   ArrowRight,
-  Star,
-  Gamepad2,
   Store,
   MapPin
 } from 'lucide-react';
@@ -199,40 +197,55 @@ const PartnersPage: React.FC = () => {
       company: 'Moscow Gaming Center',
       contact: 'Alexei Petrov',
       position: '采购总监',
-      content: 'MistyIslet 为我们提供了优质的产品和专业的服务，合作非常愉快。产品质量excellent，物流效率很高。我们的15家门店销售情况都很好。',
       rating: 5,
-      avatar: '👨‍💼'
+      content: '与MistyIslet合作三年来，他们的产品质量和服务水平都非常出色。配送及时，产品品质稳定，是我们最信任的合作伙伴。',
+      avatar: 'AP'
     },
     {
       id: 2,
       company: 'St. Petersburg Tech Hub',
-      contact: 'Elena Volkova',
+      contact: 'Elena Volkov',
       position: '运营经理',
-      content: '通过MistyIslet，我们获得了稳定的高品质外设供应。他们的专业团队总是能够快速响应我们的需求，支持我们的分销网络发展。',
       rating: 5,
-      avatar: '👩‍💼'
+      content: '专业的团队，优质的产品，合理的价格。MistyIslet帮助我们建立了完善的供应链体系，业务增长了200%。',
+      avatar: 'EV'
     },
     {
       id: 3,
       company: 'Far East Gaming Co.',
       contact: 'Dmitri Kozlov',
-      position: 'CEO',
-      content: '作为跨境贸易伙伴，MistyIslet在处理中俄贸易流程方面非常专业。他们帮助我们解决了很多复杂的清关和物流问题。',
+      position: '贸易总监',
       rating: 5,
-      avatar: '👨‍💻'
+      content: '作为远东地区的合作伙伴，MistyIslet为我们提供了专业的跨境贸易服务。清关效率高，风险控制严格。',
+      avatar: 'DK'
     }
   ];
 
   return (
     <div className="partners-page">
-      {/* Header */}
-      <section className="partners-header">
+      {/* Hero Section */}
+      <section className="partners-hero-section">
         <div className="container">
-          <div className="header-content animate-fadeInUp">
-            <h1 className="page-title">合作伙伴生态</h1>
-            <p className="page-description">
-              连接全球电竞品牌与俄罗斯市场，构建完整供应链生态
-            </p>
+          <div className="partners-hero-content">
+            <div className="partners-hero-text">
+              <p className="partners-hero-subtitle">
+                携手全球顶级品牌，服务俄罗斯优质商家，
+                构建专业可靠的外设供应链生态系统。
+              </p>
+              
+              <h1 className="partners-hero-title">
+                GLOBAL
+                <br />
+                PARTNERS
+              </h1>
+              
+              <div className="partners-hero-description">
+                <p>
+                  六年来，我们与全球15+顶级电竞品牌建立深度合作，
+                  为俄罗斯50+优质商家提供专业供应链服务。
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -240,16 +253,31 @@ const PartnersPage: React.FC = () => {
       {/* Achievements */}
       <section className="achievements-section">
         <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">OUR ACHIEVEMENTS</p>
+            <h2 className="section-title">
+              合作成果
+              <br />
+              数据见证实力
+            </h2>
+            <div className="section-description">
+              <p>
+                通过专业服务和优质产品，我们在中俄外设贸易领域
+                建立了良好的声誉和广泛的合作网络。
+              </p>
+            </div>
+          </div>
+
           <div className="achievements-grid">
             {achievements.map((achievement, index) => {
               const Icon = achievement.icon;
               return (
-                <div key={index} className="achievement-item animate-fadeInUp">
+                <div key={index} className="achievement-item">
                   <div className="achievement-icon">
                     <Icon size={32} />
                   </div>
-                  <h3 className="achievement-number">{achievement.number}</h3>
-                  <p className="achievement-label">{achievement.label}</p>
+                  <div className="achievement-number">{achievement.number}</div>
+                  <div className="achievement-label">{achievement.label}</div>
                 </div>
               );
             })}
@@ -257,96 +285,83 @@ const PartnersPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Tab Navigation */}
+      {/* Partners Tabs */}
       <section className="partners-tabs-section">
         <div className="container">
+          <div className="section-header">
+            <p className="section-subtitle">PARTNERSHIPS</p>
+            <h2 className="section-title">
+              合作伙伴
+              <br />
+              共创美好未来
+            </h2>
+          </div>
+
           <div className="partners-tabs">
-            <button 
+            <button
               className={`tab-button ${activeTab === 'brands' ? 'active' : ''}`}
               onClick={() => setActiveTab('brands')}
             >
-              <Gamepad2 size={20} />
-              <span>电竞品牌伙伴</span>
-              <div className="tab-subtitle">供应链上游</div>
+              <span>品牌供应商</span>
+              <span className="tab-subtitle">Global Gaming Brands</span>
             </button>
-            <button 
+            <button
               className={`tab-button ${activeTab === 'merchants' ? 'active' : ''}`}
               onClick={() => setActiveTab('merchants')}
             >
-              <Store size={20} />
               <span>俄罗斯商家</span>
-              <div className="tab-subtitle">销售渠道</div>
+              <span className="tab-subtitle">Russian Merchants</span>
             </button>
           </div>
-        </div>
-      </section>
 
-      {/* Gaming Brands Section */}
-      {activeTab === 'brands' && (
-        <section className="section partners-grid-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title animate-fadeInUp">电竞品牌合作伙伴</h2>
-              <p className="section-description animate-fadeInUp">
-                与全球顶级电竞品牌建立深度合作，确保产品品质与供应稳定
-              </p>
-            </div>
-
-            <div className="partners-grid brands-grid">
+          {/* Brands Grid */}
+          {activeTab === 'brands' && (
+            <div className="brands-grid">
               {gamingBrands.map((brand) => (
-                <div key={brand.id} className={`brand-card animate-fadeInUp ${brand.featured ? 'featured' : ''}`}>
-                  {brand.featured && <div className="featured-badge">核心品牌</div>}
+                <div key={brand.id} className={`brand-card ${brand.featured ? 'featured' : ''}`}>
+                  {brand.featured && <span className="featured-badge">核心伙伴</span>}
+                  
                   <div className="brand-header">
                     <div className="brand-logo">
-                      <img src={brand.logo} alt={brand.name} />
+                      {brand.name.charAt(0)}
                     </div>
                     <div className="brand-info">
                       <h3 className="brand-name">{brand.name}</h3>
                       <p className="brand-type">{brand.type}</p>
-                      <p className="brand-country">
-                        <MapPin size={14} />
-                        {brand.country}
-                      </p>
+                      <p className="brand-country">{brand.country}</p>
                     </div>
                   </div>
+                  
                   <p className="brand-description">{brand.description}</p>
+                  
                   <div className="brand-products">
-                    <h4>主要产品:</h4>
+                    <h4>主营产品</h4>
                     <div className="product-tags">
                       {brand.products.map((product, index) => (
                         <span key={index} className="product-tag">{product}</span>
                       ))}
                     </div>
                   </div>
+                  
                   <div className="brand-footer">
                     <span className="partnership-year">合作自 {brand.partnership}</span>
-                    <CheckCircle size={16} className="verified-icon" />
+                    <CheckCircle className="verified-icon" size={20} />
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
+          )}
 
-      {/* Russian Merchants Section */}
-      {activeTab === 'merchants' && (
-        <section className="section partners-grid-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title animate-fadeInUp">俄罗斯商家伙伴</h2>
-              <p className="section-description animate-fadeInUp">
-                深耕俄罗斯本土市场，与当地优秀商家建立长期合作关系
-              </p>
-            </div>
-
-            <div className="partners-grid merchants-grid">
+          {/* Merchants Grid */}
+          {activeTab === 'merchants' && (
+            <div className="merchants-grid">
               {russianMerchants.map((merchant) => (
-                <div key={merchant.id} className={`merchant-card animate-fadeInUp ${merchant.featured ? 'featured' : ''}`}>
-                  {merchant.featured && <div className="featured-badge">战略伙伴</div>}
+                <div key={merchant.id} className={`merchant-card ${merchant.featured ? 'featured' : ''}`}>
+                  {merchant.featured && <span className="featured-badge">重点伙伴</span>}
+                  
                   <div className="merchant-header">
                     <div className="merchant-avatar">
-                      <span>{merchant.avatar}</span>
+                      {merchant.avatar}
                     </div>
                     <div className="merchant-info">
                       <h3 className="merchant-name">{merchant.name}</h3>
@@ -357,7 +372,9 @@ const PartnersPage: React.FC = () => {
                       </p>
                     </div>
                   </div>
+                  
                   <p className="merchant-description">{merchant.description}</p>
+                  
                   <div className="merchant-stats">
                     <div className="stat-item">
                       <span className="stat-label">业务类型:</span>
@@ -372,77 +389,86 @@ const PartnersPage: React.FC = () => {
                       <span className="stat-value">{merchant.monthlyVolume}</span>
                     </div>
                   </div>
+                  
                   <div className="merchant-specialties">
-                    <h4>专业领域:</h4>
+                    <h4>专业领域</h4>
                     <div className="specialty-tags">
                       {merchant.specialties.map((specialty, index) => (
                         <span key={index} className="specialty-tag">{specialty}</span>
                       ))}
                     </div>
                   </div>
+                  
                   <div className="merchant-footer">
                     <span className="partnership-year">合作自 {merchant.partnership}</span>
-                    <CheckCircle size={16} className="verified-icon" />
+                    <CheckCircle className="verified-icon" size={20} />
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
+          )}
+        </div>
+      </section>
 
       {/* Testimonials */}
-      <section className="section testimonials-section">
+      <section className="testimonials-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title animate-fadeInUp">合作伙伴评价</h2>
-            <p className="section-description animate-fadeInUp">
-              听听我们合作伙伴的真实声音
-            </p>
+            <p className="section-subtitle">TESTIMONIALS</p>
+            <h2 className="section-title">
+              客户评价
+              <br />
+              真实反馈见证
+            </h2>
+            <div className="section-description">
+              <p>
+                来自合作伙伴的真实评价，见证我们的专业服务
+                和优质产品在市场中的良好表现。
+              </p>
+            </div>
           </div>
 
           <div className="testimonials-grid">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card animate-fadeInUp">
+              <div key={testimonial.id} className="testimonial-card">
                 <div className="testimonial-header">
                   <div className="avatar">{testimonial.avatar}</div>
                   <div className="testimonial-info">
-                    <h4 className="contact-name">{testimonial.contact}</h4>
-                    <p className="contact-position">{testimonial.position}</p>
-                    <p className="company-name">{testimonial.company}</p>
+                    <div className="contact-name">{testimonial.contact}</div>
+                    <div className="contact-position">{testimonial.position}</div>
+                    <div className="company-name">{testimonial.company}</div>
                   </div>
                   <div className="rating">
-                    {[...Array(testimonial.rating)].map((_, index) => (
-                      <Star key={index} size={16} fill="currentColor" />
-                    ))}
+                    {'★'.repeat(testimonial.rating)}
                   </div>
                 </div>
-                <blockquote className="testimonial-content">
+                <div className="testimonial-content">
                   "{testimonial.content}"
-                </blockquote>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="partners-cta">
         <div className="container">
-          <div className="cta-content animate-fadeInUp">
-            <Heart size={48} className="cta-icon" />
+          <div className="cta-content">
+            <div className="cta-icon">
+              <Heart size={32} />
+            </div>
             <h2>成为我们的合作伙伴</h2>
             <p>
-              无论您是电竞品牌商还是俄罗斯本土商家，
-              我们都期待与您建立长期稳定的合作关系。
+              无论您是品牌方还是渠道商，我们都期待与您建立
+              长期稳定的合作关系，共同开拓市场机遇。
             </p>
             <div className="cta-actions">
-              <a href="/collaboration" className="btn btn-primary">
-                了解合作
-                <ArrowRight size={20} />
+              <a href="/collaboration" className="btn-modern">
+                开始合作 <ArrowRight size={16} />
               </a>
-              <a href="mailto:partners@mistyislet.com" className="btn btn-secondary">
-                联系我们
+              <a href="/contact" className="btn-modern">
+                联系我们 <ArrowRight size={16} />
               </a>
             </div>
           </div>

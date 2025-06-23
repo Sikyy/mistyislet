@@ -81,10 +81,10 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/brands" element={<ProductsPage />} />
               <Route path="/partners" element={<PartnersPage />} />
-              <Route path="/brand-story" element={<BrandStoryPage />} />
-              <Route path="/collaboration" element={<CollaborationPage />} />
+              <Route path="/about" element={<BrandStoryPage />} />
+              <Route path="/contact" element={<CollaborationPage />} />
             </Routes>
           </main>
           <Footer />

@@ -13,10 +13,10 @@ import './Footer.css';
 const Footer: React.FC = () => {
   const quickLinks = [
     { path: '/', label: '首页' },
-    { path: '/products', label: '品牌列表' },
-    { path: '/brand-story', label: '关于我们' },
+    { path: '/brands', label: '品牌列表' },
+    { path: '/about', label: '关于我们' },
     { path: '/partners', label: '合作伙伴' },
-    { path: '/collaboration', label: '联系我们' },
+    { path: '/contact', label: '联系我们' },
   ];
 
   const contactInfo = [
@@ -166,7 +166,7 @@ const Footer: React.FC = () => {
             </div>
             
             {/* <div className="footer-actions">
-              <Link to="/collaboration" className="btn btn-glass btn-small">
+              <Link to="/contact" className="btn btn-glass btn-small">
                 开始合作
                 <ArrowRight size={16} />
               </Link>

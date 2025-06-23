@@ -226,7 +226,7 @@ const HomePage: React.FC = () => {
             >
               合作伙伴
             </button>
-            {/* <Link to="/collaboration" className="nav-item">
+                            {/* <Link to="/contact" className="nav-item">
               联系我们
             </Link> */}
           </nav>
@@ -251,7 +251,7 @@ const HomePage: React.FC = () => {
             我们致力于连接俄罗斯最具潜力的电竞渠道商、职业俱乐部与内容创作者，协同推广高性能外设品牌，推动俄罗斯电竞市场的专业化与商业化发展。
             </p>
             <div className="hero-actions-layout">
-              <Link to="/collaboration" className="btn-modern primary">
+                              <Link to="/contact" className="btn-modern primary">
                 讨论项目
                 <ArrowRight size={18} />
               </Link>
@@ -289,7 +289,7 @@ const HomePage: React.FC = () => {
               return (
                 <Link 
                   key={index} 
-                  to={`/products?category=${categoryId}`}
+                  to={`/brands?category=${categoryId}`}
                   className="category-card" 
                   data-category={category.title}
                 >

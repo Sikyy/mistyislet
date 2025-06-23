@@ -4,10 +4,7 @@ import {
   FileText, 
   Truck, 
   CheckCircle, 
-  Phone, 
-  Mail, 
   MessageSquare,
-  ArrowRight,
   Users,
   Package,
   DollarSign,
@@ -23,11 +20,8 @@ const CollaborationPage: React.FC = () => {
     company: '',
     email: '',
     phone: '',
-    businessType: '',
     message: ''
   });
-
-
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -38,7 +32,6 @@ const CollaborationPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
   };
 
@@ -133,13 +126,18 @@ const CollaborationPage: React.FC = () => {
 
   return (
     <div className="collaboration-page">
-      {/* Header */}
+      {/* Hero Section */}
       <section className="collaboration-header">
         <div className="container">
-          <div className="header-content animate-fadeInUp">
-            <h1 className="page-title">品牌合作</h1>
+          <div className="header-content">
+            <h1 className="page-title">
+              PARTNER
+              <br />
+              WITH US
+            </h1>
             <p className="page-description">
-              携手共创美好未来，开启互利共赢的合作之旅
+              携手共创美好未来，开启互利共赢的合作之旅。
+              专业团队，优质服务，值得信赖的合作伙伴。
             </p>
           </div>
         </div>
@@ -149,9 +147,14 @@ const CollaborationPage: React.FC = () => {
       <section className="section types-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title animate-fadeInUp">合作模式</h2>
-            <p className="section-description animate-fadeInUp">
-              多种合作模式，满足不同客户需求
+            <h2 className="section-title">
+              合作模式
+              <br />
+              多元化选择
+            </h2>
+            <p className="section-description">
+              提供多种合作模式，满足不同客户的个性化需求，
+              让每一种合作都能发挥最大价值。
             </p>
           </div>
 
@@ -159,7 +162,7 @@ const CollaborationPage: React.FC = () => {
             {collaborationTypes.map((type, index) => {
               const Icon = type.icon;
               return (
-                <div key={index} className="type-card animate-fadeInUp">
+                <div key={index} className="type-card">
                   <div className="type-header">
                     <div className="type-icon">
                       <Icon size={32} />
@@ -168,7 +171,7 @@ const CollaborationPage: React.FC = () => {
                   </div>
                   <p className="type-description">{type.description}</p>
                   <div className="type-features">
-                    <h4>服务内容：</h4>
+                    <h4>服务内容</h4>
                     <ul>
                       {type.features.map((feature, featureIndex) => (
                         <li key={featureIndex}>{feature}</li>
@@ -176,7 +179,7 @@ const CollaborationPage: React.FC = () => {
                     </ul>
                   </div>
                   <div className="type-suitable">
-                    <strong>适合：</strong> {type.suitable}
+                    <strong>适合</strong> {type.suitable}
                   </div>
                 </div>
               );
@@ -189,9 +192,14 @@ const CollaborationPage: React.FC = () => {
       <section className="section process-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title animate-fadeInUp">合作流程</h2>
-            <p className="section-description animate-fadeInUp">
-              简单高效的合作流程，让合作变得更加便捷
+            <h2 className="section-title">
+              合作流程
+              <br />
+              简单高效
+            </h2>
+            <p className="section-description">
+              标准化的合作流程，确保每一个环节都专业高效，
+              让合作变得更加便捷和可靠。
             </p>
           </div>
 
@@ -199,21 +207,18 @@ const CollaborationPage: React.FC = () => {
             {process.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={index} className="process-item animate-fadeInUp">
-                  <div className="process-number">{item.step}</div>
-                  <div className="process-icon">
-                    <Icon size={24} />
+                <div key={index} className="process-item">
+                  <div className="process-step">
+                    <div className="step-number">{item.step}</div>
+                    <div className="step-icon">
+                      <Icon size={24} />
+                    </div>
                   </div>
                   <div className="process-content">
                     <h3 className="process-title">{item.title}</h3>
                     <p className="process-description">{item.description}</p>
                     <span className="process-duration">{item.duration}</span>
                   </div>
-                  {index < process.length - 1 && (
-                    <div className="process-arrow">
-                      <ArrowRight size={20} />
-                    </div>
-                  )}
                 </div>
               );
             })}
@@ -225,9 +230,14 @@ const CollaborationPage: React.FC = () => {
       <section className="section advantages-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title animate-fadeInUp">合作优势</h2>
-            <p className="section-description animate-fadeInUp">
-              选择我们的理由
+            <h2 className="section-title">
+              合作优势
+              <br />
+              专业可靠
+            </h2>
+            <p className="section-description">
+              多年行业经验积累，形成了完善的服务体系，
+              为每一位合作伙伴提供专业保障。
             </p>
           </div>
 
@@ -235,7 +245,7 @@ const CollaborationPage: React.FC = () => {
             {advantages.map((advantage, index) => {
               const Icon = advantage.icon;
               return (
-                <div key={index} className="advantage-card animate-fadeInUp">
+                <div key={index} className="advantage-item">
                   <div className="advantage-icon">
                     <Icon size={32} />
                   </div>
@@ -249,76 +259,38 @@ const CollaborationPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact-form" className="section contact-section">
-        <div className="container">
-          <div className="contact-content">
-            <div className="contact-info animate-fadeInLeft">
-              <h2>开始合作</h2>
-              <p>
-                填写表单或直接联系我们，我们的专业团队将在24小时内与您取得联系，
-                为您提供个性化的合作方案。
-              </p>
-              
-              <div className="contact-methods">
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <Phone size={24} />
-                  </div>
-                  <div className="method-info">
-                    <h4>电话咨询</h4>
-                    <p>+86 400-888-0000</p>
-                    <span>工作时间：9:00-18:00</span>
-                  </div>
-                </div>
-
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <Mail size={24} />
-                  </div>
-                  <div className="method-info">
-                    <h4>邮件联系</h4>
-                    <p>contact@mistyislet.com</p>
-                    <span>24小时内回复</span>
-                  </div>
-                </div>
-
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <MessageSquare size={24} />
-                  </div>
-                  <div className="method-info">
-                    <h4>在线咨询</h4>
-                    <p>即时沟通</p>
-                    <span>专业顾问在线</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <form className="contact-form animate-fadeInRight" onSubmit={handleSubmit}>
-              <h3>合作咨询表单</h3>
-              
+            {/* Contact Section */}
+      <section className="section contact-section">
+        {/* Contact Form */}
+        <div className="contact-form-container">
+            <h3 className="contact-form-title">Lets Have a Chat 👋</h3>
+            <p className="contact-form-description">
+              Questions about our products/services, orders, or just want to say hello? We're here to help
+            </p>
+            
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="name">姓名 *</label>
+                  <label htmlFor="firstName">First name</label>
                   <input
                     type="text"
-                    id="name"
+                    id="firstName"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
+                    placeholder="Jonathan"
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="company">公司名称 *</label>
+                  <label htmlFor="lastName">Last name</label>
                   <input
                     type="text"
-                    id="company"
+                    id="lastName"
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
+                    placeholder="James"
                     required
                   />
                 </div>
@@ -326,66 +298,67 @@ const CollaborationPage: React.FC = () => {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="email">邮箱地址 *</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    placeholder="jonathan2718@gmail.com"
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="phone">联系电话</label>
+                  <label htmlFor="phone">Phone number</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
+                    placeholder="Subject"
                   />
                 </div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="businessType">业务类型 *</label>
-                <select
-                  id="businessType"
-                  name="businessType"
-                  value={formData.businessType}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="">请选择业务类型</option>
-                  <option value="retailer">零售商</option>
-                  <option value="distributor">经销商</option>
-                  <option value="wholesaler">批发商</option>
-                  <option value="manufacturer">制造商</option>
-                  <option value="other">其他</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">合作需求 *</label>
+                <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  rows={5}
-                  placeholder="请详细描述您的合作需求..."
+                  placeholder="Hey i have some issues activating my account..."
                   required
-                ></textarea>
+                />
               </div>
 
-              <button type="submit" className="btn btn-primary">
-                提交申请
-                <ArrowRight size={20} />
-              </button>
+              <div className="form-submit">
+                <button type="submit" className="btn-submit">
+                  Send message
+                </button>
+              </div>
             </form>
+
+            <div className="social-links">
+              <a href="https://twitter.com/mistyislet" className="social-link" title="Twitter" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a href="https://instagram.com/mistyislet" className="social-link" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.326-1.297-.877-.808-1.297-1.930-1.297-3.326 0-1.297.49-2.448 1.297-3.326.808-.877 1.930-1.297 3.326-1.297s2.448.49 3.326 1.297c.877.808 1.297 1.930 1.297 3.326 0 1.297-.49 2.448-1.297 3.326-.808.877-1.930 1.297-3.326 1.297zm7.718-1.297c-.878.807-2.030 1.297-3.326 1.297s-2.448-.49-3.326-1.297c-.877-.808-1.297-1.930-1.297-3.326 0-1.297.49-2.448 1.297-3.326.808-.877 1.930-1.297 3.326-1.297s2.448.49 3.326 1.297c.877.808 1.297 1.930 1.297 3.326 0 1.297-.49 2.448-1.297 3.326z"/>
+                </svg>
+              </a>
+              <a href="https://discord.gg/mistyislet" className="social-link" title="Discord" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.196.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
       </section>
     </div>
   );
