@@ -253,10 +253,10 @@ const HomePage: React.FC = () => {
               核心优势
             </button>
             <button 
-              className={`nav-item ${activeSection === 'products' ? 'active' : ''}`}
-              onClick={() => scrollToSection('products')}
+              className={`nav-item ${activeSection === 'market-stats' ? 'active' : ''}`}
+              onClick={() => scrollToSection('market-stats')}
             >
-              产品
+              市场洞察
             </button>
             <button 
               className={`nav-item ${activeSection === 'partners' ? 'active' : ''}`}
@@ -304,7 +304,7 @@ const HomePage: React.FC = () => {
       <section id="product-categories" className="product-category-section">
         <div className="category-container">
           <div className="category-header">
-            {/* <h2 className="category-main-title">选择您的产品类别</h2> */}
+            <h2 className="category-main-title">产品矩阵</h2>
             <p className="category-subtitle">探索我们丰富的产品生态系统</p>
           </div>
           
@@ -356,93 +356,178 @@ const HomePage: React.FC = () => {
       {/* Features Section */}
       <section id="features" className="section features-section">
         <div className="container">
-          <div className="section-header">
-            <div 
-              className={`section-badge glass ${visibleElements.has('features-badge') ? 'animate-slide-down' : ''}`}
-              data-animate
-              id="features-badge"
-            >
-              <Target size={16} />
-              <span>核心优势</span>
-            </div>
-            <h2 
-              className={`section-title ${visibleElements.has('features-title') ? 'animate-slide-down-delayed' : ''}`}
-              data-animate
-              id="features-title"
-            >
-              为什么选择我们的
-              <br />
-              <span className="text-gradient">供应链解决方案</span>
-            </h2>
-          </div>
-          
-          <div className="features-grid">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div key={index} className="feature-card glass animate-fadeInScale">
-                  <div className="feature-icon">
-                    <Icon size={28} />
-                  </div>
-                  <h3 className="feature-title">{feature.title}</h3>
-                  <p className="feature-description">{feature.description}</p>
+          <div className="features-hero-layout">
+            {/* Left Side - Main Message */}
+            <div className="features-main-content">
+              <div className="feature-badge">核心优势</div>
+              <h2 className="feature-title-large">
+                <span className="feature-number-large">99.9%</span>
+                <span className="feature-text-large">
+                  客户满意度
+                  <br />
+                  专业供应链服务
+                </span>
+              </h2>
+              
+              <div className="feature-description-large">
+                我们凭借严格的质量控制、全球供应链网络和专业服务团队，
+                为俄罗斯客户提供最可靠的外设供应链解决方案。
+              </div>
+
+              {/* Key Metrics */}
+              <div className="feature-metrics">
+                <div className="metric-item">
+                  <div className="metric-number">500+</div>
+                  <div className="metric-label">合作品牌</div>
                 </div>
-              );
-            })}
+                <div className="metric-item">
+                  <div className="metric-number">15+</div>
+                  <div className="metric-label">服务城市</div>
+                </div>
+                <div className="metric-item">
+                  <div className="metric-number">48h</div>
+                  <div className="metric-label">平均交付</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Features Grid */}
+            <div className="features-grid-modern">
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={index} className="feature-card-modern">
+                    <div className="feature-icon-modern">
+                      <Icon size={24} />
+                    </div>
+                    <div className="feature-content">
+                      <h3 className="feature-title-modern">{feature.title}</h3>
+                      <p className="feature-desc-modern">{feature.description}</p>
+                    </div>
+                    <div className="feature-arrow">
+                      <ArrowRight size={20} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Products Section */}
-      <section id="products" className="section products-section">
+      {/* Market Statistics Section */}
+      <section id="market-stats" className="section market-stats-section">
         <div className="container">
-          <div className="section-header">
-            <div 
-              className={`section-badge glass ${visibleElements.has('products-badge') ? 'animate-slide-down' : ''}`}
-              data-animate
-              id="products-badge"
-            >
-              <Package size={16} />
-              <span>产品生态</span>
-            </div>
-            <h2 
-              className={`section-title ${visibleElements.has('products-title') ? 'animate-slide-down-delayed' : ''}`}
-              data-animate
-              id="products-title"
-            >
-              丰富的产品矩阵
-              <br />
-              <span className="text-gradient">满足多元化需求</span>
-            </h2>
-          </div>
-          
-          <div className="products-showcase">
-            {productCategories.map((category, index) => {
-              const Icon = category.icon;
-              return (
-                <div key={index} className="product-card-modern glass animate-fadeInScale">
-                  <div className="product-header">
-                    <div className="product-icon-large">
-                      <Icon size={36} />
-                    </div>
-                    <div className="product-badge">{category.highlight}</div>
-                  </div>
-                  
-                  <div className="product-info">
-                    <h3 className="product-title">{category.title}</h3>
-                    <p className="product-description">{category.description}</p>
-                    <div className="product-stats">{category.stats}</div>
-                  </div>
-                  
-                  <Link to="/products" className="product-explore">
-                    探索更多
-                    <ArrowRight size={16} />
-                  </Link>
-                  
-                  <div className="product-glow"></div>
+          <div className="market-hero-layout">
+            {/* Left Side - Main Insight */}
+            <div className="market-main-insight">
+              <div className="insight-badge">俄罗斯电竞市场</div>
+              <h2 className="insight-title">
+                <span className="insight-number-large">74%</span>
+                <span className="insight-text-large">
+                  玩家使用专业外设
+                  <br />
+                  设备普及率持续增长
+                </span>
+              </h2>
+              
+              {/* Bottom Stats */}
+              <div className="bottom-stats">
+                <div className="stat-big">
+                  <div className="stat-number-big">12.5M</div>
+                  <div className="stat-label-small">活跃电竞玩家，覆盖15+主要城市</div>
                 </div>
-              );
-            })}
+                <div className="stat-big">
+                  <div className="stat-number-big">$420M</div>
+                  <div className="stat-label-small">年市场规模，外设占比20.2%</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Visual Data */}
+            <div className="market-visual-data">
+              <div className="visual-title">外设使用情况</div>
+              
+              {/* Enhanced Peripheral Icons Grid */}
+              <div className="peripheral-grid-enhanced">
+                {/* Keyboards - 75% usage */}
+                <div className="peripheral-row-enhanced">
+                  <div className="row-label-enhanced">键盘</div>
+                  <div className="icon-visualization">
+                    <div className="icon-grid">
+                      {Array.from({length: 20}, (_, i) => (
+                        <div key={i} className={`icon-container ${i < 15 ? 'active' : 'inactive'}`}>
+                          <Keyboard size={14} className="peripheral-icon-enhanced" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="percentage-enhanced">75%</div>
+                </div>
+
+                {/* Mice - 82% usage */}
+                <div className="peripheral-row-enhanced">
+                  <div className="row-label-enhanced">鼠标</div>
+                  <div className="icon-visualization">
+                    <div className="icon-grid">
+                      {Array.from({length: 20}, (_, i) => (
+                        <div key={i} className={`icon-container ${i < 16 ? 'active' : 'inactive'}`}>
+                          <Mouse size={14} className="peripheral-icon-enhanced" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="percentage-enhanced">82%</div>
+                </div>
+
+                {/* Headphones - 68% usage */}
+                <div className="peripheral-row-enhanced">
+                  <div className="row-label-enhanced">耳机</div>
+                  <div className="icon-visualization">
+                    <div className="icon-grid">
+                      {Array.from({length: 20}, (_, i) => (
+                        <div key={i} className={`icon-container ${i < 14 ? 'active' : 'inactive'}`}>
+                          <Headphones size={14} className="peripheral-icon-enhanced" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="percentage-enhanced">68%</div>
+                </div>
+
+                {/* Gamepads - 45% usage */}
+                <div className="peripheral-row-enhanced">
+                  <div className="row-label-enhanced">手柄</div>
+                  <div className="icon-visualization">
+                    <div className="icon-grid">
+                      {Array.from({length: 20}, (_, i) => (
+                        <div key={i} className={`icon-container ${i < 9 ? 'active' : 'inactive'}`}>
+                          <Gamepad2 size={14} className="peripheral-icon-enhanced" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="percentage-enhanced">45%</div>
+                </div>
+
+                {/* Mousepads - 58% usage */}
+                <div className="peripheral-row-enhanced">
+                  <div className="row-label-enhanced">鼠标垫</div>
+                  <div className="icon-visualization">
+                    <div className="icon-grid">
+                      {Array.from({length: 20}, (_, i) => (
+                        <div key={i} className={`icon-container ${i < 12 ? 'active' : 'inactive'}`}>
+                          <Package size={14} className="peripheral-icon-enhanced" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="percentage-enhanced">58%</div>
+                </div>
+              </div>
+
+
+            </div>
           </div>
         </div>
       </section>

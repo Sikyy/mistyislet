@@ -17,7 +17,8 @@ import {
   Armchair,
   ChevronDown,
   X,
-  SlidersHorizontal
+  SlidersHorizontal,
+  Target
 } from 'lucide-react';
 import './ProductsPage.css';
 
@@ -27,7 +28,7 @@ const ProductsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<string>('all');
-  const [minRating, setMinRating] = useState<number>(0);
+
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   // Handle URL parameters for category filtering
@@ -41,20 +42,23 @@ const ProductsPage: React.FC = () => {
   }, [searchParams]);
 
   const categories = [
-    { id: 'all', name: '全部产品', icon: Monitor },
+    { id: 'all', name: '全部类别', icon: Monitor },
     { id: 'keyboard', name: '键盘', icon: Keyboard },
     { id: 'mouse', name: '鼠标', icon: Mouse },
+    { id: 'headphones', name: '耳机', icon: Headphones },
     { id: 'mousepad', name: '鼠标垫', icon: Package },
-    { id: 'gamepad', name: '游戏手柄', icon: Gamepad2 },
-    { id: 'headphones', name: '游戏耳机', icon: Headphones },
+    { id: 'gamepad', name: '手柄', icon: Gamepad2 },
     { id: 'keycaps', name: '键帽', icon: Settings },
     { id: 'switches', name: '轴体', icon: Cpu },
     { id: 'accessories', name: '配件', icon: Zap },
+    { id: 'chair', name: '电竞桌椅', icon: Armchair },
   ];
 
   const brands = [
-    'Razer', 'Logitech G', 'Corsair', 'SteelSeries', 'HyperX', 
-    'ASUS ROG', 'Cherry MX', 'GMK', 'DXRacer', 'Xbox', 'Anker', 'Cooler Master'
+    'AngryMiao', 'ATK', 'Hachiware', 'MadLoon', 'MelGeek', 'PMO', 'WOBKEY', 
+    'Razer', 'ROG', 'Sukisora', 'Zowie', '戟创agkey', 'ANTICATER', 'Logitech', 
+    'MoonDROP', 'FUtureMatch', 'DRUNKDEER', 'GAMESIR', 'Mojhon', 
+    'MCHOSE', '8BitDo', 'Flydigi', 'VGN', 'ARTISAN', 'betop'
   ];
 
   const priceRanges = [
@@ -65,225 +69,257 @@ const ProductsPage: React.FC = () => {
     { id: 'high', name: '¥1300+', min: 1300, max: 9999 },
   ];
 
-  const products = [
-    // 键盘类
+  const brandMatrix = [
     {
       id: 1,
-      name: 'RGB机械键盘 Pro',
-      category: 'keyboard',
-      brand: 'Razer',
-      price: 1099,
-      priceRange: '¥899-1299',
-      rating: 4.8,
-      features: ['RGB背光', '机械轴体', '无线连接', '可编程'],
-      description: '专业级机械键盘，适合游戏和办公使用',
-      image: '⌨️',
-      popular: true
+      brand: 'AngryMiao',
+      logo: 'https://image.siky.me/mistyislet/logo.0bd130c6.png',
+      description: '原创设计，极致工艺',
+      categories: ['键盘', '键帽', '配件'],
+      productCount: '30+',
+      website: 'https://angrymiao.com',
+      status: 'preferred'
     },
     {
       id: 2,
-      name: '60%紧凑型键盘',
-      category: 'keyboard',
-      brand: 'Corsair',
-      price: 849,
-      priceRange: '¥699-999',
-      rating: 4.7,
-      features: ['紧凑设计', '热插拔', '铝合金外壳', 'USB-C'],
-      description: '节省空间的紧凑型机械键盘',
-      image: '⌨️',
-      popular: false
+      brand: 'ATK',
+      logo: 'https://image.siky.me/mistyislet/ATK.png',
+      description: '专业外设，游戏首选',
+      categories: ['键盘', '鼠标', '配件'],
+      productCount: '45+',
+      website: 'https://www.atk.store/',
+      status: 'strategic'
     },
-    // 鼠标类
     {
       id: 3,
-      name: '无线游戏鼠标',
-      category: 'mouse',
-      brand: 'Logitech G',
-      price: 549,
-      priceRange: '¥399-699',
-      rating: 4.9,
-      features: ['高精度传感器', '无线连接', '可调DPI', 'RGB灯效'],
-      description: '专为电竞玩家设计的高性能游戏鼠标',
-      image: '🖱️',
-      popular: true
+      brand: 'Hachiware',
+      logo: 'https://image.siky.me/mistyislet/Hachiware.jpg',
+      description: '日式精工，萌系设计',
+      categories: ['键盘', '键帽', '配件'],
+      productCount: '25+',
+      website: 'https://hachiware.jp',
+      status: 'preferred'
     },
     {
       id: 4,
-      name: '轻量化电竞鼠标',
-      category: 'mouse',
-      brand: 'SteelSeries',
-      price: 399,
-      priceRange: '¥299-499',
-      rating: 4.6,
-      features: ['超轻设计', '20000DPI', '蜂窝外壳', '快速充电'],
-      description: '超轻量化设计，提供极致手感',
-      image: '🖱️',
-      popular: false
+      brand: 'MadLoon',
+      logo: 'https://image.siky.me/mistyislet/MadLoon.png',
+      description: '疯狂创意，独特体验',
+      categories: ['键盘', '鼠标', '配件'],
+      productCount: '35+',
+      website: 'https://www.fgg.com.cn/',
+      status: 'preferred'
     },
-    // 鼠标垫类
     {
       id: 5,
-      name: '超大游戏鼠标垫',
-      category: 'mousepad',
-      brand: 'HyperX',
-      price: 149,
-      priceRange: '¥99-199',
-      rating: 4.5,
-      features: ['防水面料', '防滑底座', '多尺寸', '易清洁'],
-      description: '高品质游戏鼠标垫，提供顺滑的使用体验',
-      image: '🖥️',
-      popular: false
+      brand: 'MelGeek',
+      logo: 'https://image.siky.me/mistyislet/MelGeek.png',
+      description: '甜蜜设计，温馨体验',
+      categories: ['键盘', '键帽', '配件'],
+      productCount: '40+',
+      website: 'https://www.melgeek.com/',
+      status: 'strategic'
     },
     {
       id: 6,
-      name: 'RGB发光鼠标垫',
-      category: 'mousepad',
-      brand: 'ASUS ROG',
-      price: 249,
-      priceRange: '¥199-299',
-      rating: 4.4,
-      features: ['RGB灯效', '硬质表面', 'USB供电', '同步软件'],
-      description: 'RGB发光鼠标垫，炫酷灯效提升桌面氛围',
-      image: '✨',
-      popular: true
+      brand: 'PMO',
+      logo: 'https://www.pmolab.cn/static/media/logo.png',
+      description: '性能怪兽，电竞利器',
+      categories: ['鼠标', '键盘', '配件'],
+      productCount: '50+',
+      website: 'https://www.pmolab.cn/',
+      status: 'strategic'
     },
-    // 游戏手柄类
     {
       id: 7,
-      name: '专业游戏手柄',
-      category: 'gamepad',
-      brand: 'Xbox',
-      price: 399,
-      priceRange: '¥299-499',
-      rating: 4.7,
-      features: ['无线连接', '震动反馈', '可编程按键', '长续航'],
-      description: '适配多平台的专业游戏手柄',
-      image: '🎮',
-      popular: false
+      brand: 'WOBKEY',
+      logo: 'https://wobkey.com/static/media/logo.png',
+      description: '键盘专家，打字利器',
+      categories: ['键盘', '轴体', '键帽'],
+      productCount: '60+',
+      website: 'https://wobkey.com',
+      status: 'strategic'
     },
-    // 游戏耳机类
     {
       id: 8,
-      name: '降噪电竞耳机',
-      category: 'headphones',
-      brand: 'SteelSeries',
-      price: 799,
-      priceRange: '¥599-999',
-      rating: 4.6,
-      features: ['主动降噪', '7.1环绕声', '可拆卸麦克风', 'RGB灯效'],
-      description: '专业电竞耳机，提供沉浸式音频体验',
-      image: '🎧',
-      popular: true
+      brand: 'Razer',
+      logo: 'https://logos-world.net/wp-content/uploads/2021/10/Razer-Logo.png',
+      description: '全球领先的游戏外设品牌',
+      categories: ['键盘', '鼠标', '耳机', '鼠标垫'],
+      productCount: '120+',
+      website: 'https://www.razer.com',
+      status: 'strategic'
     },
     {
       id: 9,
-      name: '无线头戴式耳机',
-      category: 'headphones',
-      brand: 'HyperX',
-      price: 549,
-      priceRange: '¥399-699',
-      rating: 4.5,
-      features: ['无线2.4G', '50mm驱动器', '记忆海绵', '旋转式麦克风'],
-      description: '舒适无线耳机，适合长时间游戏',
-      image: '🎧',
-      popular: false
+      brand: 'ROG',
+      logo: 'https://logos-world.net/wp-content/uploads/2021/08/Asus-ROG-Logo.png',
+      description: '华硕玩家国度，创新先锋',
+      categories: ['键盘', '鼠标', '耳机'],
+      productCount: '85+',
+      website: 'https://rog.asus.com',
+      status: 'preferred'
     },
-    // 键帽类
     {
       id: 10,
-      name: 'PBT键帽套装',
-      category: 'keycaps',
-      brand: 'GMK',
-      price: 449,
-      priceRange: '¥299-599',
-      rating: 4.8,
-      features: ['PBT材质', '热升华工艺', '多色搭配', '兼容MX轴'],
-      description: '高品质PBT键帽，手感细腻耐用',
-      image: '🔤',
-      popular: true
+      brand: 'Sukisora',
+      logo: 'https://via.placeholder.com/200x100/ff6b9d/ffffff?text=SS',
+      description: '樱花设计，唯美体验',
+      categories: ['键盘', '键帽', '配件'],
+      productCount: '20+',
+      website: 'https://sukisora.com',
+      status: 'preferred'
     },
-    // 轴体类
     {
       id: 11,
-      name: '机械键盘轴体套装',
-      category: 'switches',
-      brand: 'Cherry MX',
-      price: 299,
-      priceRange: '¥199-399',
-      rating: 4.8,
-      features: ['多种轴体', '热插拔', '工厂润滑', '静音设计'],
-      description: '专业机械键盘轴体，满足不同手感需求',
-      image: '⚙️',
-      popular: false
+      brand: 'Zowie',
+      logo: 'https://logos-world.net/wp-content/uploads/2022/04/Zowie-Logo.png',
+      description: '电竞专用，职业选择',
+      categories: ['鼠标', '鼠标垫', '配件'],
+      productCount: '40+',
+      website: 'https://zowie.benq.com',
+      status: 'strategic'
     },
-    // 配件类
     {
       id: 12,
-      name: 'RGB灯带套装',
-      category: 'accessories',
-      brand: 'Cooler Master',
-      price: 149,
-      priceRange: '¥99-199',
-      rating: 4.3,
-      features: ['可裁剪', '多色灯效', '磁吸安装', '遥控器'],
-      description: '提升桌面氛围的RGB灯带套装',
-      image: '💡',
-      popular: false
+      brand: '戟创agkey',
+      logo: 'https://via.placeholder.com/200x100/c0392b/ffffff?text=戟创',
+      description: '国产精品，匠心制造',
+      categories: ['键盘', '轴体', '配件'],
+      productCount: '35+',
+      website: 'https://agkey.cn',
+      status: 'preferred'
     },
-    // 电竞桌椅类
     {
       id: 13,
-      name: '电竞游戏椅',
-      category: 'furniture',
-      brand: 'DXRacer',
-      price: 1899,
-      priceRange: '¥1299-2499',
-      rating: 4.7,
-      features: ['人体工学', '高度调节', '腰部支撑', 'PU皮革'],
-      description: '专业电竞椅，提供舒适的游戏体验',
-      image: '🪑',
-      popular: true
+      brand: 'ANTICATER',
+      logo: 'https://via.placeholder.com/200x100/8e44ad/ffffff?text=AC',
+      description: '反传统设计，独特美学',
+      categories: ['键盘', '配件'],
+      productCount: '25+',
+      website: 'https://anticater.com',
+      status: 'preferred'
     },
     {
       id: 14,
-      name: '升降电竞桌',
-      category: 'furniture',
-      brand: 'DXRacer',
-      price: 1299,
-      priceRange: '¥899-1699',
-      rating: 4.5,
-      features: ['电动升降', '记忆位置', '线缆管理', '碳纤维桌面'],
-      description: '可升降电竞桌，打造完美游戏空间',
-      image: '🏢',
-      popular: false
+      brand: 'Logitech',
+      logo: 'https://logos-world.net/wp-content/uploads/2020/12/Logitech-Logo.png',
+      description: '瑞士精工，全球信赖',
+      categories: ['键盘', '鼠标', '耳机'],
+      productCount: '100+',
+      website: 'https://www.logitech.com',
+      status: 'strategic'
     },
-    // 其他电子产品类
     {
       id: 15,
-      name: '游戏显示器',
-      category: 'electronics',
-      brand: 'ASUS ROG',
-      price: 2999,
-      priceRange: '¥1999-3999',
-      rating: 4.8,
-      features: ['144Hz刷新率', '1ms响应', 'HDR支持', 'G-Sync'],
-      description: '高刷新率游戏显示器，画面流畅无拖影',
-      image: '🖥️',
-      popular: true
+      brand: 'MoonDROP',
+      logo: 'https://via.placeholder.com/200x100/34495e/ffffff?text=MD',
+      description: '月之神韵，听觉盛宴',
+      categories: ['耳机', '配件'],
+      productCount: '30+',
+      website: 'https://moondroplab.com/',
+      status: 'preferred'
     },
     {
       id: 16,
-      name: 'USB集线器',
-      category: 'electronics',
-      brand: 'Anker',
-      price: 199,
-      priceRange: '¥99-299',
-      rating: 4.4,
-      features: ['USB 3.0', '多端口', '快速充电', '紧凑设计'],
-      description: '多功能USB集线器，扩展桌面连接',
-      image: '🔌',
-      popular: false
+      brand: 'FUtureMatch',
+      logo: 'https://via.placeholder.com/200x100/1abc9c/ffffff?text=FM',
+      description: '未来科技，开放设计',
+      categories: ['配件', '电竞桌椅'],
+      productCount: '15+',
+      website: 'https://futurematch.cn',
+      status: 'preferred'
     },
+    {
+      id: 17,
+      brand: 'DRUNKDEER',
+      logo: 'https://via.placeholder.com/200x100/d35400/ffffff?text=DD',
+      description: '醉鹿科技，创新体验',
+      categories: ['键盘', '轴体'],
+      productCount: '25+',
+      website: 'https://drunkdeer.com',
+      status: 'preferred'
+    },
+    {
+      id: 18,
+      brand: 'GAMESIR',
+      logo: 'https://via.placeholder.com/200x100/2c3e50/ffffff?text=GS',
+      description: '游戏手柄专家',
+      categories: ['手柄', '配件'],
+      productCount: '40+',
+      website: 'https://www.gamesir.com',
+      status: 'strategic'
+    },
+    {
+      id: 19,
+      brand: 'Mojhon',
+      logo: 'https://via.placeholder.com/200x100/16a085/ffffff?text=MJ',
+      description: '魔法设计，神奇体验',
+      categories: ['鼠标', '键盘', '配件'],
+      productCount: '35+',
+      website: 'https://www.bigbigwon.cn/',
+      status: 'preferred'
+    },
+    {
+      id: 20,
+      brand: 'MCHOSE',
+      logo: 'https://via.placeholder.com/200x100/27ae60/ffffff?text=MC',
+      description: '鼠标专家，精准操控',
+      categories: ['鼠标', '鼠标垫', '配件'],
+      productCount: '50+',
+      website: 'https://www.maicong.cn/',
+      status: 'strategic'
+    },
+    {
+      id: 21,
+      brand: '8BitDo',
+      logo: 'https://via.placeholder.com/200x100/f1c40f/ffffff?text=8B',
+      description: '复古手柄，经典重现',
+      categories: ['手柄', '配件'],
+      productCount: '30+',
+      website: 'https://www.8bitdo.com/',
+      status: 'preferred'
+    },
+    {
+      id: 22,
+      brand: 'Flydigi',
+      logo: 'https://via.placeholder.com/200x100/e74c3c/ffffff?text=FD',
+      description: '飞智科技，手游利器',
+      categories: ['手柄', '配件'],
+      productCount: '45+',
+      website: 'https://www.flydigi.com/',
+      status: 'strategic'
+    },
+    {
+      id: 23,
+      brand: 'VGN',
+      logo: 'https://via.placeholder.com/200x100/9b59b6/ffffff?text=VGN',
+      description: '电竞装备，性能至上',
+      categories: ['鼠标', '键盘', '耳机'],
+      productCount: '60+',
+      website: 'https://vgnlab.com/',
+      status: 'strategic'
+    },
+    {
+      id: 24,
+      brand: 'ARTISAN',
+      logo: 'https://via.placeholder.com/200x100/95a5a6/ffffff?text=AT',
+      description: '手工艺人，极致鼠标垫',
+      categories: ['鼠标垫', '配件'],
+      productCount: '20+',
+      website: 'https://artisan-jp.com',
+      status: 'strategic'
+    },
+    {
+      id: 25,
+      brand: 'betop',
+      logo: 'https://via.placeholder.com/200x100/3498db/ffffff?text=BP',
+      description: '北通科技，手柄专家',
+      categories: ['手柄', '配件'],
+      productCount: '40+',
+      website: 'https://betop.com.cn',
+      status: 'strategic'
+    }
   ];
 
   const toggleBrand = (brand: string) => {
@@ -295,25 +331,32 @@ const ProductsPage: React.FC = () => {
   };
 
   const clearFilters = () => {
-    setActiveCategory('all');
     setSelectedBrands([]);
-    setPriceRange('all');
-    setMinRating(0);
+    setActiveCategory('all');
     setSearchTerm('');
   };
 
-  const filteredProducts = products.filter(product => {
-    const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.brand.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-    const matchesPrice = priceRange === 'all' || (() => {
-      const range = priceRanges.find(r => r.id === priceRange);
-      return range ? product.price >= range.min && product.price <= range.max : true;
+  const filteredBrands = brandMatrix.filter(brand => {
+    const matchesSearch = brand.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         brand.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(brand.brand);
+    const matchesCategory = activeCategory === 'all' || (() => {
+      const categoryMap = {
+        'keyboard': '键盘',
+        'mouse': '鼠标',
+        'headphones': '耳机',
+        'mousepad': '鼠标垫',
+        'gamepad': '手柄',
+        'keycaps': '键帽',
+        'switches': '轴体',
+        'accessories': '配件',
+        'chair': '电竞桌椅'
+      };
+      const categoryName = categoryMap[activeCategory as keyof typeof categoryMap];
+      return categoryName ? brand.categories.includes(categoryName) : true;
     })();
-    const matchesRating = product.rating >= minRating;
     
-    return matchesCategory && matchesSearch && matchesBrand && matchesPrice && matchesRating;
+    return matchesSearch && matchesBrand && matchesCategory;
   });
 
   return (
@@ -321,10 +364,11 @@ const ProductsPage: React.FC = () => {
       {/* Header */}
       <section className="products-header">
         <div className="container">
-          <div className="header-content animate-fadeInUp">
-            <h1 className="page-title">产品展示</h1>
+          <div className="header-content">
+            <div className="header-badge">品牌矩阵</div>
+            <h1 className="page-title">全球顶级品牌供应</h1>
             <p className="page-description">
-              精选全球顶级外设品牌，为您提供专业的产品解决方案
+              深度合作12+国际品牌，覆盖全品类外设产品，提供一站式B2B供应链解决方案
             </p>
           </div>
         </div>
@@ -376,11 +420,31 @@ const ProductsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Categories */}
+              {/* Product Categories */}
               <div className="filter-section">
-                <h3 className="filter-title">产品分类</h3>
+                <h3 className="filter-title">外设类别</h3>
                 <div className="category-list">
                   {categories.map((category) => {
+                    let count = brandMatrix.length;
+                    if (category.id !== 'all') {
+                      const categoryMap = {
+                        'keyboard': '键盘',
+                        'mouse': '鼠标', 
+                        'headphones': '耳机',
+                        'mousepad': '鼠标垫',
+                        'gamepad': '手柄',
+                        'keycaps': '键帽',
+                        'switches': '轴体',
+                        'accessories': '配件',
+                        'chair': '电竞桌椅'
+                      };
+                      const categoryName = categoryMap[category.id as keyof typeof categoryMap];
+                      count = brandMatrix.filter(b => b.categories.includes(categoryName)).length;
+                    }
+                    const displayCategory = { ...category, count };
+                    
+                    return displayCategory;
+                  }).map((category) => {
                     const Icon = category.icon;
                     return (
                       <button
@@ -390,9 +454,7 @@ const ProductsPage: React.FC = () => {
                       >
                         <Icon size={16} />
                         <span>{category.name}</span>
-                        <span className="category-count">
-                          {category.id === 'all' ? products.length : products.filter(p => p.category === category.id).length}
-                        </span>
+                        <span className="category-count">{category.count}</span>
                       </button>
                     );
                   })}
@@ -401,69 +463,24 @@ const ProductsPage: React.FC = () => {
 
               {/* Brands */}
               <div className="filter-section">
-                <h3 className="filter-title">品牌</h3>
+                <h3 className="filter-title">品牌筛选</h3>
                 <div className="brand-list">
-                  {brands.map((brand) => (
-                    <label key={brand} className="brand-item">
+                  {brandMatrix.map((brand) => (
+                    <label key={brand.brand} className="brand-item">
                       <input
                         type="checkbox"
-                        checked={selectedBrands.includes(brand)}
-                        onChange={() => toggleBrand(brand)}
+                        checked={selectedBrands.includes(brand.brand)}
+                        onChange={() => toggleBrand(brand.brand)}
                       />
                       <span className="checkmark"></span>
-                      <span className="brand-name">{brand}</span>
-                      <span className="brand-count">
-                        {products.filter(p => p.brand === brand).length}
-                      </span>
+                      <span className="brand-name">{brand.brand}</span>
+                      <span className="brand-count">{brand.productCount}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
-              {/* Price Range */}
-              <div className="filter-section">
-                <h3 className="filter-title">价格区间</h3>
-                <div className="price-list">
-                  {priceRanges.map((range) => (
-                    <label key={range.id} className="price-item">
-                      <input
-                        type="radio"
-                        name="priceRange"
-                        checked={priceRange === range.id}
-                        onChange={() => setPriceRange(range.id)}
-                      />
-                      <span className="radio-mark"></span>
-                      <span className="price-name">{range.name}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
 
-              {/* Rating */}
-              <div className="filter-section">
-                <h3 className="filter-title">评分</h3>
-                <div className="rating-list">
-                  {[4.5, 4.0, 3.5, 3.0, 0].map((rating) => (
-                    <button
-                      key={rating}
-                      className={`rating-item ${minRating === rating ? 'active' : ''}`}
-                      onClick={() => setMinRating(rating)}
-                    >
-                      <div className="rating-stars">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            size={14}
-                            className={star <= rating ? 'filled' : 'empty'}
-                            fill={star <= rating ? 'currentColor' : 'none'}
-                          />
-                        ))}
-                      </div>
-                      <span>{rating === 0 ? '所有评分' : `${rating}+ 星`}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
 
               {/* Clear Filters */}
               <div className="filter-actions">
@@ -481,18 +498,10 @@ const ProductsPage: React.FC = () => {
               <div className="results-header">
                 <div className="results-info">
                   <span className="results-count">
-                    共找到 <strong>{filteredProducts.length}</strong> 个产品
+                    共找到 <strong>{filteredBrands.length}</strong> 个合作品牌
                   </span>
-                  {(activeCategory !== 'all' || selectedBrands.length > 0 || priceRange !== 'all' || minRating > 0 || searchTerm) && (
+                  {(selectedBrands.length > 0 || activeCategory !== 'all' || searchTerm) && (
                     <div className="active-filters">
-                      {activeCategory !== 'all' && (
-                        <span className="filter-tag">
-                          {categories.find(c => c.id === activeCategory)?.name}
-                          <button onClick={() => setActiveCategory('all')}>
-                            <X size={12} />
-                          </button>
-                        </span>
-                      )}
                       {selectedBrands.map(brand => (
                         <span key={brand} className="filter-tag">
                           {brand}
@@ -501,18 +510,10 @@ const ProductsPage: React.FC = () => {
                           </button>
                         </span>
                       ))}
-                      {priceRange !== 'all' && (
+                      {activeCategory !== 'all' && (
                         <span className="filter-tag">
-                          {priceRanges.find(r => r.id === priceRange)?.name}
-                          <button onClick={() => setPriceRange('all')}>
-                            <X size={12} />
-                          </button>
-                        </span>
-                      )}
-                      {minRating > 0 && (
-                        <span className="filter-tag">
-                          {minRating}+ 星
-                          <button onClick={() => setMinRating(0)}>
+                          {categories.find(c => c.id === activeCategory)?.name || activeCategory}
+                          <button onClick={() => setActiveCategory('all')}>
                             <X size={12} />
                           </button>
                         </span>
@@ -522,46 +523,63 @@ const ProductsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Products Grid */}
-              <div className="products-grid">
-                {filteredProducts.map((product) => (
-                  <div key={product.id} className="product-card animate-fadeInUp">
-                    {product.popular && <div className="popular-badge">热门</div>}
-                    <div className="product-image">
-                      <span className="product-emoji">{product.image}</span>
+              {/* Brand Matrix Grid */}
+              <div className="partners-grid">
+                {filteredBrands.map((brand) => (
+                  <a 
+                    key={brand.id} 
+                    href={brand.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="partner-card"
+                  >
+                    {/* Brand Logo */}
+                    <div className="partner-logo">
+                      <img 
+                        src={brand.logo} 
+                        alt={`${brand.brand} logo`}
+                        onError={(e) => {
+                          console.log(`Logo failed to load for ${brand.brand}: ${brand.logo}`);
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          
+                          // 检查是否已经有fallback元素
+                          const existingFallback = target.parentElement!.querySelector('.partner-logo-fallback');
+                          if (!existingFallback) {
+                            const fallback = document.createElement('div');
+                            fallback.className = 'partner-logo-fallback';
+                            fallback.textContent = brand.brand.length > 6 ? brand.brand.substring(0, 6) : brand.brand;
+                            target.parentElement!.appendChild(fallback);
+                          }
+                        }}
+                        onLoad={(e) => {
+                          console.log(`Logo loaded successfully for ${brand.brand}: ${brand.logo}`);
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'block';
+                          
+                          // 移除可能存在的fallback
+                          const fallback = target.parentElement!.querySelector('.partner-logo-fallback');
+                          if (fallback) {
+                            fallback.remove();
+                          }
+                        }}
+                      />
                     </div>
-                    <div className="product-info">
-                      <div className="product-meta">
-                        <span className="product-brand">{product.brand}</span>
-                        <div className="product-rating">
-                          <Star size={14} fill="currentColor" />
-                          <span>{product.rating}</span>
-                        </div>
-                      </div>
-                      <h3 className="product-name">{product.name}</h3>
-                      <p className="product-description">{product.description}</p>
-                      <div className="product-features">
-                        {product.features.slice(0, 3).map((feature, index) => (
-                          <span key={index} className="feature-tag">{feature}</span>
-                        ))}
-                      </div>
-                      <div className="product-footer">
-                        <span className="product-price">{product.priceRange}</span>
-                        <button className="inquiry-btn">
-                          询价
-                          <ArrowRight size={16} />
-                        </button>
-                      </div>
+                    
+                    {/* Brand Info */}
+                    <div className="partner-info">
+                      <h3 className="partner-name">{brand.brand}</h3>
+                      <p className="partner-description">{brand.description}</p>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
               
-              {filteredProducts.length === 0 && (
+              {filteredBrands.length === 0 && (
                 <div className="no-results">
                   <div className="no-results-content">
                     <Filter size={48} />
-                    <h3>未找到相关产品</h3>
+                    <h3>未找到相关品牌</h3>
                     <p>请尝试调整搜索条件或筛选器</p>
                     <button className="clear-filters-btn" onClick={clearFilters}>
                       清除所有筛选
@@ -578,15 +596,15 @@ const ProductsPage: React.FC = () => {
       {/* CTA Section */}
       <section className="products-cta">
         <div className="container">
-          <div className="cta-content animate-fadeInUp">
-            <h2>需要定制化解决方案？</h2>
-            <p>我们提供个性化的产品采购和供应链服务</p>
+          <div className="cta-content">
+            <h2>开启品牌合作之旅</h2>
+            <p>与全球顶级品牌深度合作，为您提供专业的B2B供应链解决方案</p>
             <div className="cta-actions">
               <a href="mailto:contact@mistyislet.com" className="btn btn-primary">
-                联系我们
+                咨询合作
               </a>
               <a href="/collaboration" className="btn btn-secondary">
-                了解合作
+                了解详情
               </a>
             </div>
           </div>

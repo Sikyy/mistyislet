@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { path: '/products', label: '产品列表' },
+    { path: '/products', label: '品牌列表' },
     { path: '/brand-story', label: '关于我们' },
     { path: '/partners', label: '合作伙伴' },
     { path: '/collaboration', label: '联系我们' },
