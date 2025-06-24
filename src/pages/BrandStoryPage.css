@@ -193,9 +193,9 @@
 
 .timeline-track {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 800px;
   width: 100%;
   position: relative;
 }
@@ -204,8 +204,8 @@
   content: '';
   position: absolute;
   top: 40px;
-  left: 10%;
-  right: 10%;
+  left: 12.5%;
+  right: 12.5%;
   height: 1px;
   background: #333333;
   z-index: 1;
@@ -266,12 +266,14 @@
   }
   
   .timeline-track {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 600px;
   }
   
   .timeline-track::before {
-    display: none;
+    left: 16.7%;
+    right: 16.7%;
   }
 }
 

@@ -4,30 +4,28 @@ import {
   Eye, 
   Heart
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './BrandStoryPage.css';
 
 const BrandStoryPage: React.FC = () => {
+  const { t } = useTranslation();
+  
   const timeline = [
     {
-      year: '2018',
-      title: '公司成立',
-      description: 'MistyIslet在深圳成立，专注于中俄供应链服务'
-    },
-    {
-      year: '2020',
-      title: '市场拓展', 
-      description: '在俄罗斯建立本地化服务团队'
-    },
-    {
-      year: '2022',
-      title: '技术升级',
-      description: '引入AI技术优化供应链管理'
-    },
-    {
       year: '2024',
-      title: '战略升级',
-      description: '成为中俄外设贸易领域的重要桥梁'
-    }
+      title: t('about.timeline.events.2024.title'),
+      description: t('about.timeline.events.2024.description')
+    },
+    {
+      year: '2025',
+      title: t('about.timeline.events.2025.title'), 
+      description: t('about.timeline.events.2025.description')
+    },
+    {
+      year: '2026',
+      title: t('about.timeline.events.2026.title'),
+      description: t('about.timeline.events.2026.description')
+    },
   ];
 
   return (
@@ -38,20 +36,18 @@ const BrandStoryPage: React.FC = () => {
           <div className="hero-content">
             <div className="hero-text">
               <p className="hero-subtitle">
-                我们专注为俄罗斯商家提供高端外设设备供应链服务，
-                致力于打造最专业、最可靠的跨境贸易桥梁。
+                {t('about.heroSubtitle')}
               </p>
               
               <h1 className="hero-title">
-                ABOUT
+                {t('about.heroTitle')}
                 <br />
-                MISTYISLET
+                {t('about.heroTitleLine2')}
               </h1>
               
               <div className="hero-description">
                 <p>
-                  连接中俄两国市场四年来，我们始终坚持以品质为核心，
-                  以创新为驱动，为客户创造价值。
+                  {t('about.heroDescription')}
                 </p>
               </div>
             </div>
@@ -64,16 +60,15 @@ const BrandStoryPage: React.FC = () => {
         <div className="container">
           <div className="story-content">
             <div className="story-header">
-              <p className="story-subtitle">SINCE 2018</p>
+              <p className="story-subtitle">{t('about.story.subtitle')}</p>
               <h2 className="story-title">
-                我们一直在为中俄跨境贸易
+                {t('about.story.title')}
                 <br />
-                书写新的历史篇章
+                {t('about.story.titleLine2')}
               </h2>
               <div className="story-description">
                 <p>
-                  六年来，我们专注于外设设备供应链服务，
-                  通过不断创新和优化，为客户提供最优质的产品和服务体验。
+                  {t('about.story.description')}
                 </p>
               </div>
             </div>
@@ -85,11 +80,11 @@ const BrandStoryPage: React.FC = () => {
       <section className="mission-section">
         <div className="container">
           <div className="section-header">
-            <p className="section-subtitle">OUR VALUES</p>
+            <p className="section-subtitle">{t('about.values.subtitle')}</p>
             <h2 className="section-title">
-              企业核心价值
+              {t('about.values.title')}
               <br />
-              与发展理念
+              {t('about.values.titleLine2')}
             </h2>
           </div>
           
@@ -99,8 +94,8 @@ const BrandStoryPage: React.FC = () => {
                 <Target size={32} />
               </div>
               <div className="mission-content">
-                <h3>我们的使命</h3>
-                <p>成为中俄供应链合作的重要桥梁，为俄罗斯商家提供高品质的外设产品和专业的供应链服务。</p>
+                <h3>{t('about.values.mission.title')}</h3>
+                <p>{t('about.values.mission.description')}</p>
               </div>
             </div>
             
@@ -109,8 +104,8 @@ const BrandStoryPage: React.FC = () => {
                 <Eye size={32} />
               </div>
               <div className="mission-content">
-                <h3>我们的愿景</h3>
-                <p>成为全球领先的跨境供应链服务提供商，让世界各地的优质产品能够更便捷地流通。</p>
+                <h3>{t('about.values.vision.title')}</h3>
+                <p>{t('about.values.vision.description')}</p>
               </div>
             </div>
             
@@ -119,8 +114,8 @@ const BrandStoryPage: React.FC = () => {
                 <Heart size={32} />
               </div>
               <div className="mission-content">
-                <h3>核心价值</h3>
-                <p>诚信为本，品质至上，客户第一，构建互利共赢的生态系统。</p>
+                <h3>{t('about.values.coreValues.title')}</h3>
+                <p>{t('about.values.coreValues.description')}</p>
               </div>
             </div>
           </div>
@@ -131,16 +126,15 @@ const BrandStoryPage: React.FC = () => {
       <section className="timeline-section">
         <div className="container">
           <div className="section-header">
-            <p className="section-subtitle">HISTORY</p>
+            <p className="section-subtitle">{t('about.timeline.subtitle')}</p>
             <h2 className="section-title">
-              发展历程
+              {t('about.timeline.title')}
               <br />
-              砥砺前行六年路
+              {t('about.timeline.titleLine2')}
             </h2>
             <div className="section-description">
               <p>
-                从初创到成长，我们始终坚持初心，
-                用专业和坚持书写着跨境贸易的新篇章。
+                {t('about.timeline.description')}
               </p>
             </div>
           </div>

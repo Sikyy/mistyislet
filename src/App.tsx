@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './App.css';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
@@ -31,7 +32,7 @@ const ScrollToHash = () => {
       if (element) {
         setTimeout(() => {
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - 100; // 向上偏移100px
+          const offsetPosition = elementPosition - 250; // 向上偏移250px
           
           window.scrollTo({
             top: offsetPosition,
@@ -55,6 +56,25 @@ const ScrollToHash = () => {
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const { i18n } = useTranslation();
+
+  // 监听语言变化并更新HTML lang属性
+  useEffect(() => {
+    const updateHtmlLang = () => {
+      document.documentElement.setAttribute('lang', i18n.language);
+    };
+
+    // 初始设置
+    updateHtmlLang();
+
+    // 监听语言变化
+    i18n.on('languageChanged', updateHtmlLang);
+
+    // 清理监听器
+    return () => {
+      i18n.off('languageChanged', updateHtmlLang);
+    };
+  }, [i18n]);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;

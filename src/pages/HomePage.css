@@ -167,6 +167,27 @@
   color: white;
   margin: 0;
   letter-spacing: -0.02em;
+  min-height: 220px; /* 确保有足够空间容纳三行文本 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 为不同语言优化文本换行和间距 */
+html[lang="en"] .hero-main-title {
+  line-height: 1.2;
+  min-height: 240px;
+}
+
+html[lang="ru"] .hero-main-title {
+  line-height: 1.3;
+  min-height: 260px; /* 俄文需要更多空间 */
+  font-size: 68px; /* 稍微减小字体以适应更长的文本 */
+}
+
+html[lang="zh"] .hero-main-title {
+  line-height: 1.1;
+  min-height: 220px;
 }
 
 .title-emphasis {
@@ -178,7 +199,7 @@
 /* Bottom Left - Description and Buttons */
 .hero-bottom-left {
   position: absolute;
-  bottom: 160px;
+  bottom: 60px;
   left: 80px;
   max-width: 500px;
 }
@@ -261,7 +282,7 @@
   
   .hero-bottom-left {
     left: 60px;
-    bottom: 100px;
+    bottom: 60px;
   }
   
 
@@ -289,6 +310,24 @@
   
   .hero-main-title {
     font-size: 48px;
+    min-height: 160px; /* 移动端基础最小高度 */
+  }
+
+  /* 移动端语言特定调整 */
+  html[lang="en"] .hero-main-title {
+    line-height: 1.2;
+    min-height: 170px;
+  }
+
+  html[lang="ru"] .hero-main-title {
+    line-height: 1.3;
+    min-height: 180px;
+    font-size: 44px; /* 俄文在移动端需要更小的字体 */
+  }
+
+  html[lang="zh"] .hero-main-title {
+    line-height: 1.1;
+    min-height: 160px;
   }
   
   .hero-bottom-left {
@@ -1796,130 +1835,187 @@
     radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
 }
 
-/* Specific category styling with background images */
-.category-card[data-category="键盘"] .category-image-background {
+/* Category Background Images - All Languages */
+
+/* Keyboards */
+.category-card[data-category="键盘"] .category-image-background,
+.category-card[data-category="Keyboards"] .category-image-background,
+.category-card[data-category="Клавиатуры"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/keyboard.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="键盘"]:hover {
+.category-card[data-category="键盘"]:hover,
+.category-card[data-category="Keyboards"]:hover,
+.category-card[data-category="Клавиатуры"]:hover {
   border-color: rgba(120, 119, 198, 0.6);
 }
 
-.category-card[data-category="键盘"]:hover .category-image-background {
+.category-card[data-category="键盘"]:hover .category-image-background,
+.category-card[data-category="Keyboards"]:hover .category-image-background,
+.category-card[data-category="Клавиатуры"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/keyboard.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="鼠标"] .category-image-background {
+/* Mice */
+.category-card[data-category="鼠标"] .category-image-background,
+.category-card[data-category="Mice"] .category-image-background,
+.category-card[data-category="Мыши"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/mouse.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="鼠标"]:hover {
+.category-card[data-category="鼠标"]:hover,
+.category-card[data-category="Mice"]:hover,
+.category-card[data-category="Мыши"]:hover {
   border-color: rgba(255, 154, 158, 0.6);
 }
 
-.category-card[data-category="鼠标"]:hover .category-image-background {
+.category-card[data-category="鼠标"]:hover .category-image-background,
+.category-card[data-category="Mice"]:hover .category-image-background,
+.category-card[data-category="Мыши"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/mouse.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="鼠标垫"] .category-image-background {
+/* Mousepads */
+.category-card[data-category="鼠标垫"] .category-image-background,
+.category-card[data-category="Mousepads"] .category-image-background,
+.category-card[data-category="Коврики для мыши"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/mousepad.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="鼠标垫"]:hover {
+.category-card[data-category="鼠标垫"]:hover,
+.category-card[data-category="Mousepads"]:hover,
+.category-card[data-category="Коврики для мыши"]:hover {
   border-color: rgba(255, 193, 7, 0.6);
 }
 
-.category-card[data-category="鼠标垫"]:hover .category-image-background {
+.category-card[data-category="鼠标垫"]:hover .category-image-background,
+.category-card[data-category="Mousepads"]:hover .category-image-background,
+.category-card[data-category="Коврики для мыши"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/mousepad.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="游戏手柄"] .category-image-background {
+/* Gamepads */
+.category-card[data-category="游戏手柄"] .category-image-background,
+.category-card[data-category="Gamepads"] .category-image-background,
+.category-card[data-category="Геймпады"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/gamepad.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="游戏手柄"]:hover {
+.category-card[data-category="游戏手柄"]:hover,
+.category-card[data-category="Gamepads"]:hover,
+.category-card[data-category="Геймпады"]:hover {
   border-color: rgba(76, 175, 80, 0.6);
 }
 
-.category-card[data-category="游戏手柄"]:hover .category-image-background {
+.category-card[data-category="游戏手柄"]:hover .category-image-background,
+.category-card[data-category="Gamepads"]:hover .category-image-background,
+.category-card[data-category="Геймпады"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/gamepad.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="游戏耳机"] .category-image-background {
+/* Gaming Headphones */
+.category-card[data-category="游戏耳机"] .category-image-background,
+.category-card[data-category="Gaming Headphones"] .category-image-background,
+.category-card[data-category="Игровые наушники"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/headphones.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="游戏耳机"]:hover {
+.category-card[data-category="游戏耳机"]:hover,
+.category-card[data-category="Gaming Headphones"]:hover,
+.category-card[data-category="Игровые наушники"]:hover {
   border-color: rgba(244, 67, 54, 0.6);
 }
 
-.category-card[data-category="游戏耳机"]:hover .category-image-background {
+.category-card[data-category="游戏耳机"]:hover .category-image-background,
+.category-card[data-category="Gaming Headphones"]:hover .category-image-background,
+.category-card[data-category="Игровые наушники"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/headphones.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="键帽"] .category-image-background {
+/* Keycaps */
+.category-card[data-category="键帽"] .category-image-background,
+.category-card[data-category="Keycaps"] .category-image-background,
+.category-card[data-category="Клавиши"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/keycaps.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="键帽"]:hover {
+.category-card[data-category="键帽"]:hover,
+.category-card[data-category="Keycaps"]:hover,
+.category-card[data-category="Клавиши"]:hover {
   border-color: rgba(156, 39, 176, 0.6);
 }
 
-.category-card[data-category="键帽"]:hover .category-image-background {
+.category-card[data-category="键帽"]:hover .category-image-background,
+.category-card[data-category="Keycaps"]:hover .category-image-background,
+.category-card[data-category="Клавиши"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/keycaps.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="轴体"] .category-image-background {
+/* Switches */
+.category-card[data-category="轴体"] .category-image-background,
+.category-card[data-category="Switches"] .category-image-background,
+.category-card[data-category="Переключатели"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/switches.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="轴体"]:hover {
+.category-card[data-category="轴体"]:hover,
+.category-card[data-category="Switches"]:hover,
+.category-card[data-category="Переключатели"]:hover {
   border-color: rgba(255, 87, 34, 0.6);
 }
 
-.category-card[data-category="轴体"]:hover .category-image-background {
+.category-card[data-category="轴体"]:hover .category-image-background,
+.category-card[data-category="Switches"]:hover .category-image-background,
+.category-card[data-category="Переключатели"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/switches.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="配件"] .category-image-background {
+/* Accessories */
+.category-card[data-category="配件"] .category-image-background,
+.category-card[data-category="Accessories"] .category-image-background,
+.category-card[data-category="Аксессуары"] .category-image-background {
   background: 
     linear-gradient(135deg, rgba(40, 40, 40, 0.3) 0%, rgba(60, 60, 60, 0.2) 100%),
     url('/public/accessories.jpg') center/cover no-repeat;
 }
 
-.category-card[data-category="配件"]:hover {
+.category-card[data-category="配件"]:hover,
+.category-card[data-category="Accessories"]:hover,
+.category-card[data-category="Аксессуары"]:hover {
   border-color: rgba(0, 188, 212, 0.6);
 }
 
-.category-card[data-category="配件"]:hover .category-image-background {
+.category-card[data-category="配件"]:hover .category-image-background,
+.category-card[data-category="Accessories"]:hover .category-image-background,
+.category-card[data-category="Аксессуары"]:hover .category-image-background {
   background: 
     linear-gradient(135deg, rgba(20, 20, 20, 0.1) 0%, rgba(30, 30, 30, 0.05) 100%),
     url('/public/accessories.jpg') center/cover no-repeat;

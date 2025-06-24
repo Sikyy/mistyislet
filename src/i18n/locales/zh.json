@@ -1,0 +1,488 @@
+{
+  "navbar": {
+    "brands": "品牌列表",
+    "about": "关于我们", 
+    "partners": "合作伙伴",
+    "contact": "联系我们",
+    "startCollaboration": "开始合作",
+    "language": "语言"
+  },
+  "languages": {
+    "chinese": "中文",
+    "english": "English", 
+    "russian": "Русский"
+  },
+  "home": {
+    "heroTitle": "迷雾岛屿",
+    "heroSubtitle": "探索未知的科技边界", 
+    "heroDescription": "在这里，我们致力于发现和推广最前沿的科技产品，为您带来独特的数字体验。",
+    "exploreProducts": "探索产品",
+    "learnMore": "了解更多",
+    "navigation": {
+      "home": "首页",
+      "productCategories": "产品分类",
+      "coreAdvantages": "核心优势",
+      "marketInsights": "市场洞察",
+      "partners": "合作伙伴"
+    },
+    "hero": {
+      "mainTitle": "让您的外设业务",
+      "mainTitleLine2": "卓越非凡 — 这是一门",
+      "mainTitleEmphasis": "艺术",
+      "description": "我们致力于连接俄罗斯最具潜力的电竞渠道商、职业俱乐部与内容创作者，协同推广高性能外设品牌，推动俄罗斯电竞市场的专业化与商业化发展。",
+      "discussProject": "讨论项目"
+    },
+    "products": {
+      "title": "产品矩阵",
+      "subtitle": "探索我们丰富的产品生态系统",
+            "categories": {
+        "keyboard": "键盘",
+        "mouse": "鼠标",
+        "mousepad": "鼠标垫",
+        "gamepad": "游戏手柄",
+        "headphones": "游戏耳机",
+        "keycaps": "键帽",
+        "switches": "轴体",
+        "accessories": "配件",
+        "gamingChair": "电竞桌椅",
+        "electronics": "其他电子产品"
+      },
+      "placeholderText": "产品图片"
+    },
+    "features": {
+      "badge": "核心优势",
+      "satisfaction": "客户满意度",
+      "professionalService": "专业供应链服务",
+      "description": "我们凭借严格的质量控制、全球供应链网络和专业服务团队，为俄罗斯客户提供最可靠的外设供应链解决方案。",
+      "metrics": {
+        "brands": "合作品牌",
+        "cities": "服务城市", 
+        "delivery": "平均交付"
+      },
+      "list": {
+        "quality": {
+          "title": "品质保证",
+          "description": "严格的质量控制体系，确保每一件产品都达到国际标准"
+        },
+        "supply": {
+          "title": "全球供应链",
+          "description": "与全球顶级品牌深度合作，整合优质资源"
+        },
+        "logistics": {
+          "title": "高效物流",
+          "description": "专业的跨境物流网络，智能仓储管理"
+        },
+        "service": {
+          "title": "专业服务",
+          "description": "经验丰富的专业团队，提供全链条服务"
+        }
+      }
+    },
+    "market": {
+      "badge": "俄罗斯电竞市场",
+      "penetration": "玩家使用专业外设",
+      "growth": "设备普及率持续增长",
+      "stats": {
+        "activePlayersLabel": "活跃电竞玩家，覆盖15+主要城市",
+        "marketSizeLabel": "年市场规模，外设占比20.2%"
+      },
+      "usage": {
+        "title": "外设使用情况",
+        "keyboard": "键盘",
+        "mouse": "鼠标",
+        "headphones": "耳机",
+        "gamepad": "手柄",
+        "mousepad": "鼠标垫"
+      }
+    },
+    "partners": {
+      "ecosystem": "合作伙伴生态"
+    }
+  },
+  "partnersPage": {
+    "heroSubtitle": "携手全球顶级品牌，服务俄罗斯优质商家，构建专业可靠的外设供应链生态系统。",
+    "heroTitle": "GLOBAL",
+    "heroTitleLine2": "PARTNERS",
+    "heroDescription": "两年来，我们与全球15+顶级电竞品牌建立深度合作，为俄罗斯10+优质商家提供专业供应链服务。",
+    "achievements": {
+      "subtitle": "OUR ACHIEVEMENTS",
+      "title": "合作成果",
+      "titleLine2": "数据见证实力",
+      "description": "通过专业服务和优质产品，我们在中俄外设贸易领域建立了良好的声誉和广泛的合作网络。",
+      "russianPartners": "俄罗斯商家伙伴",
+      "federalDistricts": "联邦区覆盖",
+      "annualSales": "年销售量",
+      "annualGrowth": "年增长率"
+    },
+    "partnerships": {
+      "subtitle": "PARTNERSHIPS",
+      "title": "俄罗斯商家",
+      "description": "覆盖俄罗斯8个联邦区的专业合作网络，月销售量超过76K件，建立了稳定可靠的供应链生态系统。",
+      "annualSalesLabel": "年销售量",
+      "districtsLabel": "联邦区覆盖",
+      "marketDistribution": "市场分布"
+    },
+    "collaboration": {
+      "subtitle": "COLLABORATION MODELS",
+      "title": "合作模式",
+      "titleNumber": "3种",
+      "titleLine2": "灵活多样",
+      "description": "为不同规模和类型的企业提供定制化的合作方案，满足各种业务需求。",
+      "brandCooperationLabel": "品牌合作",
+      "channelCoverageLabel": "渠道覆盖",
+      "suitableLabel": "适合",
+      "productSupply": {
+        "title": "产品供应",
+        "description": "为您提供高品质的外设产品供应服务",
+        "suitable": "零售商、经销商",
+        "stats": "15+ 品牌合作",
+        "features": {
+          "0": "产品采购",
+          "1": "质量控制",
+          "2": "库存管理",
+          "3": "物流配送"
+        }
+      },
+      "brandAgency": {
+        "title": "品牌代理",
+        "description": "成为我们的品牌代理商，共同开拓市场",
+        "suitable": "有销售网络的企业",
+        "stats": "10+ 渠道覆盖",
+        "features": {
+          "0": "品牌授权",
+          "1": "市场支持",
+          "2": "培训服务",
+          "3": "营销资源"
+        }
+      },
+      "strategicPartnership": {
+        "title": "战略合作",
+        "description": "建立长期战略合作关系，实现共同发展",
+        "suitable": "大型采购商",
+        "stats": "76K+ 年销量",
+        "features": {
+          "0": "定制方案",
+          "1": "优先供货",
+          "2": "价格优惠",
+          "3": "技术支持"
+        }
+      }
+    },
+    "process": {
+      "subtitle": "COOPERATION PROCESS",
+      "title": "合作流程",
+      "titleNumber": "5步",
+      "titleLine2": "简单高效",
+      "description": "我们制定了标准化的合作流程，确保高效、透明的合作体验。",
+      "averageCycle": "平均周期",
+      "averageCompletionRate": "平均完成率",
+      "averageCycleDays": "13天",
+      "processCompletionRate": "流程完成率",
+      "initialContact": {
+        "title": "初步沟通",
+        "description": "通过电话、邮件或在线表单与我们取得联系",
+        "duration": "1-2个工作日"
+      },
+      "needsAssessment": {
+        "title": "需求评估",
+        "description": "详细了解您的业务需求和合作意向",
+        "duration": "3-5个工作日"
+      },
+      "solutionDevelopment": {
+        "title": "方案制定",
+        "description": "为您量身定制合适的合作方案",
+        "duration": "5-7个工作日"
+      },
+      "contractSigning": {
+        "title": "合同签署",
+        "description": "确定合作细节，正式签署合作协议",
+        "duration": "2-3个工作日"
+      },
+      "serviceExecution": {
+        "title": "服务执行",
+        "description": "开始提供专业的供应链服务",
+        "duration": "持续服务"
+      }
+    },
+    "advantages": {
+      "subtitle": "COMPETITIVE ADVANTAGES",
+      "title": "核心优势",
+      "titleNumber": "4项",
+      "description": "多年行业经验积累，形成了完善的服务体系，为每一位合作伙伴提供专业保障。",
+      "productQualityLabel": "产品合格率",
+      "satisfactionLabel": "客户满意度",
+      "performanceMetrics": "性能指标",
+      "qualityAssurance": {
+        "title": "品质保证",
+        "description": "严格的质量控制体系，确保产品品质",
+        "label": "合格率"
+      },
+      "fastResponse": {
+        "title": "快速响应",
+        "description": "24小时内响应客户需求",
+        "label": "平均响应时间",
+        "stats": "2小时"
+      },
+      "priceAdvantage": {
+        "title": "价格优势",
+        "description": "直接厂商合作，提供具竞争力的价格",
+        "label": "成本节省"
+      },
+      "professionalService": {
+        "title": "专业服务",
+        "description": "专业团队提供全方位服务支持",
+        "label": "客户满意度"
+      }
+    },
+    "testimonials": {
+      "subtitle": "CUSTOMER TESTIMONIALS",
+      "title": "客户评价",
+      "titleLine2": "真实反馈",
+      "description": "来自合作伙伴的真实评价，见证我们的专业服务和优质产品在市场中的良好表现。",
+      "satisfactionLabel": "客户满意度",
+      "ratingLabel": "平均评分",
+      "testimonial1": {
+        "position": "采购总监",
+        "content": "与MistyIslet合作三年来，他们的产品质量和服务水平都非常出色。配送及时，产品品质稳定，是我们最信任的合作伙伴。",
+        "location": "莫斯科",
+        "businessType": "零售连锁"
+      },
+      "testimonial2": {
+        "position": "运营经理",
+        "content": "专业的团队，优质的产品，合理的价格。MistyIslet帮助我们建立了完善的供应链体系，业务增长了200%。",
+        "location": "圣彼得堡",
+        "businessType": "批发分销"
+      },
+      "testimonial3": {
+        "position": "贸易总监",
+        "content": "作为远东地区的合作伙伴，MistyIslet为我们提供了专业的跨境贸易服务。清关效率高，风险控制严格。",
+        "location": "符拉迪沃斯托克",
+        "businessType": "进出口贸易"
+      }
+    },
+    "cta": {
+      "title": "成为我们的合作伙伴",
+      "description": "无论您是品牌方还是渠道商，我们都期待与您建立长期稳定的合作关系，共同开拓市场机遇。",
+      "startCollaboration": "开始合作",
+      "contactUs": "联系我们"
+    }
+  },
+  "contact": {
+    "heroTitle": "与我们联系",
+    "heroDescription": "准备开始您的外设业务之旅吗？联系我们的专业团队，获取定制化的B2B解决方案。",
+    "formTitle": "发送消息",
+    "formDescription": "填写下面的表格，我们将在24小时内回复您。",
+    "fields": {
+      "name": "姓名",
+      "email": "邮箱",
+      "company": "公司名称",
+      "phone": "电话号码",
+      "subject": "主题",
+      "message": "留言"
+    },
+    "placeholders": {
+      "name": "张三",
+      "email": "zhangsan@example.com",
+      "company": "您的公司名称",
+      "phone": "+86 138 0013 8000",
+      "subject": "合作咨询",
+      "message": "请描述您的需求..."
+    },
+    "submit": "发送消息"
+  },
+  "brands": {
+    "badge": "品牌矩阵",
+    "title": "全球顶级品牌供应",
+    "description": "深度合作12+国际品牌，覆盖全品类外设产品，提供一站式B2B供应链解决方案",
+    "filters": {
+      "search": "搜索",
+      "searchPlaceholder": "搜索产品或品牌...",
+      "categories": "外设类别",
+      "brandFilter": "品牌筛选",
+      "mobileFilter": "筛选器",
+      "clearFilters": "清除筛选",
+      "clearAllFilters": "清除所有筛选"
+    },
+    "categories": {
+      "all": "全部类别",
+      "keyboard": "键盘",
+      "mouse": "鼠标",
+      "headphones": "耳机",
+      "mousepad": "鼠标垫",
+      "gamepad": "手柄",
+      "keycaps": "键帽",
+      "switches": "轴体",
+      "accessories": "配件",
+      "chair": "电竞桌椅"
+    },
+    "results": {
+      "found": "共找到",
+      "partners": "个合作品牌"
+    },
+    "noResults": {
+      "title": "未找到相关品牌",
+      "description": "请尝试调整搜索条件或筛选器"
+    },
+    "cta": {
+      "title": "开启品牌合作之旅",
+      "description": "与全球顶级品牌深度合作，为您提供专业的B2B供应链解决方案",
+      "contact": "咨询合作",
+      "learnMore": "了解详情"
+    },
+    "brandDescriptions": {
+      "AngryMiao": "原创设计，极致工艺",
+      "ATK": "专业外设，游戏首选",
+      "Hachiware": "日式精工，萌系设计",
+      "MadLoon": "疯狂创意，独特体验",
+      "MelGeek": "甜蜜设计，温馨体验",
+      "PMO": "性能怪兽，电竞利器",
+      "WOBKEY": "键盘专家，打字利器",
+      "Razer": "全球领先的游戏外设品牌",
+      "ROG": "华硕玩家国度，创新先锋",
+      "Sukisora": "樱花设计，唯美体验",
+      "Zowie": "电竞专用，职业选择",
+      "戟创agkey": "国产精品，匠心制造",
+      "ANTICATER": "反传统设计，独特美学",
+      "Logitech": "瑞士精工，全球信赖",
+      "MoonDROP": "月之神韵，听觉盛宴",
+      "DRUNKDEER": "醉鹿科技，创新体验",
+      "GAMESIR": "游戏手柄专家",
+      "Mojhon": "魔法设计，神奇体验",
+      "MCHOSE": "鼠标专家，精准操控",
+      "8BitDo": "复古手柄，经典重现",
+      "Flydigi": "飞智科技，手游利器",
+      "VGN": "电竞装备，性能至上",
+      "ARTISAN": "手工艺人，极致鼠标垫",
+      "betop": "北通科技，手柄专家"
+    }
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "专注于科技创新的先行者",
+    "mission": "我们的使命",
+    "vision": "我们的愿景", 
+    "values": "我们的价值观",
+    "heroSubtitle": "我们专注为俄罗斯商家提供高端外设设备供应链服务，致力于打造最专业、最可靠的跨境贸易桥梁。",
+    "heroTitle": "ABOUT",
+    "heroTitleLine2": "MISTYISLET",
+    "heroDescription": "连接中俄两国市场四年来，我们始终坚持以品质为核心，以创新为驱动，为客户创造价值。",
+    "story": {
+      "subtitle": "SINCE 2018",
+      "title": "我们一直在为中俄跨境贸易",
+      "titleLine2": "书写新的历史篇章",
+      "description": "六年来，我们专注于外设设备供应链服务，通过不断创新和优化，为客户提供最优质的产品和服务体验。"
+    },
+    "values": {
+      "subtitle": "OUR VALUES",
+      "title": "企业核心价值",
+      "titleLine2": "与发展理念",
+      "mission": {
+        "title": "我们的使命", 
+        "description": "成为中俄供应链合作的重要桥梁，为俄罗斯商家提供高品质的外设产品和专业的供应链服务。"
+      },
+      "vision": {
+        "title": "我们的愿景",
+        "description": "成为全球领先的跨境供应链服务提供商，让世界各地的优质产品能够更便捷地流通。"
+      },
+      "coreValues": {
+        "title": "核心价值",
+        "description": "诚信为本，品质至上，客户第一，构建互利共赢的生态系统。"
+      }
+    },
+    "timeline": {
+      "subtitle": "HISTORY",
+      "title": "发展历程",
+      "titleLine2": "砥砺前行六年路",
+      "description": "从初创到成长，我们始终坚持初心，用专业和坚持书写着跨境贸易的新篇章。",
+      "events": {
+        "2024": {
+          "title": "公司成立",
+          "description": "MistyIslet在中国杭州成立，专注于中俄供应链服务"
+        },
+        "2025": {
+          "title": "市场拓展",
+          "description": "在俄罗斯与本土商家进行全面合作"
+        },
+        "2026": {
+          "title": "进行中",
+          "description": "预期--引入AI技术优化供应链管理，完善管理效率"
+        }
+      }
+    }
+  },
+  "partners": {
+    "title": "合作伙伴",
+    "subtitle": "与优秀企业共同成长",
+    "becomePartner": "成为合作伙伴",
+    "achievements": {
+      "russianPartners": "俄罗斯商家伙伴",
+      "federalDistricts": "联邦区覆盖",
+      "annualSales": "年销售量",
+      "annualGrowth": "年增长率"
+    },
+    "collaborationTypes": {
+      "productSupply": {
+        "title": "产品供应",
+        "description": "为您提供高品质的外设产品供应服务",
+        "suitable": "零售商、经销商"
+      },
+      "brandAgency": {
+        "title": "品牌代理",
+        "description": "成为我们的品牌代理商，共同开拓市场",
+        "suitable": "有销售网络的企业"
+      },
+      "strategicPartnership": {
+        "title": "战略合作",
+        "description": "建立长期战略合作关系，实现共同发展",
+        "suitable": "大型采购商"
+      }
+    },
+    "process": {
+      "initialContact": {
+        "title": "初步沟通",
+        "description": "通过电话、邮件或在线表单与我们取得联系"
+      },
+      "needsAssessment": {
+        "title": "需求评估",
+        "description": "详细了解您的业务需求和合作意向"
+      },
+      "solutionDevelopment": {
+        "title": "方案制定",
+        "description": "为您量身定制合适的合作方案"
+      },
+      "contractSigning": {
+        "title": "合同签署",
+        "description": "确定合作细节，正式签署合作协议"
+      },
+      "serviceExecution": {
+        "title": "服务执行",
+        "description": "开始提供专业的供应链服务"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "版权所有",
+    "allRightsReserved": "保留所有权利",
+    "quickLinks": "快速导航",
+    "servicesTitle": "服务范围",
+    "contactUs": "联系我们",
+    "description": "专注于为俄罗斯商家提供高端外设设备供应链服务，致力于打造最专业、最可靠的跨境贸易桥梁。",
+    "companyName": "杭州烟渚科技有限公司",
+    "companyNameEn": "Hangzhou Yanzhu Technology Co., Ltd.",
+    "slogan": "连接中俄，智造未来",
+    "sloganSub": "专业的供应链解决方案",
+    "services": {
+      "highEnd": "高端外设供应链服务",
+      "logistics": "跨境物流解决方案", 
+      "agency": "品牌代理与分销",
+      "support": "技术支持与售后"
+    },
+    "contact": {
+      "email": "邮箱",
+      "phone": "电话",
+      "address": "地址",
+      "website": "网站",
+      "addressValue": "中国浙江省杭州市滨江区"
+    }
+  }
+} 

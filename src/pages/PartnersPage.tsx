@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   Building2, 
   TrendingUp, 
@@ -7,88 +8,24 @@ import {
   CheckCircle,
   ArrowRight,
   Store,
-  MapPin
+
+  Handshake, 
+  FileText, 
+  Truck, 
+  MessageSquare,
+  Users,
+  Package,
+  DollarSign,
+  Clock,
+  Shield,
+  Star,
+
 } from 'lucide-react';
 import './PartnersPage.css';
 
 const PartnersPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'brands' | 'merchants'>('brands');
-
-  // 电竞品牌合作伙伴（供应链上游）
-  const gamingBrands = [
-    {
-      id: 1,
-      name: 'Razer',
-      type: '全球顶级电竞品牌',
-      country: '美国/新加坡',
-      products: ['机械键盘', '游戏鼠标', '电竞耳机', '鼠标垫'],
-      partnership: '2019年',
-      description: '全球领先的电竞外设品牌，专为游戏玩家和电竞选手设计专业设备',
-      logo: 'https://logos-world.net/wp-content/uploads/2020/09/Razer-Logo.png',
-      featured: true,
-      volume: '月均供应 5000+ 件'
-    },
-    {
-      id: 2,
-      name: 'Logitech G',
-      type: '专业游戏外设',
-      country: '瑞士',
-      products: ['游戏键盘', '游戏鼠标', '游戏耳机', '摄像头'],
-      partnership: '2018年',
-      description: '罗技旗下专业游戏品牌，专注于高性能游戏外设的研发和制造',
-      logo: 'https://logos-world.net/wp-content/uploads/2020/09/Logitech-Logo.png',
-      featured: true,
-      volume: '月均供应 8000+ 件'
-    },
-    {
-      id: 3,
-      name: 'Corsair',
-      type: '高端电竞装备',
-      country: '美国',
-      products: ['机械键盘', '游戏鼠标', '内存条', '电源'],
-      partnership: '2020年',
-      description: '美海盗船品牌，专注于高端游戏硬件和外设，深受电竞爱好者喜爱',
-      logo: 'https://logos-world.net/wp-content/uploads/2020/09/Corsair-Logo.png',
-      featured: true,
-      volume: '月均供应 3000+ 件'
-    },
-    {
-      id: 4,
-      name: 'SteelSeries',
-      type: '专业电竞外设',
-      country: '丹麦',
-      products: ['游戏耳机', '机械键盘', '游戏鼠标', '鼠标垫'],
-      partnership: '2021年',
-      description: '丹麦专业电竞外设品牌，为全球顶级电竞选手提供专业装备',
-      logo: 'https://1000logos.net/wp-content/uploads/2022/08/SteelSeries-Logo.png',
-      featured: false,
-      volume: '月均供应 2500+ 件'
-    },
-    {
-      id: 5,
-      name: 'HyperX',
-      type: '金士顿电竞品牌',
-      country: '美国',
-      products: ['电竞耳机', '机械键盘', '游戏鼠标', '内存条'],
-      partnership: '2020年',
-      description: '金士顿旗下电竞品牌，专注于为游戏玩家提供高品质外设产品',
-      logo: 'https://logos-world.net/wp-content/uploads/2022/02/HyperX-Logo.png',
-      featured: false,
-      volume: '月均供应 4000+ 件'
-    },
-    {
-      id: 6,
-      name: 'ASUS ROG',
-      type: '玩家国度',
-      country: '台湾',
-      products: ['游戏笔记本', '机械键盘', '游戏鼠标', '显示器'],
-      partnership: '2019年',
-      description: '华硕玩家国度系列，专为游戏玩家和超频爱好者打造的高端品牌',
-      logo: 'https://logos-world.net/wp-content/uploads/2020/09/ASUS-ROG-Logo.png',
-      featured: true,
-      volume: '月均供应 6000+ 件'
-    }
-  ];
+  const { t } = useTranslation();
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   // 俄罗斯商家伙伴（销售渠道）
   const russianMerchants = [
@@ -114,7 +51,7 @@ const PartnersPage: React.FC = () => {
       city: '圣彼得堡',
       region: '西北联邦区',
       businessType: '批发分销',
-      storeCount: '50+ 合作商',
+      storeCount: '10+ 合作商',
       partnership: '2019年',
       description: '圣彼得堡地区最大的电竞外设批发商，覆盖整个西北联邦区的分销网络',
       avatar: '🏢',
@@ -185,10 +122,111 @@ const PartnersPage: React.FC = () => {
   ];
 
   const achievements = [
-    { icon: Building2, number: '15+', label: '电竞品牌合作' },
-    { icon: Store, number: '50+', label: '俄罗斯商家伙伴' },
-    { icon: Globe, number: '8', label: '联邦区覆盖' },
-    { icon: TrendingUp, number: '300%', label: '年增长率' }
+    { icon: Building2, number: '10+', label: t('partnersPage.achievements.russianPartners'), subtitle: 'Russian Partners' },
+    { icon: Store, number: '8', label: t('partnersPage.achievements.federalDistricts'), subtitle: 'Federal Districts' },
+    { icon: Globe, number: '76K+', label: t('partnersPage.achievements.annualSales'), subtitle: 'Annual Sales' },
+    { icon: TrendingUp, number: '300%', label: t('partnersPage.achievements.annualGrowth'), subtitle: 'Annual Growth' }
+  ];
+
+  const collaborationTypes = [
+    {
+      icon: Package,
+      title: t('partnersPage.collaboration.productSupply.title'),
+      description: t('partnersPage.collaboration.productSupply.description'),
+      features: [t('partnersPage.collaboration.productSupply.features.0'), t('partnersPage.collaboration.productSupply.features.1'), t('partnersPage.collaboration.productSupply.features.2'), t('partnersPage.collaboration.productSupply.features.3')],
+      suitable: t('partnersPage.collaboration.productSupply.suitable'),
+      stats: t('partnersPage.collaboration.productSupply.stats')
+    },
+    {
+      icon: Handshake,
+      title: t('partnersPage.collaboration.brandAgency.title'),
+      description: t('partnersPage.collaboration.brandAgency.description'),
+      features: [t('partnersPage.collaboration.brandAgency.features.0'), t('partnersPage.collaboration.brandAgency.features.1'), t('partnersPage.collaboration.brandAgency.features.2'), t('partnersPage.collaboration.brandAgency.features.3')],
+      suitable: t('partnersPage.collaboration.brandAgency.suitable'),
+      stats: t('partnersPage.collaboration.brandAgency.stats')
+    },
+    {
+      icon: Users,
+      title: t('partnersPage.collaboration.strategicPartnership.title'),
+      description: t('partnersPage.collaboration.strategicPartnership.description'),
+      features: [t('partnersPage.collaboration.strategicPartnership.features.0'), t('partnersPage.collaboration.strategicPartnership.features.1'), t('partnersPage.collaboration.strategicPartnership.features.2'), t('partnersPage.collaboration.strategicPartnership.features.3')],
+      suitable: t('partnersPage.collaboration.strategicPartnership.suitable'),
+      stats: t('partnersPage.collaboration.strategicPartnership.stats')
+    }
+  ];
+
+  const process = [
+    {
+      step: 1,
+      icon: MessageSquare,
+      title: t('partnersPage.process.initialContact.title'),
+      description: t('partnersPage.process.initialContact.description'),
+      duration: t('partnersPage.process.initialContact.duration'),
+      completion: '95%'
+    },
+    {
+      step: 2,
+      icon: FileText,
+      title: t('partnersPage.process.needsAssessment.title'),
+      description: t('partnersPage.process.needsAssessment.description'),
+      duration: t('partnersPage.process.needsAssessment.duration'),
+      completion: '89%'
+    },
+    {
+      step: 3,
+      icon: Handshake,
+      title: t('partnersPage.process.solutionDevelopment.title'),
+      description: t('partnersPage.process.solutionDevelopment.description'),
+      duration: t('partnersPage.process.solutionDevelopment.duration'),
+      completion: '92%'
+    },
+    {
+      step: 4,
+      icon: CheckCircle,
+      title: t('partnersPage.process.contractSigning.title'),
+      description: t('partnersPage.process.contractSigning.description'),
+      duration: t('partnersPage.process.contractSigning.duration'),
+      completion: '98%'
+    },
+    {
+      step: 5,
+      icon: Truck,
+      title: t('partnersPage.process.serviceExecution.title'),
+      description: t('partnersPage.process.serviceExecution.description'),
+      duration: t('partnersPage.process.serviceExecution.duration'),
+      completion: '100%'
+    }
+  ];
+
+  const advantages = [
+    {
+      icon: Shield,
+      title: t('partnersPage.advantages.qualityAssurance.title'),
+      description: t('partnersPage.advantages.qualityAssurance.description'),
+      stats: '99.5%',
+      label: t('partnersPage.advantages.qualityAssurance.label')
+    },
+    {
+      icon: Clock,
+      title: t('partnersPage.advantages.fastResponse.title'),
+      description: t('partnersPage.advantages.fastResponse.description'),
+      stats: t('partnersPage.advantages.fastResponse.stats'),
+      label: t('partnersPage.advantages.fastResponse.label')
+    },
+    {
+      icon: DollarSign,
+      title: t('partnersPage.advantages.priceAdvantage.title'),
+      description: t('partnersPage.advantages.priceAdvantage.description'),
+      stats: '15-30%',
+      label: t('partnersPage.advantages.priceAdvantage.label')
+    },
+    {
+      icon: Star,
+      title: t('partnersPage.advantages.professionalService.title'),
+      description: t('partnersPage.advantages.professionalService.description'),
+      stats: '98%',
+      label: t('partnersPage.advantages.professionalService.label')
+    }
   ];
 
   const testimonials = [
@@ -196,30 +234,44 @@ const PartnersPage: React.FC = () => {
       id: 1,
       company: 'Moscow Gaming Center',
       contact: 'Alexei Petrov',
-      position: '采购总监',
+      position: t('partnersPage.testimonials.testimonial1.position'),
       rating: 5,
-      content: '与MistyIslet合作三年来，他们的产品质量和服务水平都非常出色。配送及时，产品品质稳定，是我们最信任的合作伙伴。',
-      avatar: 'AP'
+      content: t('partnersPage.testimonials.testimonial1.content'),
+      avatar: 'AP',
+      logo: 'MGC',
+      established: '2018',
+      location: t('partnersPage.testimonials.testimonial1.location'),
+      businessType: t('partnersPage.testimonials.testimonial1.businessType')
     },
     {
       id: 2,
       company: 'St. Petersburg Tech Hub',
       contact: 'Elena Volkov',
-      position: '运营经理',
+      position: t('partnersPage.testimonials.testimonial2.position'),
       rating: 5,
-      content: '专业的团队，优质的产品，合理的价格。MistyIslet帮助我们建立了完善的供应链体系，业务增长了200%。',
-      avatar: 'EV'
+      content: t('partnersPage.testimonials.testimonial2.content'),
+      avatar: 'EV',
+      logo: 'SPTH',
+      established: '2019',
+      location: t('partnersPage.testimonials.testimonial2.location'),
+      businessType: t('partnersPage.testimonials.testimonial2.businessType')
     },
     {
       id: 3,
       company: 'Far East Gaming Co.',
       contact: 'Dmitri Kozlov',
-      position: '贸易总监',
+      position: t('partnersPage.testimonials.testimonial3.position'),
       rating: 5,
-      content: '作为远东地区的合作伙伴，MistyIslet为我们提供了专业的跨境贸易服务。清关效率高，风险控制严格。',
-      avatar: 'DK'
+      content: t('partnersPage.testimonials.testimonial3.content'),
+      avatar: 'DK',
+      logo: 'FEGC',
+      established: '2022',
+      location: t('partnersPage.testimonials.testimonial3.location'),
+      businessType: t('partnersPage.testimonials.testimonial3.businessType')
     }
   ];
+
+
 
   return (
     <div className="partners-page">
@@ -229,20 +281,18 @@ const PartnersPage: React.FC = () => {
           <div className="partners-hero-content">
             <div className="partners-hero-text">
               <p className="partners-hero-subtitle">
-                携手全球顶级品牌，服务俄罗斯优质商家，
-                构建专业可靠的外设供应链生态系统。
+                {t('partnersPage.heroSubtitle')}
               </p>
               
               <h1 className="partners-hero-title">
-                GLOBAL
+                {t('partnersPage.heroTitle')}
                 <br />
-                PARTNERS
+                {t('partnersPage.heroTitleLine2')}
               </h1>
               
               <div className="partners-hero-description">
                 <p>
-                  六年来，我们与全球15+顶级电竞品牌建立深度合作，
-                  为俄罗斯50+优质商家提供专业供应链服务。
+                  {t('partnersPage.heroDescription')}
                 </p>
               </div>
             </div>
@@ -254,16 +304,15 @@ const PartnersPage: React.FC = () => {
       <section className="achievements-section">
         <div className="container">
           <div className="section-header">
-            <p className="section-subtitle">OUR ACHIEVEMENTS</p>
+            <p className="section-subtitle">{t('partnersPage.achievements.subtitle')}</p>
             <h2 className="section-title">
-              合作成果
+              {t('partnersPage.achievements.title')}
               <br />
-              数据见证实力
+              {t('partnersPage.achievements.titleLine2')}
             </h2>
             <div className="section-description">
               <p>
-                通过专业服务和优质产品，我们在中俄外设贸易领域
-                建立了良好的声誉和广泛的合作网络。
+                {t('partnersPage.achievements.description')}
               </p>
             </div>
           </div>
@@ -278,6 +327,7 @@ const PartnersPage: React.FC = () => {
                   </div>
                   <div className="achievement-number">{achievement.number}</div>
                   <div className="achievement-label">{achievement.label}</div>
+                  {achievement.subtitle && <div className="achievement-subtitle">{achievement.subtitle}</div>}
                 </div>
               );
             })}
@@ -285,168 +335,305 @@ const PartnersPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Partners Tabs */}
+      {/* Partners Section */}
       <section className="partners-tabs-section">
         <div className="container">
-          <div className="section-header">
-            <p className="section-subtitle">PARTNERSHIPS</p>
-            <h2 className="section-title">
-              合作伙伴
-              <br />
-              共创美好未来
-            </h2>
-          </div>
-
-          <div className="partners-tabs">
-            <button
-              className={`tab-button ${activeTab === 'brands' ? 'active' : ''}`}
-              onClick={() => setActiveTab('brands')}
-            >
-              <span>品牌供应商</span>
-              <span className="tab-subtitle">Global Gaming Brands</span>
-            </button>
-            <button
-              className={`tab-button ${activeTab === 'merchants' ? 'active' : ''}`}
-              onClick={() => setActiveTab('merchants')}
-            >
-              <span>俄罗斯商家</span>
-              <span className="tab-subtitle">Russian Merchants</span>
-            </button>
-          </div>
-
-          {/* Brands Grid */}
-          {activeTab === 'brands' && (
-            <div className="brands-grid">
-              {gamingBrands.map((brand) => (
-                <div key={brand.id} className={`brand-card ${brand.featured ? 'featured' : ''}`}>
-                  {brand.featured && <span className="featured-badge">核心伙伴</span>}
-                  
-                  <div className="brand-header">
-                    <div className="brand-logo">
-                      {brand.name.charAt(0)}
-                    </div>
-                    <div className="brand-info">
-                      <h3 className="brand-name">{brand.name}</h3>
-                      <p className="brand-type">{brand.type}</p>
-                      <p className="brand-country">{brand.country}</p>
-                    </div>
-                  </div>
-                  
-                  <p className="brand-description">{brand.description}</p>
-                  
-                  <div className="brand-products">
-                    <h4>主营产品</h4>
-                    <div className="product-tags">
-                      {brand.products.map((product, index) => (
-                        <span key={index} className="product-tag">{product}</span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="brand-footer">
-                    <span className="partnership-year">合作自 {brand.partnership}</span>
-                    <CheckCircle className="verified-icon" size={20} />
-                  </div>
+          <div className="partnerships-layout">
+            <div className="partnerships-left">
+              <p className="section-subtitle">{t('partnersPage.partnerships.subtitle')}</p>
+              <h2 className="section-title">
+                10+
+                <br />
+                <span className="title-accent">{t('partnersPage.partnerships.title')}</span>
+              </h2>
+              <div className="partnerships-description">
+                <p>
+                  {t('partnersPage.partnerships.description')}
+                </p>
+              </div>
+              <div className="partnership-metrics">
+                <div className="metric-large">
+                  <span className="metric-number">76K+</span>
+                  <span className="metric-label">{t('partnersPage.partnerships.annualSalesLabel')}</span>
                 </div>
-              ))}
-            </div>
-          )}
-
-          {/* Merchants Grid */}
-          {activeTab === 'merchants' && (
-            <div className="merchants-grid">
-              {russianMerchants.map((merchant) => (
-                <div key={merchant.id} className={`merchant-card ${merchant.featured ? 'featured' : ''}`}>
-                  {merchant.featured && <span className="featured-badge">重点伙伴</span>}
-                  
-                  <div className="merchant-header">
-                    <div className="merchant-avatar">
-                      {merchant.avatar}
-                    </div>
-                    <div className="merchant-info">
-                      <h3 className="merchant-name">{merchant.name}</h3>
-                      <p className="merchant-type">{merchant.type}</p>
-                      <p className="merchant-location">
-                        <MapPin size={14} />
-                        {merchant.city}, {merchant.region}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <p className="merchant-description">{merchant.description}</p>
-                  
-                  <div className="merchant-stats">
-                    <div className="stat-item">
-                      <span className="stat-label">业务类型:</span>
-                      <span className="stat-value">{merchant.businessType}</span>
-                    </div>
-                    <div className="stat-item">
-                      <span className="stat-label">规模:</span>
-                      <span className="stat-value">{merchant.storeCount}</span>
-                    </div>
-                    <div className="stat-item">
-                      <span className="stat-label">采购量:</span>
-                      <span className="stat-value">{merchant.monthlyVolume}</span>
-                    </div>
-                  </div>
-                  
-                  <div className="merchant-specialties">
-                    <h4>专业领域</h4>
-                    <div className="specialty-tags">
-                      {merchant.specialties.map((specialty, index) => (
-                        <span key={index} className="specialty-tag">{specialty}</span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="merchant-footer">
-                    <span className="partnership-year">合作自 {merchant.partnership}</span>
-                    <CheckCircle className="verified-icon" size={20} />
-                  </div>
+                <div className="metric-large">
+                  <span className="metric-number">8</span>
+                  <span className="metric-label">{t('partnersPage.partnerships.districtsLabel')}</span>
                 </div>
-              ))}
+              </div>
             </div>
-          )}
+            
+            <div className="partnerships-right">
+              <div className="partnerships-visual">
+                <div className="visual-title">{t('partnersPage.partnerships.marketDistribution')}</div>
+                <div className="merchants-visualization">
+                  {russianMerchants.map((merchant, index) => (
+                    <div key={merchant.id} className={`merchant-visual-item ${merchant.featured ? 'featured' : ''}`}>
+                      <div className="merchant-icon">{merchant.avatar}</div>
+                      <div className="merchant-info-compact">
+                        <div className="merchant-name-compact">{merchant.name}</div>
+                        <div className="merchant-region">{merchant.region}</div>
+                        <div className="merchant-volume">{merchant.monthlyVolume.replace('月均采购 ', '').replace(' 件', '')}</div>
+                      </div>
+                      <div className="merchant-status">
+                        {merchant.featured && <span className="status-dot"></span>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Collaboration Types */}
+      <section className="section types-section">
+        <div className="container">
+          <div className="collaboration-layout">
+            <div className="collaboration-left">
+              <p className="section-subtitle">{t('partnersPage.collaboration.subtitle')}</p>
+              <h2 className="section-title">
+                {t('partnersPage.collaboration.titleNumber')}
+                <br />
+                <span className="title-accent">{t('partnersPage.collaboration.title')}</span>
+              </h2>
+              <div className="collaboration-description">
+                <p>
+                  {t('partnersPage.collaboration.description')}
+                </p>
+              </div>
+              <div className="collaboration-stats">
+                <div className="stat-highlight">
+                  <span className="stat-number">15+</span>
+                  <span className="stat-label">{t('partnersPage.collaboration.brandCooperationLabel')}</span>
+                </div>
+                <div className="stat-highlight">
+                  <span className="stat-number">10+</span>
+                  <span className="stat-label">{t('partnersPage.collaboration.channelCoverageLabel')}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="collaboration-right">
+              <div className="types-visual-grid">
+                {collaborationTypes.map((type, index) => {
+                  const Icon = type.icon;
+                  return (
+                    <div key={index} className="type-visual-card">
+                      <div className="type-visual-header">
+                        <div className="type-icon-modern">
+                          <Icon size={24} />
+                        </div>
+                        <div className="type-stats-badge">{type.stats}</div>
+                      </div>
+                      <h3 className="type-title-modern">{type.title}</h3>
+                      <p className="type-description-compact">{type.description}</p>
+                      <div className="type-features-compact">
+                        {type.features.slice(0, 2).map((feature, featureIndex) => (
+                          <span key={featureIndex} className="feature-tag">{feature}</span>
+                        ))}
+                      </div>
+                      <div className="type-suitable-modern">
+                        <span className="suitable-label">{t('partnersPage.collaboration.suitableLabel')}：</span>
+                        <span className="suitable-text">{type.suitable}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="section process-section">
+        <div className="container">
+          <div className="process-layout">
+            <div className="process-left">
+              <p className="section-subtitle">{t('partnersPage.process.subtitle')}</p>
+              <h2 className="section-title">
+                {t('partnersPage.process.titleNumber')}
+                <br />
+                <span className="title-accent">{t('partnersPage.process.title')}</span>
+              </h2>
+              <div className="process-description">
+                <p>
+                  {t('partnersPage.process.description')}
+                </p>
+              </div>
+              <div className="process-completion">
+                <div className="completion-stat">
+                  <span className="completion-number">95%</span>
+                  <span className="completion-label">{t('partnersPage.process.averageCompletionRate')}</span>
+                </div>
+                <div className="completion-stat">
+                  <span className="completion-number">{t('partnersPage.process.averageCycleDays')}</span>
+                  <span className="completion-label">{t('partnersPage.process.averageCycle')}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="process-right">
+              <div className="process-visual">
+                <div className="visual-title">{t('partnersPage.process.processCompletionRate')}</div>
+                <div className="process-steps-visual">
+                  {process.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={index} className="process-step-visual">
+                        <div className="step-visual-header">
+                          <div className="step-number-modern">{item.step}</div>
+                          <div className="step-completion">{item.completion}</div>
+                        </div>
+                        <div className="step-visual-content">
+                          <div className="step-icon-modern">
+                            <Icon size={20} />
+                          </div>
+                          <div className="step-info">
+                            <h4 className="step-title-modern">{item.title}</h4>
+                            <p className="step-duration-modern">{item.duration}</p>
+                          </div>
+                        </div>
+                        <div className="completion-bar">
+                          <div 
+                            className="completion-fill" 
+                            style={{ width: item.completion }}
+                          ></div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages */}
+      <section className="section advantages-section">
+        <div className="container">
+          <div className="advantages-layout">
+            <div className="advantages-left">
+              <p className="section-subtitle">{t('partnersPage.advantages.subtitle')}</p>
+              <h2 className="section-title">
+                {t('partnersPage.advantages.titleNumber')}
+                <br />
+                <span className="title-accent">{t('partnersPage.advantages.title')}</span>
+              </h2>
+              <div className="advantages-description">
+                <p>
+                  {t('partnersPage.advantages.description')}
+                </p>
+              </div>
+              <div className="advantages-highlight">
+                <div className="advantage-big-stat">
+                  <span className="big-stat-number">99.5%</span>
+                  <span className="big-stat-label">{t('partnersPage.advantages.productQualityLabel')}</span>
+                </div>
+                <div className="advantage-big-stat">
+                  <span className="big-stat-number">98%</span>
+                  <span className="big-stat-label">{t('partnersPage.advantages.satisfactionLabel')}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="advantages-right">
+              <div className="advantages-visual">
+                <div className="visual-title">{t('partnersPage.advantages.performanceMetrics')}</div>
+                <div className="advantages-grid-modern">
+                  {advantages.map((advantage, index) => {
+                    const Icon = advantage.icon;
+                    return (
+                      <div key={index} className="advantage-visual-card">
+                        <div className="advantage-visual-header">
+                          <div className="advantage-icon-modern">
+                            <Icon size={20} />
+                          </div>
+                          <div className="advantage-stat-large">{advantage.stats}</div>
+                        </div>
+                        <h4 className="advantage-title-modern">{advantage.title}</h4>
+                        <p className="advantage-label-modern">{advantage.label}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="testimonials-section">
         <div className="container">
-          <div className="section-header">
-            <p className="section-subtitle">TESTIMONIALS</p>
-            <h2 className="section-title">
-              客户评价
-              <br />
-              真实反馈见证
-            </h2>
-            <div className="section-description">
-              <p>
-                来自合作伙伴的真实评价，见证我们的专业服务
-                和优质产品在市场中的良好表现。
-              </p>
-            </div>
-          </div>
-
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card">
-                <div className="testimonial-header">
-                  <div className="avatar">{testimonial.avatar}</div>
-                  <div className="testimonial-info">
-                    <div className="contact-name">{testimonial.contact}</div>
-                    <div className="contact-position">{testimonial.position}</div>
-                    <div className="company-name">{testimonial.company}</div>
-                  </div>
-                  <div className="rating">
-                    {'★'.repeat(testimonial.rating)}
-                  </div>
+          <div className="testimonials-layout">
+            <div className="testimonials-left">
+              <p className="section-subtitle">{t('partnersPage.testimonials.subtitle')}</p>
+              <h2 className="section-title">
+                {t('partnersPage.testimonials.title')}
+                <br />
+                <span className="title-accent">{t('partnersPage.testimonials.titleLine2')}</span>
+              </h2>
+              <div className="testimonials-description">
+                <p>
+                  {t('partnersPage.testimonials.description')}
+                </p>
+              </div>
+              <div className="testimonials-stats">
+                <div className="testimonial-big-stat">
+                  <span className="testimonial-stat-number">100%</span>
+                  <span className="testimonial-stat-label">{t('partnersPage.testimonials.satisfactionLabel')}</span>
                 </div>
-                <div className="testimonial-content">
-                  "{testimonial.content}"
+                <div className="testimonial-big-stat">
+                  <span className="testimonial-stat-number">5.0</span>
+                  <span className="testimonial-stat-label">{t('partnersPage.testimonials.ratingLabel')}</span>
                 </div>
               </div>
-            ))}
+            </div>
+            
+            <div className="testimonials-right">
+              <div className="testimonials-carousel">
+                <button 
+                  className="carousel-nav-btn carousel-prev"
+                  onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                >
+                  &lt;
+                </button>
+                
+                <div className="testimonial-card-carousel">
+                  <div className="client-logo-carousel">
+                    <span className="logo-text-carousel">{testimonials[currentTestimonial].logo}</span>
+                  </div>
+                  <div className="company-name-carousel">{testimonials[currentTestimonial].company}</div>
+                  <div className="testimonial-content-carousel">
+                    "{testimonials[currentTestimonial].content}"
+                  </div>
+                  <div className="testimonial-author-carousel">
+                    {testimonials[currentTestimonial].contact}, {testimonials[currentTestimonial].position}
+                  </div>
+                </div>
+                
+                <button 
+                  className="carousel-nav-btn carousel-next"
+                  onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                >
+                  &gt;
+                </button>
+                
+                <div className="carousel-indicators">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`carousel-dot ${index === currentTestimonial ? 'active' : ''}`}
+                      onClick={() => setCurrentTestimonial(index)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -458,17 +645,16 @@ const PartnersPage: React.FC = () => {
             <div className="cta-icon">
               <Heart size={32} />
             </div>
-            <h2>成为我们的合作伙伴</h2>
+            <h2>{t('partnersPage.cta.title')}</h2>
             <p>
-              无论您是品牌方还是渠道商，我们都期待与您建立
-              长期稳定的合作关系，共同开拓市场机遇。
+              {t('partnersPage.cta.description')}
             </p>
             <div className="cta-actions">
-              <a href="/collaboration" className="btn-modern">
-                开始合作 <ArrowRight size={16} />
+              <a href="/contact#contact-form" className="btn-modern">
+                {t('partnersPage.cta.startCollaboration')} <ArrowRight size={16} />
               </a>
-              <a href="/contact" className="btn-modern">
-                联系我们 <ArrowRight size={16} />
+              <a href="/contact#contact-form" className="btn-modern">
+                {t('partnersPage.cta.contactUs')} <ArrowRight size={16} />
               </a>
             </div>
           </div>

@@ -17,9 +17,11 @@ import {
   X,
   SlidersHorizontal
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './ProductsPage.css';
 
 const ProductsPage: React.FC = () => {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -38,27 +40,40 @@ const ProductsPage: React.FC = () => {
   }, [searchParams]);
 
   const categories = [
-    { id: 'all', name: '全部类别', icon: Monitor },
-    { id: 'keyboard', name: '键盘', icon: Keyboard },
-    { id: 'mouse', name: '鼠标', icon: Mouse },
-    { id: 'headphones', name: '耳机', icon: Headphones },
-    { id: 'mousepad', name: '鼠标垫', icon: Package },
-    { id: 'gamepad', name: '手柄', icon: Gamepad2 },
-    { id: 'keycaps', name: '键帽', icon: Settings },
-    { id: 'switches', name: '轴体', icon: Cpu },
-    { id: 'accessories', name: '配件', icon: Zap },
-    { id: 'chair', name: '电竞桌椅', icon: Armchair },
+    { id: 'all', name: t('brands.categories.all'), icon: Monitor },
+    { id: 'keyboard', name: t('brands.categories.keyboard'), icon: Keyboard },
+    { id: 'mouse', name: t('brands.categories.mouse'), icon: Mouse },
+    { id: 'headphones', name: t('brands.categories.headphones'), icon: Headphones },
+    { id: 'mousepad', name: t('brands.categories.mousepad'), icon: Package },
+    { id: 'gamepad', name: t('brands.categories.gamepad'), icon: Gamepad2 },
+    { id: 'keycaps', name: t('brands.categories.keycaps'), icon: Settings },
+    { id: 'switches', name: t('brands.categories.switches'), icon: Cpu },
+    { id: 'accessories', name: t('brands.categories.accessories'), icon: Zap },
+    { id: 'chair', name: t('brands.categories.chair'), icon: Armchair },
   ];
 
-
+  // Create category mapping helper function
+  const getCategoryMapping = () => {
+    return {
+      keyboard: t('brands.categories.keyboard'),
+      mouse: t('brands.categories.mouse'),
+      headphones: t('brands.categories.headphones'),
+      mousepad: t('brands.categories.mousepad'),
+      gamepad: t('brands.categories.gamepad'),
+      keycaps: t('brands.categories.keycaps'),
+      switches: t('brands.categories.switches'),
+      accessories: t('brands.categories.accessories'),
+      chair: t('brands.categories.chair')
+    };
+  };
 
   const brandMatrix = [
     {
       id: 1,
       brand: 'AngryMiao',
       logo: 'https://image.siky.me/mistyislet/logo.0bd130c6.png',
-      description: '原创设计，极致工艺',
-      categories: ['键盘', '键帽', '配件'],
+      description: t('brands.brandDescriptions.AngryMiao'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().keycaps, getCategoryMapping().accessories],
       productCount: '30+',
       website: 'https://angrymiao.com',
       status: 'preferred'
@@ -67,8 +82,8 @@ const ProductsPage: React.FC = () => {
       id: 2,
       brand: 'ATK',
       logo: 'https://image.siky.me/mistyislet/ATK.png',
-      description: '专业外设，游戏首选',
-      categories: ['键盘', '鼠标', '配件'],
+      description: t('brands.brandDescriptions.ATK'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().mouse, getCategoryMapping().accessories],
       productCount: '45+',
       website: 'https://www.atk.store/',
       status: 'strategic'
@@ -77,8 +92,8 @@ const ProductsPage: React.FC = () => {
       id: 3,
       brand: 'Hachiware',
       logo: 'https://image.siky.me/mistyislet/Hachiware.jpg',
-      description: '日式精工，萌系设计',
-      categories: ['键盘', '键帽', '配件'],
+      description: t('brands.brandDescriptions.Hachiware'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().keycaps, getCategoryMapping().accessories],
       productCount: '25+',
       website: 'https://hachiware.jp',
       status: 'preferred'
@@ -87,8 +102,8 @@ const ProductsPage: React.FC = () => {
       id: 4,
       brand: 'MadLoon',
       logo: 'https://image.siky.me/mistyislet/MadLoon.png',
-      description: '疯狂创意，独特体验',
-      categories: ['键盘', '鼠标', '配件'],
+      description: t('brands.brandDescriptions.MadLoon'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().mouse, getCategoryMapping().accessories],
       productCount: '35+',
       website: 'https://www.fgg.com.cn/',
       status: 'preferred'
@@ -97,8 +112,8 @@ const ProductsPage: React.FC = () => {
       id: 5,
       brand: 'MelGeek',
       logo: 'https://image.siky.me/mistyislet/MelGeek.png',
-      description: '甜蜜设计，温馨体验',
-      categories: ['键盘', '键帽', '配件'],
+      description: t('brands.brandDescriptions.MelGeek'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().keycaps, getCategoryMapping().accessories],
       productCount: '40+',
       website: 'https://www.melgeek.com/',
       status: 'strategic'
@@ -107,8 +122,8 @@ const ProductsPage: React.FC = () => {
       id: 6,
       brand: 'PMO',
       logo: 'https://image.siky.me/mistyislet/PMO.jpg',
-      description: '性能怪兽，电竞利器',
-      categories: ['鼠标', '键盘', '配件'],
+      description: t('brands.brandDescriptions.PMO'),
+      categories: [getCategoryMapping().mouse, getCategoryMapping().keyboard, getCategoryMapping().accessories],
       productCount: '50+',
       website: 'https://www.pmolab.cn/',
       status: 'strategic'
@@ -117,8 +132,8 @@ const ProductsPage: React.FC = () => {
       id: 7,
       brand: 'WOBKEY',
       logo: 'https://image.siky.me/mistyislet/WOBKEY.jpg',
-      description: '键盘专家，打字利器',
-      categories: ['键盘', '轴体', '键帽'],
+      description: t('brands.brandDescriptions.WOBKEY'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().switches, getCategoryMapping().keycaps],
       productCount: '60+',
       website: 'https://wobkey.com',
       status: 'strategic'
@@ -127,8 +142,8 @@ const ProductsPage: React.FC = () => {
       id: 8,
       brand: 'Razer',
       logo: 'https://image.siky.me/mistyislet/razer.png',
-      description: '全球领先的游戏外设品牌',
-      categories: ['键盘', '鼠标', '耳机', '鼠标垫'],
+      description: t('brands.brandDescriptions.Razer'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().mouse, getCategoryMapping().headphones, getCategoryMapping().mousepad],
       productCount: '120+',
       website: 'https://www.razer.com',
       status: 'strategic'
@@ -137,8 +152,8 @@ const ProductsPage: React.FC = () => {
       id: 9,
       brand: 'ROG',
       logo: 'https://image.siky.me/mistyislet/ROG.png',
-      description: '华硕玩家国度，创新先锋',
-      categories: ['键盘', '鼠标', '耳机'],
+      description: t('brands.brandDescriptions.ROG'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().mouse, getCategoryMapping().headphones],
       productCount: '85+',
       website: 'https://rog.asus.com',
       status: 'preferred'
@@ -147,8 +162,8 @@ const ProductsPage: React.FC = () => {
       id: 10,
       brand: 'Sukisora',
       logo: 'https://image.siky.me/mistyislet/Sukisora.jpg',
-      description: '樱花设计，唯美体验',
-      categories: ['键盘', '键帽', '配件'],
+      description: t('brands.brandDescriptions.Sukisora'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().keycaps, getCategoryMapping().accessories],
       productCount: '20+',
       website: 'https://sukisora.com',
       status: 'preferred'
@@ -157,8 +172,8 @@ const ProductsPage: React.FC = () => {
       id: 11,
       brand: 'Zowie',
       logo: 'https://image.siky.me/mistyislet/zowie.jpg',
-      description: '电竞专用，职业选择',
-      categories: ['鼠标', '鼠标垫', '配件'],
+      description: t('brands.brandDescriptions.Zowie'),
+      categories: [getCategoryMapping().mouse, getCategoryMapping().mousepad, getCategoryMapping().accessories],
       productCount: '40+',
       website: 'https://zowie.benq.com',
       status: 'strategic'
@@ -167,8 +182,8 @@ const ProductsPage: React.FC = () => {
       id: 12,
       brand: '戟创agkey',
       logo: 'https://image.siky.me/mistyislet/agkey.jpg',
-      description: '国产精品，匠心制造',
-      categories: ['键盘', '轴体', '配件'],
+      description: t('brands.brandDescriptions.戟创agkey'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().switches, getCategoryMapping().accessories],
       productCount: '35+',
       website: 'https://agkey.cn',
       status: 'preferred'
@@ -177,8 +192,8 @@ const ProductsPage: React.FC = () => {
       id: 13,
       brand: 'ANTICATER',
       logo: 'https://image.siky.me/mistyislet/anticater.png',
-      description: '反传统设计，独特美学',
-      categories: ['键盘', '配件'],
+      description: t('brands.brandDescriptions.ANTICATER'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().accessories],
       productCount: '25+',
       website: 'https://anticater.com',
       status: 'preferred'
@@ -187,8 +202,8 @@ const ProductsPage: React.FC = () => {
       id: 14,
       brand: 'Logitech',
       logo: 'https://image.siky.me/mistyislet/Logitech.png',
-      description: '瑞士精工，全球信赖',
-      categories: ['键盘', '鼠标', '耳机'],
+      description: t('brands.brandDescriptions.Logitech'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().mouse, getCategoryMapping().headphones],
       productCount: '100+',
       website: 'https://www.logitech.com',
       status: 'strategic'
@@ -197,28 +212,18 @@ const ProductsPage: React.FC = () => {
       id: 15,
       brand: 'MoonDROP',
       logo: 'https://image.siky.me/mistyislet/Moondrop.jpg',
-      description: '月之神韵，听觉盛宴',
-      categories: ['耳机', '配件'],
+      description: t('brands.brandDescriptions.MoonDROP'),
+      categories: [getCategoryMapping().headphones, getCategoryMapping().accessories],
       productCount: '30+',
       website: 'https://moondroplab.com/',
       status: 'preferred'
     },
-    // {
-    //   id: 16,
-    //   brand: 'FUtureMatch',
-    //   logo: 'https://via.placeholder.com/200x100/1abc9c/ffffff?text=FM',
-    //   description: '未来科技，开放设计',
-    //   categories: ['配件', '电竞桌椅'],
-    //   productCount: '15+',
-    //   website: 'https://futurematch.cn',
-    //   status: 'preferred'
-    // },
     {
       id: 17,
       brand: 'DRUNKDEER',
       logo: 'https://image.siky.me/mistyislet/drunkdeer.png',
-      description: '醉鹿科技，创新体验',
-      categories: ['键盘', '轴体'],
+      description: t('brands.brandDescriptions.DRUNKDEER'),
+      categories: [getCategoryMapping().keyboard, getCategoryMapping().switches],
       productCount: '25+',
       website: 'https://drunkdeer.com',
       status: 'preferred'
@@ -227,8 +232,8 @@ const ProductsPage: React.FC = () => {
       id: 18,
       brand: 'GAMESIR',
       logo: 'https://image.siky.me/mistyislet/gamesir.jpg',
-      description: '游戏手柄专家',
-      categories: ['手柄', '配件'],
+      description: t('brands.brandDescriptions.GAMESIR'),
+      categories: [getCategoryMapping().gamepad, getCategoryMapping().accessories],
       productCount: '40+',
       website: 'https://www.gamesir.com',
       status: 'strategic'
@@ -237,8 +242,8 @@ const ProductsPage: React.FC = () => {
       id: 19,
       brand: 'Mojhon',
       logo: 'https://image.siky.me/mistyislet/Mojhon.jpg',
-      description: '魔法设计，神奇体验',
-      categories: ['鼠标', '键盘', '配件'],
+      description: t('brands.brandDescriptions.Mojhon'),
+      categories: [getCategoryMapping().mouse, getCategoryMapping().keyboard, getCategoryMapping().accessories],
       productCount: '35+',
       website: 'https://www.bigbigwon.cn/',
       status: 'preferred'
@@ -247,8 +252,8 @@ const ProductsPage: React.FC = () => {
       id: 20,
       brand: 'MCHOSE',
       logo: 'https://image.siky.me/mistyislet/mchose.jpg',
-      description: '鼠标专家，精准操控',
-      categories: ['鼠标', '鼠标垫', '配件'],
+      description: t('brands.brandDescriptions.MCHOSE'),
+      categories: [getCategoryMapping().mouse, getCategoryMapping().mousepad, getCategoryMapping().accessories],
       productCount: '50+',
       website: 'https://www.maicong.cn/',
       status: 'strategic'
@@ -257,8 +262,8 @@ const ProductsPage: React.FC = () => {
       id: 21,
       brand: '8BitDo',
       logo: 'https://image.siky.me/mistyislet/8BitDo.png',
-      description: '复古手柄，经典重现',
-      categories: ['手柄', '配件'],
+      description: t('brands.brandDescriptions.8BitDo'),
+      categories: [getCategoryMapping().gamepad, getCategoryMapping().accessories],
       productCount: '30+',
       website: 'https://www.8bitdo.com/',
       status: 'preferred'
@@ -267,8 +272,8 @@ const ProductsPage: React.FC = () => {
       id: 22,
       brand: 'Flydigi',
       logo: 'https://image.siky.me/mistyislet/flydigi.png',
-      description: '飞智科技，手游利器',
-      categories: ['手柄', '配件'],
+      description: t('brands.brandDescriptions.Flydigi'),
+      categories: [getCategoryMapping().gamepad, getCategoryMapping().accessories],
       productCount: '45+',
       website: 'https://www.flydigi.com/',
       status: 'strategic'
@@ -277,8 +282,8 @@ const ProductsPage: React.FC = () => {
       id: 23,
       brand: 'VGN',
       logo: 'https://image.siky.me/mistyislet/VGN.png',
-      description: '电竞装备，性能至上',
-      categories: ['鼠标', '键盘', '耳机'],
+      description: t('brands.brandDescriptions.VGN'),
+      categories: [getCategoryMapping().mouse, getCategoryMapping().keyboard, getCategoryMapping().headphones],
       productCount: '60+',
       website: 'https://vgnlab.com/',
       status: 'strategic'
@@ -287,8 +292,8 @@ const ProductsPage: React.FC = () => {
       id: 24,
       brand: 'ARTISAN',
       logo: 'https://image.siky.me/mistyislet/artisan.png',
-      description: '手工艺人，极致鼠标垫',
-      categories: ['鼠标垫', '配件'],
+      description: t('brands.brandDescriptions.ARTISAN'),
+      categories: [getCategoryMapping().mousepad, getCategoryMapping().accessories],
       productCount: '20+',
       website: 'https://artisan-jp.com',
       status: 'strategic'
@@ -297,8 +302,8 @@ const ProductsPage: React.FC = () => {
       id: 25,
       brand: 'betop',
       logo: 'https://image.siky.me/mistyislet/betop.png',
-      description: '北通科技，手柄专家',
-      categories: ['手柄', '配件'],
+      description: t('brands.brandDescriptions.betop'),
+      categories: [getCategoryMapping().gamepad, getCategoryMapping().accessories],
       productCount: '40+',
       website: 'https://betop.com.cn',
       status: 'strategic'
@@ -324,18 +329,8 @@ const ProductsPage: React.FC = () => {
                          brand.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(brand.brand);
     const matchesCategory = activeCategory === 'all' || (() => {
-      const categoryMap = {
-        'keyboard': '键盘',
-        'mouse': '鼠标',
-        'headphones': '耳机',
-        'mousepad': '鼠标垫',
-        'gamepad': '手柄',
-        'keycaps': '键帽',
-        'switches': '轴体',
-        'accessories': '配件',
-        'chair': '电竞桌椅'
-      };
-      const categoryName = categoryMap[activeCategory as keyof typeof categoryMap];
+      const categoryMapping = getCategoryMapping();
+      const categoryName = categoryMapping[activeCategory as keyof typeof categoryMapping];
       return categoryName ? brand.categories.includes(categoryName) : true;
     })();
     
@@ -348,10 +343,10 @@ const ProductsPage: React.FC = () => {
       <section className="products-header">
         <div className="container">
           <div className="header-content">
-            <div className="header-badge">品牌矩阵</div>
-            <h1 className="page-title">全球顶级品牌供应</h1>
+            <div className="header-badge">{t('brands.badge')}</div>
+            <h1 className="page-title">{t('brands.title')}</h1>
             <p className="page-description">
-              深度合作12+国际品牌，覆盖全品类外设产品，提供一站式B2B供应链解决方案
+              {t('brands.description')}
             </p>
           </div>
         </div>
@@ -369,7 +364,7 @@ const ProductsPage: React.FC = () => {
                 onClick={() => setShowMobileFilters(!showMobileFilters)}
               >
                 <SlidersHorizontal size={20} />
-                <span>筛选器</span>
+                <span>{t('brands.filters.mobileFilter')}</span>
                 <ChevronDown 
                   size={16} 
                   className={showMobileFilters ? 'rotate-180' : ''} 
@@ -382,12 +377,12 @@ const ProductsPage: React.FC = () => {
               
               {/* Search */}
               <div className="filter-section">
-                <h3 className="filter-title">搜索</h3>
+                <h3 className="filter-title">{t('brands.filters.search')}</h3>
                 <div className="search-input-wrapper">
                   <Search size={18} />
                   <input
                     type="text"
-                    placeholder="搜索产品或品牌..."
+                    placeholder={t('brands.filters.searchPlaceholder')}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="search-input"
@@ -405,23 +400,13 @@ const ProductsPage: React.FC = () => {
 
               {/* Product Categories */}
               <div className="filter-section">
-                <h3 className="filter-title">外设类别</h3>
+                <h3 className="filter-title">{t('brands.filters.categories')}</h3>
                 <div className="category-list">
                   {categories.map((category) => {
                     let count = brandMatrix.length;
                     if (category.id !== 'all') {
-                      const categoryMap = {
-                        'keyboard': '键盘',
-                        'mouse': '鼠标', 
-                        'headphones': '耳机',
-                        'mousepad': '鼠标垫',
-                        'gamepad': '手柄',
-                        'keycaps': '键帽',
-                        'switches': '轴体',
-                        'accessories': '配件',
-                        'chair': '电竞桌椅'
-                      };
-                      const categoryName = categoryMap[category.id as keyof typeof categoryMap];
+                      const categoryMapping = getCategoryMapping();
+                      const categoryName = categoryMapping[category.id as keyof typeof categoryMapping];
                       count = brandMatrix.filter(b => b.categories.includes(categoryName)).length;
                     }
                     const displayCategory = { ...category, count };
@@ -446,7 +431,7 @@ const ProductsPage: React.FC = () => {
 
               {/* Brands */}
               <div className="filter-section">
-                <h3 className="filter-title">品牌筛选</h3>
+                <h3 className="filter-title">{t('brands.filters.brandFilter')}</h3>
                 <div className="brand-list">
                   {brandMatrix.map((brand) => (
                     <label key={brand.brand} className="brand-item">
@@ -463,12 +448,10 @@ const ProductsPage: React.FC = () => {
                 </div>
               </div>
 
-
-
               {/* Clear Filters */}
               <div className="filter-actions">
                 <button className="clear-filters-btn" onClick={clearFilters}>
-                  清除筛选
+                  {t('brands.filters.clearFilters')}
                 </button>
               </div>
 
@@ -481,7 +464,7 @@ const ProductsPage: React.FC = () => {
               <div className="results-header">
                 <div className="results-info">
                   <span className="results-count">
-                    共找到 <strong>{filteredBrands.length}</strong> 个合作品牌
+                    {t('brands.results.found')} <strong>{filteredBrands.length}</strong> {t('brands.results.partners')}
                   </span>
                   {(selectedBrands.length > 0 || activeCategory !== 'all' || searchTerm) && (
                     <div className="active-filters">
@@ -562,10 +545,10 @@ const ProductsPage: React.FC = () => {
                 <div className="no-results">
                   <div className="no-results-content">
                     <Filter size={48} />
-                    <h3>未找到相关品牌</h3>
-                    <p>请尝试调整搜索条件或筛选器</p>
+                    <h3>{t('brands.noResults.title')}</h3>
+                    <p>{t('brands.noResults.description')}</p>
                     <button className="clear-filters-btn" onClick={clearFilters}>
-                      清除所有筛选
+                      {t('brands.filters.clearAllFilters')}
                     </button>
                   </div>
                 </div>
@@ -580,14 +563,14 @@ const ProductsPage: React.FC = () => {
       <section className="products-cta">
         <div className="container">
           <div className="cta-content">
-            <h2>开启品牌合作之旅</h2>
-            <p>与全球顶级品牌深度合作，为您提供专业的B2B供应链解决方案</p>
+            <h2>{t('brands.cta.title')}</h2>
+            <p>{t('brands.cta.description')}</p>
             <div className="cta-actions">
               <a href="mailto:contact@mistyislet.com" className="btn btn-primary">
-                咨询合作
+                {t('brands.cta.contact')}
               </a>
-                              <a href="/contact" className="btn btn-secondary">
-                了解详情
+              <a href="/contact" className="btn btn-secondary">
+                {t('brands.cta.learnMore')}
               </a>
             </div>
           </div>

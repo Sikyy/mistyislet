@@ -8,49 +8,52 @@ import {
   ArrowRight,
   ExternalLink 
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+  
   const quickLinks = [
-    { path: '/', label: '首页' },
-    { path: '/brands', label: '品牌列表' },
-    { path: '/about', label: '关于我们' },
-    { path: '/partners', label: '合作伙伴' },
-    { path: '/contact', label: '联系我们' },
+    { path: '/', label: t('home.heroTitle') },
+    { path: '/brands', label: t('navbar.brands') },
+    { path: '/about', label: t('navbar.about') },
+    { path: '/partners', label: t('navbar.partners') },
+    { path: '/contact', label: t('navbar.contact') },
   ];
 
   const contactInfo = [
     {
       icon: Mail,
-      label: '邮箱',
+      label: t('footer.contact.email'),
       value: 'info@mistyislet.com',
       href: 'mailto:info@mistyislet.com'
     },
     {
       icon: Phone,
-      label: '电话',
+      label: t('footer.contact.phone'),
       value: '+86 198-1689-1233',
       href: 'tel:+8619816891233'
     },
     {
       icon: MapPin,
-      label: '地址',
-      value: '中国浙江省杭州市滨江区',
+      label: t('footer.contact.address'),
+      value: t('footer.contact.addressValue'),
       href: null
     },
     {
       icon: Globe,
-      label: '网站',
+      label: t('footer.contact.website'),
       value: 'www.mistyislet.com',
       href: 'https://www.mistyislet.com'
     }
   ];
 
   const businessInfo = [
-    '高端外设供应链服务',
-    '跨境物流解决方案',
-    '品牌代理与分销',
-    '技术支持与售后'
+    t('footer.services.highEnd'),
+    t('footer.services.logistics'),
+    t('footer.services.agency'),
+    t('footer.services.support')
   ];
 
   return (
@@ -71,26 +74,25 @@ const Footer: React.FC = () => {
             </Link>
             
             <p className="footer-description">
-              专注于为俄罗斯商家提供高端外设设备供应链服务，
-              致力于打造最专业、最可靠的跨境贸易桥梁。
+              {t('footer.description')}
             </p>
             
             <div className="company-info">
-              <h4 className="company-name">杭州烟渚科技有限公司</h4>
-              <p className="company-name-en">Hangzhou Yanzhu Technology Co., Ltd.</p>
+              <h4 className="company-name">{t('footer.companyName')}</h4>
+              <p className="company-name-en">{t('footer.companyNameEn')}</p>
             </div>
             
             <div className="footer-highlight glass">
               <div className="highlight-content">
-                <h4>连接中俄，智造未来</h4>
-                <p>专业的供应链解决方案</p>
+                <h4>{t('footer.slogan')}</h4>
+                <p>{t('footer.sloganSub')}</p>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="footer-section">
-            <h3 className="footer-title">快速导航</h3>
+            <h3 className="footer-title">{t('footer.quickLinks')}</h3>
             <nav className="footer-nav">
               {quickLinks.map((link) => (
                 <Link 
@@ -107,7 +109,7 @@ const Footer: React.FC = () => {
 
           {/* Business Info */}
           <div className="footer-section">
-            <h3 className="footer-title">服务范围</h3>
+            <h3 className="footer-title">{t('footer.servicesTitle')}</h3>
             <ul className="footer-list">
               {businessInfo.map((item, index) => (
                 <li key={index} className="footer-list-item">
@@ -119,7 +121,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className="footer-section">
-            <h3 className="footer-title">联系我们</h3>
+            <h3 className="footer-title">{t('footer.contactUs')}</h3>
             <div className="contact-info">
               {contactInfo.map((contact, index) => {
                 const Icon = contact.icon;
@@ -161,8 +163,8 @@ const Footer: React.FC = () => {
           <div className="footer-divider"></div>
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              <p>&copy; 2024 杭州烟渚科技有限公司. 保留所有权利。</p>
-              <p className="footer-subtitle">Hangzhou Yanzhu Technology Co., Ltd.</p>
+              <p>&copy; 2024 {t('footer.companyName')}. {t('footer.allRightsReserved')}。</p>
+              <p className="footer-subtitle">{t('footer.companyNameEn')}</p>
             </div>
             
             {/* <div className="footer-actions">

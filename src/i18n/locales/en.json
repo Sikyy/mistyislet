@@ -1,0 +1,488 @@
+{
+  "navbar": {
+    "brands": "Brands",
+    "about": "About Us",
+    "partners": "Partners", 
+    "contact": "Contact",
+    "startCollaboration": "Start Collaboration",
+    "language": "Language"
+  },
+  "languages": {
+    "chinese": "中文",
+    "english": "English",
+    "russian": "Русский"
+  },
+  "home": {
+    "heroTitle": "Misty Islet",
+    "heroSubtitle": "Explore the Unknown Frontiers of Technology",
+    "heroDescription": "Here, we are committed to discovering and promoting cutting-edge tech products, bringing you unique digital experiences.", 
+    "exploreProducts": "Explore Products",
+    "learnMore": "Learn More",
+    "navigation": {
+      "home": "Home",
+      "productCategories": "Product Categories",
+      "coreAdvantages": "Core Advantages", 
+      "marketInsights": "Market Insights",
+      "partners": "Partners"
+    },
+    "hero": {
+      "mainTitle": "Make Your Peripheral",
+      "mainTitleLine2": "Business Exceptional",
+      "mainTitleEmphasis": "— It's an Art",
+      "description": "We are committed to connecting Russia's most promising esports channel partners, professional clubs, and content creators to collaboratively promote high-performance peripheral brands and drive the professionalization and commercialization of the Russian esports market.",
+      "discussProject": "Discuss Project"
+    },
+    "products": {
+      "title": "Product Matrix",
+      "subtitle": "Explore Our Rich Product Ecosystem",
+      "categories": {
+        "keyboard": "Keyboards",
+        "mouse": "Mice",
+        "mousepad": "Mousepads", 
+        "gamepad": "Gamepads",
+        "headphones": "Gaming Headphones",
+        "keycaps": "Keycaps",
+        "switches": "Switches",
+        "accessories": "Accessories",
+        "gamingChair": "Gaming Chairs & Desks",
+        "electronics": "Other Electronics"
+      },
+      "placeholderText": "Product Image"
+    },
+    "features": {
+      "badge": "Core Advantages",
+      "satisfaction": "Customer Satisfaction",
+      "professionalService": "Professional Supply Chain Services",
+      "description": "With strict quality control, global supply chain networks, and professional service teams, we provide Russian customers with the most reliable peripheral supply chain solutions.",
+      "metrics": {
+        "brands": "Partner Brands",
+        "cities": "Service Cities",
+        "delivery": "Average Delivery"
+      },
+      "list": {
+        "quality": {
+          "title": "Quality Assurance",
+          "description": "Strict quality control system ensuring every product meets international standards"
+        },
+        "supply": {
+          "title": "Global Supply Chain",
+          "description": "Deep cooperation with global top brands, integrating premium resources"
+        },
+        "logistics": {
+          "title": "Efficient Logistics",
+          "description": "Professional cross-border logistics network with intelligent warehousing management"
+        },
+        "service": {
+          "title": "Professional Service",
+          "description": "Experienced professional team providing full-chain services"
+        }
+      }
+    },
+    "market": {
+      "badge": "Russian Esports Market", 
+      "penetration": "Players Using Professional Peripherals",
+      "growth": "Equipment Penetration Continues to Grow",
+      "stats": {
+        "activePlayersLabel": "Active esports players across 15+ major cities",
+        "marketSizeLabel": "Annual market size, peripherals account for 20.2%"
+      },
+      "usage": {
+        "title": "Peripheral Usage",
+        "keyboard": "Keyboards",
+        "mouse": "Mice", 
+        "headphones": "Headphones",
+        "gamepad": "Gamepads",
+        "mousepad": "Mousepads"
+      }
+    },
+    "partners": {
+      "ecosystem": "Partner Ecosystem"
+    }
+  },
+  "partnersPage": {
+    "heroSubtitle": "Partnering with global top brands, serving quality Russian merchants, building a professional and reliable peripheral supply chain ecosystem.",
+    "heroTitle": "GLOBAL",
+    "heroTitleLine2": "PARTNERS",
+    "heroDescription": "Over two years, we have established deep cooperation with 15+ global top esports brands, providing professional supply chain services for 10+ quality Russian merchants.",
+    "achievements": {
+      "subtitle": "OUR ACHIEVEMENTS",
+      "title": "Cooperation Results",
+      "titleLine2": "Data Demonstrates Strength",
+      "description": "Through professional services and quality products, we have established a good reputation and extensive cooperation network in the China-Russia peripheral trade field.",
+      "russianPartners": "Russian Partners",
+      "federalDistricts": "Federal Districts",
+      "annualSales": "Annual Sales",
+      "annualGrowth": "Annual Growth"
+    },
+    "partnerships": {
+      "subtitle": "PARTNERSHIPS",
+      "title": "Russian Merchants",
+      "description": "Professional cooperation network covering 8 federal districts in Russia, with monthly sales exceeding 76K units, establishing a stable and reliable supply chain ecosystem.",
+      "annualSalesLabel": "Annual Sales",
+      "districtsLabel": "Federal Districts Covered",
+      "marketDistribution": "Market Distribution"
+    },
+    "collaboration": {
+      "subtitle": "COLLABORATION MODELS",
+      "title": "Cooperation Models",
+      "titleNumber": "3 Types",
+      "titleLine2": "Flexible and Diverse",
+      "description": "We provide customized cooperation solutions for enterprises of different scales and types to meet various business needs.",
+      "brandCooperationLabel": "Brand Cooperation",
+      "channelCoverageLabel": "Channel Coverage",
+      "suitableLabel": "Suitable for",
+      "productSupply": {
+        "title": "Product Supply",
+        "description": "Providing high-quality peripheral product supply services",
+        "suitable": "Retailers, Distributors",
+        "stats": "15+ Brand Partnerships",
+        "features": {
+          "0": "Product Procurement",
+          "1": "Quality Control",
+          "2": "Inventory Management",
+          "3": "Logistics Delivery"
+        }
+      },
+      "brandAgency": {
+        "title": "Brand Agency",
+        "description": "Become our brand agent and jointly develop the market",
+        "suitable": "Companies with sales networks",
+        "stats": "10+ Channel Coverage",
+        "features": {
+          "0": "Brand Authorization",
+          "1": "Market Support",
+          "2": "Training Services",
+          "3": "Marketing Resources"
+        }
+      },
+      "strategicPartnership": {
+        "title": "Strategic Partnership",
+        "description": "Establish long-term strategic partnerships for mutual development",
+        "suitable": "Large Purchasers",
+        "stats": "76K+ Annual Sales",
+        "features": {
+          "0": "Custom Solutions",
+          "1": "Priority Supply",
+          "2": "Price Advantage",
+          "3": "Technical Support"
+        }
+      }
+    },
+    "process": {
+      "subtitle": "COOPERATION PROCESS",
+      "title": "Cooperation Process",
+      "titleNumber": "5 Steps",
+      "titleLine2": "Simple and Efficient",
+      "description": "We have established a standardized cooperation process to ensure efficient and transparent cooperation experience.",
+      "averageCycle": "Average Cycle",
+      "averageCompletionRate": "Average Completion Rate",
+      "averageCycleDays": "13 Days",
+      "processCompletionRate": "Process Completion Rate",
+      "initialContact": {
+        "title": "Initial Contact",
+        "description": "Contact us via phone, email, or online form",
+        "duration": "1-2 business days"
+      },
+      "needsAssessment": {
+        "title": "Needs Assessment",
+        "description": "Detailed understanding of your business needs and cooperation intentions",
+        "duration": "3-5 business days"
+      },
+      "solutionDevelopment": {
+        "title": "Solution Development",
+        "description": "Tailor-made cooperation solutions for you",
+        "duration": "5-7 business days"
+      },
+      "contractSigning": {
+        "title": "Contract Signing",
+        "description": "Finalize cooperation details and formally sign cooperation agreement",
+        "duration": "2-3 business days"
+      },
+      "serviceExecution": {
+        "title": "Service Execution",
+        "description": "Begin providing professional supply chain services",
+        "duration": "Ongoing Service"
+      }
+    },
+    "advantages": {
+      "subtitle": "COMPETITIVE ADVANTAGES",
+      "title": "Core Advantages",
+      "titleNumber": "4 Items",
+      "description": "Years of industry experience accumulation have formed a comprehensive service system, providing professional guarantees for every partner.",
+      "productQualityLabel": "Product Quality Rate",
+      "satisfactionLabel": "Customer Satisfaction",
+      "performanceMetrics": "Performance Metrics",
+      "qualityAssurance": {
+        "title": "Quality Assurance",
+        "description": "Strict quality control system ensuring product quality",
+        "label": "Quality Rate"
+      },
+      "fastResponse": {
+        "title": "Fast Response",
+        "description": "Respond to customer needs within 24 hours",
+        "label": "Average Response Time",
+        "stats": "2 Hours"
+      },
+      "priceAdvantage": {
+        "title": "Price Advantage",
+        "description": "Direct manufacturer cooperation providing competitive prices",
+        "label": "Cost Savings"
+      },
+      "professionalService": {
+        "title": "Professional Service",
+        "description": "Professional team providing comprehensive service support",
+        "label": "Customer Satisfaction"
+      }
+    },
+    "testimonials": {
+      "subtitle": "CUSTOMER TESTIMONIALS",
+      "title": "Customer Reviews",
+      "titleLine2": "Authentic Feedback",
+      "description": "Real evaluations from partners, witnessing our professional services and quality products' good performance in the market.",
+      "satisfactionLabel": "Customer Satisfaction",
+      "ratingLabel": "Average Rating",
+      "testimonial1": {
+        "position": "Procurement Director",
+        "content": "Working with MistyIslet for three years, their product quality and service level are excellent. Timely delivery, stable product quality, they are our most trusted partner.",
+        "location": "Moscow",
+        "businessType": "Retail Chain"
+      },
+      "testimonial2": {
+        "position": "Operations Manager",
+        "content": "Professional team, quality products, reasonable prices. MistyIslet helped us establish a comprehensive supply chain system, business grew by 200%.",
+        "location": "St. Petersburg",
+        "businessType": "Wholesale Distribution"
+      },
+      "testimonial3": {
+        "position": "Trade Director",
+        "content": "As a partner in the Far East region, MistyIslet provides us with professional cross-border trade services. High customs clearance efficiency, strict risk control.",
+        "location": "Vladivostok",
+        "businessType": "Import-Export Trade"
+      }
+    },
+    "cta": {
+      "title": "Become Our Partner",
+      "description": "Whether you are a brand owner or channel partner, we look forward to establishing long-term stable cooperation with you to jointly explore market opportunities.",
+      "startCollaboration": "Start Collaboration",
+      "contactUs": "Contact Us"
+    }
+  },
+  "contact": {
+    "heroTitle": "Connect With Us",
+    "heroDescription": "Ready to start your peripheral business journey? Contact our professional team for customized B2B solutions.",
+    "formTitle": "Send Message",
+    "formDescription": "Fill out the form below and we'll get back to you within 24 hours.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "John Smith",
+      "email": "john@example.com",
+      "company": "Your Company Name",
+      "phone": "+1 555 123 4567",
+      "subject": "Partnership Inquiry",
+      "message": "Please describe your requirements..."
+    },
+    "submit": "Send Message"
+  },
+  "brands": {
+    "badge": "Brand Matrix",
+    "title": "Global Premium Brand Supply",
+    "description": "Deep cooperation with 12+ international brands, covering all categories of peripheral products, providing one-stop B2B supply chain solutions",
+    "filters": {
+      "search": "Search",
+      "searchPlaceholder": "Search products or brands...",
+      "categories": "Product Categories",
+      "brandFilter": "Brand Filter",
+      "mobileFilter": "Filters",
+      "clearFilters": "Clear Filters",
+      "clearAllFilters": "Clear All Filters"
+    },
+    "categories": {
+      "all": "All Categories",
+      "keyboard": "Keyboards",
+      "mouse": "Mice",
+      "headphones": "Headphones",
+      "mousepad": "Mousepads",
+      "gamepad": "Gamepads",
+      "keycaps": "Keycaps",
+      "switches": "Switches",
+      "accessories": "Accessories",
+      "chair": "Gaming Chairs"
+    },
+    "results": {
+      "found": "Found",
+      "partners": "partner brands"
+    },
+    "noResults": {
+      "title": "No Brands Found",
+      "description": "Please try adjusting your search terms or filters"
+    },
+    "cta": {
+      "title": "Start Your Brand Partnership Journey",
+      "description": "Deep cooperation with global top brands, providing professional B2B supply chain solutions",
+      "contact": "Contact Us",
+      "learnMore": "Learn More"
+    },
+    "brandDescriptions": {
+      "AngryMiao": "Original design, ultimate craftsmanship",
+      "ATK": "Professional peripherals, gaming first choice",
+      "Hachiware": "Japanese precision, cute design",
+      "MadLoon": "Crazy creativity, unique experience",
+      "MelGeek": "Sweet design, warm experience",
+      "PMO": "Performance monster, esports weapon",
+      "WOBKEY": "Keyboard expert, typing tool",
+      "Razer": "Global leading gaming peripheral brand",
+      "ROG": "ASUS Republic of Gamers, innovation pioneer",
+      "Sukisora": "Cherry blossom design, aesthetic experience",
+      "Zowie": "Esports dedicated, professional choice",
+      "戟创agkey": "Domestic quality, craftsmanship",
+      "ANTICATER": "Anti-traditional design, unique aesthetics",
+      "Logitech": "Swiss precision, global trust",
+      "MoonDROP": "Moon charm, auditory feast",
+      "DRUNKDEER": "Drunk Deer Technology, innovative experience",
+      "GAMESIR": "Gaming controller expert",
+      "Mojhon": "Magical design, wonderful experience",
+      "MCHOSE": "Mouse expert, precise control",
+      "8BitDo": "Retro controllers, classic reborn",
+      "Flydigi": "Flydigi Technology, mobile gaming weapon",
+      "VGN": "Esports equipment, performance first",
+      "ARTISAN": "Craftsman, ultimate mousepads",
+      "betop": "Betop Technology, controller expert"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Pioneers Focused on Technological Innovation",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "values": "Our Values",
+    "heroSubtitle": "We focus on providing high-end peripheral supply chain services for Russian merchants, committed to building the most professional and reliable cross-border trade bridge.",
+    "heroTitle": "ABOUT",
+    "heroTitleLine2": "MISTYISLET",
+    "heroDescription": "Connecting Chinese and Russian markets for four years, we have always adhered to quality as the core and innovation as the driving force to create value for customers.",
+    "story": {
+      "subtitle": "SINCE 2018",
+      "title": "We have been writing",
+      "titleLine2": "new chapters in China-Russia cross-border trade",
+      "description": "For six years, we have focused on peripheral supply chain services, continuously innovating and optimizing to provide customers with the highest quality products and service experience."
+    },
+    "values": {
+      "subtitle": "OUR VALUES",
+      "title": "Core Corporate Values",
+      "titleLine2": "and Development Philosophy",
+      "mission": {
+        "title": "Our Mission",
+        "description": "To become an important bridge for China-Russia supply chain cooperation, providing Russian merchants with high-quality peripheral products and professional supply chain services."
+      },
+      "vision": {
+        "title": "Our Vision", 
+        "description": "To become a globally leading cross-border supply chain service provider, enabling high-quality products from around the world to flow more conveniently."
+      },
+      "coreValues": {
+        "title": "Core Values",
+        "description": "Integrity-based, quality first, customer first, building a mutually beneficial ecosystem."
+      }
+    },
+    "timeline": {
+      "subtitle": "HISTORY",
+      "title": "Development Journey",
+      "titleLine2": "Six Years of Perseverance",
+      "description": "From startup to growth, we have always adhered to our original intention, writing new chapters in cross-border trade with professionalism and persistence.",
+      "events": {
+        "2024": {
+          "title": "Company Establishment",
+          "description": "MistyIslet was established in Hangzhou, China, focusing on China-Russia supply chain services"
+        },
+        "2025": {
+          "title": "Market Expansion",
+          "description": "Comprehensive cooperation with local merchants in Russia"
+        },
+        "2026": {
+          "title": "In Progress",
+          "description": "Expected - Introduction of AI technology to optimize supply chain management and improve efficiency"
+        }
+      }
+    }
+  },
+  "partners": {
+    "title": "Partners",
+    "subtitle": "Growing Together with Excellence", 
+    "becomePartner": "Become a Partner",
+    "achievements": {
+      "russianPartners": "Russian Partners",
+      "federalDistricts": "Federal Districts",
+      "annualSales": "Annual Sales",
+      "annualGrowth": "Annual Growth"
+    },
+    "collaborationTypes": {
+      "productSupply": {
+        "title": "Product Supply",
+        "description": "Providing high-quality peripheral product supply services",
+        "suitable": "Retailers, Distributors"
+      },
+      "brandAgency": {
+        "title": "Brand Agency",
+        "description": "Become our brand agent and jointly develop the market",
+        "suitable": "Companies with sales networks"
+      },
+      "strategicPartnership": {
+        "title": "Strategic Partnership",
+        "description": "Establish long-term strategic partnerships for mutual development",
+        "suitable": "Large purchasers"
+      }
+    },
+    "process": {
+      "initialContact": {
+        "title": "Initial Contact",
+        "description": "Contact us via phone, email, or online form"
+      },
+      "needsAssessment": {
+        "title": "Needs Assessment",
+        "description": "Detailed understanding of your business needs and cooperation intentions"
+      },
+      "solutionDevelopment": {
+        "title": "Solution Development",
+        "description": "Tailor-made cooperation solutions for you"
+      },
+      "contractSigning": {
+        "title": "Contract Signing",
+        "description": "Finalize cooperation details and formally sign cooperation agreement"
+      },
+      "serviceExecution": {
+        "title": "Service Execution",
+        "description": "Begin providing professional supply chain services"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Copyright",
+    "allRightsReserved": "All Rights Reserved",
+    "quickLinks": "Quick Links",
+    "servicesTitle": "Services",
+    "contactUs": "Contact Us",
+    "description": "Focused on providing high-end peripheral supply chain services for Russian merchants, committed to building the most professional and reliable cross-border trade bridge.",
+    "companyName": "Hangzhou Yanzhu Technology Co., Ltd.",
+    "companyNameEn": "杭州烟渚科技有限公司",
+    "slogan": "Connecting China and Russia, Creating the Future",
+    "sloganSub": "Professional Supply Chain Solutions",
+    "services": {
+      "highEnd": "High-end Peripheral Supply Chain Services",
+      "logistics": "Cross-border Logistics Solutions",
+      "agency": "Brand Agency & Distribution", 
+      "support": "Technical Support & After-sales"
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "website": "Website",
+      "addressValue": "Binjiang District, Hangzhou, Zhejiang Province, China"
+    }
+  }
+} 

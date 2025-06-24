@@ -332,6 +332,24 @@
   flex-wrap: wrap;
 }
 
+/* Brands Page Specific CTA Button Spacing */
+.products-cta .cta-actions {
+  gap: calc(2rem + 100px); /* 在原有2rem基础上再增加200px间距 */
+}
+
+.products-cta .cta-actions .btn {
+  min-width: 160px; /* 确保按钮有合适的最小宽度 */
+  padding: 14px 28px; /* 增加按钮内边距让它们看起来更舒适 */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.products-cta .cta-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .products-header {
@@ -1023,6 +1041,18 @@
     font-size: clamp(1.8rem, 6vw, 2.2rem);
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Mobile CTA Button Adjustments */
+  .products-cta .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .products-cta .cta-actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
 
   /* Mobile Partner Cards */
