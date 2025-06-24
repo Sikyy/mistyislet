@@ -267,28 +267,28 @@
       "contactUs": "Contact Us"
     }
   },
-  "contact": {
-    "heroTitle": "Connect With Us",
+  "contactpage": {
+    "heroSubtitle": "Ready to start your peripheral business journey? Contact our professional team for customized B2B solutions.",
+    "heroTitle": "CONNECT",
+    "heroTitleLine2": "WITH US",
     "heroDescription": "Ready to start your peripheral business journey? Contact our professional team for customized B2B solutions.",
-    "formTitle": "Send Message",
-    "formDescription": "Fill out the form below and we'll get back to you within 24 hours.",
-    "fields": {
+    "form": {
+      "subtitle": "GET IN TOUCH",
+      "title": "Send Message",
+      "titleLine2": "We're Listening",
+      "description": "Fill out the form below and we will reply within 24 hours.",
       "name": "Name",
       "email": "Email",
-      "company": "Company",
-      "phone": "Phone",
-      "subject": "Subject",
-      "message": "Message"
-    },
-    "placeholders": {
-      "name": "John Smith",
-      "email": "john@example.com",
-      "company": "Your Company Name",
-      "phone": "+1 555 123 4567",
-      "subject": "Partnership Inquiry",
-      "message": "Please describe your requirements..."
-    },
-    "submit": "Send Message"
+      "company": "Company Name",
+      "phone": "Phone Number",
+      "message": "Message",
+      "namePlaceholder": "John Smith",
+      "emailPlaceholder": "john.smith@example.com",
+      "companyPlaceholder": "Your Company Name",
+      "phonePlaceholder": "+1 555 123 4567",
+      "messagePlaceholder": "Please describe your requirements...",
+      "submit": "Send Message"
+    }
   },
   "brands": {
     "badge": "Brand Matrix",

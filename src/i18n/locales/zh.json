@@ -101,8 +101,8 @@
   },
   "partnersPage": {
     "heroSubtitle": "携手全球顶级品牌，服务俄罗斯优质商家，构建专业可靠的外设供应链生态系统。",
-    "heroTitle": "GLOBAL",
-    "heroTitleLine2": "PARTNERS",
+    "heroTitle": "全球",
+    "heroTitleLine2": "合作伙伴",
     "heroDescription": "两年来，我们与全球15+顶级电竞品牌建立深度合作，为俄罗斯10+优质商家提供专业供应链服务。",
     "achievements": {
       "subtitle": "OUR ACHIEVEMENTS",
@@ -267,28 +267,28 @@
       "contactUs": "联系我们"
     }
   },
-  "contact": {
+  "contactpage": {
+    "heroSubtitle": "准备开始您的外设业务之旅吗？联系我们的专业团队，获取定制化的B2B解决方案。",
     "heroTitle": "与我们联系",
+    "heroTitleLine2": "",
     "heroDescription": "准备开始您的外设业务之旅吗？联系我们的专业团队，获取定制化的B2B解决方案。",
-    "formTitle": "发送消息",
-    "formDescription": "填写下面的表格，我们将在24小时内回复您。",
-    "fields": {
+    "form": {
+      "subtitle": "联系方式",
+      "title": "发送消息",
+      "titleLine2": "期待您的声音",
+      "description": "填写下面的表格，我们将在24小时内回复您。",
       "name": "姓名",
       "email": "邮箱",
       "company": "公司名称",
       "phone": "电话号码",
-      "subject": "主题",
-      "message": "留言"
-    },
-    "placeholders": {
-      "name": "张三",
-      "email": "zhangsan@example.com",
-      "company": "您的公司名称",
-      "phone": "+86 138 0013 8000",
-      "subject": "合作咨询",
-      "message": "请描述您的需求..."
-    },
-    "submit": "发送消息"
+      "message": "留言",
+      "namePlaceholder": "张三",
+      "emailPlaceholder": "zhangsan@example.com",
+      "companyPlaceholder": "您的公司名称",
+      "phonePlaceholder": "+86 138 0013 8000",
+      "messagePlaceholder": "请描述您的需求...",
+      "submit": "发送消息"
+    }
   },
   "brands": {
     "badge": "品牌矩阵",
@@ -363,7 +363,7 @@
     "vision": "我们的愿景", 
     "values": "我们的价值观",
     "heroSubtitle": "我们专注为俄罗斯商家提供高端外设设备供应链服务，致力于打造最专业、最可靠的跨境贸易桥梁。",
-    "heroTitle": "ABOUT",
+    "heroTitle": "关于",
     "heroTitleLine2": "MISTYISLET",
     "heroDescription": "连接中俄两国市场四年来，我们始终坚持以品质为核心，以创新为驱动，为客户创造价值。",
     "story": {
