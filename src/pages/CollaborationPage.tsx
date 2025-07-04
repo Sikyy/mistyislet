@@ -72,10 +72,10 @@ const CollaborationPage: React.FC = () => {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="firstName">{t('contactpage.form.name')}</label>
+                  <label htmlFor="name">{t('contactpage.form.name')}</label>
                   <input
                     type="text"
-                    id="firstName"
+                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
@@ -84,10 +84,10 @@ const CollaborationPage: React.FC = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="lastName">{t('contactpage.form.company')}</label>
+                  <label htmlFor="company">{t('contactpage.form.company')}</label>
                   <input
                     type="text"
-                    id="lastName"
+                    id="company"
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}

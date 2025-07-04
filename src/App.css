@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+/* 移除全局缩放设置 */
+/* :root {
+  font-size: 133.33%;
+} */
+
 /* Light Theme Variables */
 :root[data-theme="light"] {
   --bg-primary: #ffffff;
@@ -131,6 +136,10 @@
 /* Base Styles */
 html {
   scroll-behavior: smooth;
+  /* 移除缩放设置 */
+  /* -webkit-text-size-adjust: 133.33%;
+  -moz-text-size-adjust: 133.33%;
+  text-size-adjust: 133.33%; */
 }
 
 body {
@@ -143,6 +152,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  /* 移除缩放变换 */
+  /* transform: scale(0.75);
+  transform-origin: top left;
+  width: 133.33%;
+  height: 133.33%; */
 }
 
 .App {
