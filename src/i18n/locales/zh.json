@@ -287,7 +287,10 @@
       "companyPlaceholder": "您的公司名称",
       "phonePlaceholder": "+86 138 0013 8000",
       "messagePlaceholder": "请描述您的需求...",
-      "submit": "发送消息"
+      "submit": "发送消息",
+      "success": "消息已成功发送！我们将尽快与您联系。",
+      "error": "发送失败，请稍后重试或通过其他方式联系我们。",
+      "sending": "正在发送..."
     }
   },
   "brands": {

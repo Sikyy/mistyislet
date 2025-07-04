@@ -11,6 +11,7 @@ const CollaborationPage: React.FC = () => {
     phone: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -19,9 +20,72 @@ const CollaborationPage: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    try {
+      setStatus('sending');
+      
+      // 发送数据到 Cloudflare Workers
+      const response = await fetch('https://mistyislet-email.siky.workers.dev/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      
+      // 清空表单
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
+      setStatus('success');
+      
+      // 5秒后重置状态
+      setTimeout(() => {
+        setStatus('idle');
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Error sending form:', error);
+      setStatus('error');
+      
+      // 5秒后重置错误状态
+      setTimeout(() => {
+        setStatus('idle');
+      }, 5000);
+    }
+  };
+
+  // 根据状态返回按钮文本
+  const getButtonText = () => {
+    switch (status) {
+      case 'sending':
+        return t('contactpage.form.sending');
+      case 'success':
+        return t('contactpage.form.success');
+      case 'error':
+        return t('contactpage.form.error');
+      default:
+        return t('contactpage.form.submit');
+    }
+  };
+
+  // 根据状态返回按钮类名
+  const getButtonClassName = () => {
+    let className = 'btn-submit';
+    if (status === 'success') className += ' btn-success';
+    if (status === 'error') className += ' btn-error';
+    return className;
   };
 
   return (
@@ -81,6 +145,7 @@ const CollaborationPage: React.FC = () => {
                     onChange={handleInputChange}
                     placeholder={t('contactpage.form.namePlaceholder')}
                     required
+                    disabled={status === 'sending'}
                   />
                 </div>
                 <div className="form-group">
@@ -93,6 +158,7 @@ const CollaborationPage: React.FC = () => {
                     onChange={handleInputChange}
                     placeholder={t('contactpage.form.companyPlaceholder')}
                     required
+                    disabled={status === 'sending'}
                   />
                 </div>
               </div>
@@ -108,6 +174,7 @@ const CollaborationPage: React.FC = () => {
                     onChange={handleInputChange}
                     placeholder={t('contactpage.form.emailPlaceholder')}
                     required
+                    disabled={status === 'sending'}
                   />
                 </div>
                 <div className="form-group">
@@ -119,6 +186,7 @@ const CollaborationPage: React.FC = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder={t('contactpage.form.phonePlaceholder')}
+                    disabled={status === 'sending'}
                   />
                 </div>
               </div>
@@ -132,12 +200,17 @@ const CollaborationPage: React.FC = () => {
                   onChange={handleInputChange}
                   placeholder={t('contactpage.form.messagePlaceholder')}
                   required
+                  disabled={status === 'sending'}
                 />
               </div>
 
               <div className="form-submit">
-                <button type="submit" className="btn-submit">
-                  {t('contactpage.form.submit')}
+                <button 
+                  type="submit" 
+                  className={getButtonClassName()}
+                  disabled={status === 'sending' || status === 'success'}
+                >
+                  {getButtonText()}
                 </button>
               </div>
             </form>

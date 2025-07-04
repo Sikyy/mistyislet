@@ -287,7 +287,10 @@
       "companyPlaceholder": "Your Company Name",
       "phonePlaceholder": "+1 555 123 4567",
       "messagePlaceholder": "Please describe your requirements...",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "success": "Message sent successfully! We will contact you soon.",
+      "error": "Failed to send message. Please try again later or contact us through other means.",
+      "sending": "Sending..."
     }
   },
   "brands": {

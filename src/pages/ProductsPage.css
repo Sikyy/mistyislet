@@ -129,7 +129,7 @@
 }
 
 .products-main {
-  padding: 50px 0;
+  padding: 2rem 0;
 }
 
 .products-grid {
@@ -400,6 +400,8 @@
   grid-template-columns: 280px 1fr;
   gap: 2rem;
   align-items: start;
+  margin-left: -50px; /* 向左移动50px */
+  width: calc(100% + 50px); /* 增加宽度以避免右侧内容被截断 */
 }
 
 /* Mobile Filter Toggle */
