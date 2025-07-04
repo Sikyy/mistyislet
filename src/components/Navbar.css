@@ -7,6 +7,8 @@
   z-index: 1000;
   padding: 0 40px;
   transition: all 0.3s ease;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .navbar.kubric-style::before {
@@ -80,6 +82,8 @@
   padding: 8px;
   gap: 4px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  will-change: contents;
 }
 
 .nav-glass-link {
@@ -92,6 +96,8 @@
   padding: 12px 20px;
   border-radius: 12px;
   position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-glass-link:hover {
@@ -268,118 +274,219 @@
 
 /* Mobile Language Switcher */
 .mobile-language-switcher {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .mobile-language-title {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 12px;
-  padding: 0 16px;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0 1.5rem;
+  letter-spacing: 0.025em;
 }
 
 .mobile-language-option {
   display: block;
   width: 100%;
-  padding: 12px 16px;
+  padding: 1rem 1.5rem;
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.8);
   text-align: left;
-  border-radius: 8px;
-  font-size: 15px;
+  border-radius: 12px;
+  font-size: 1.125rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 4px;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-language-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.mobile-language-option:hover::before {
+  left: 100%;
 }
 
 .mobile-language-option:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.95);
+  transform: translateX(8px);
+}
+
+.mobile-language-option:active {
+  transform: translateX(8px) scale(0.98);
 }
 
 .mobile-language-option.active {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 1);
   font-weight: 600;
+  transform: translateX(8px);
+}
+
+.mobile-language-option.active::after {
+  content: '✓';
+  position: absolute;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
 }
 
 /* Mobile Menu */
 .mobile-menu-toggle {
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
 }
 
 .mobile-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.95);
 }
 
 .mobile-menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transform: translateZ(0);
+  will-change: opacity, visibility;
 }
 
 .mobile-menu.open {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 .mobile-menu-content {
-  padding: 20px;
-  border-radius: 0 0 12px 12px;
-  background: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-top: none;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-menu.open .mobile-menu-content {
+  transform: scale(1);
 }
 
 .mobile-nav-link {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
   transition: all 0.3s ease;
   display: block;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.mobile-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.mobile-nav-link:hover::before {
+  left: 100%;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  color: #10b981;
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(8px);
 }
 
-.mobile-nav-link:last-of-type {
-  border-bottom: none;
+.mobile-nav-link:active {
+  transform: translateX(8px) scale(0.98);
 }
 
 .mobile-cta {
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 100%;
   justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.mobile-cta:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
@@ -391,13 +498,93 @@
   display: none;
 }
 
+/* Extra Small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .navbar.kubric-style {
+    padding: 0 16px;
+    top: 8px;
+  }
+  
+  .navbar-content {
+    padding: 10px 16px;
+    border-radius: 16px;
+  }
+  
+  .navbar-logo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .navbar-actions {
+    gap: 0.75rem;
+    margin-right: 0;
+  }
+  
+  .mobile-menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+  }
+  
+  .mobile-menu {
+    padding: 1rem;
+  }
+  
+  .mobile-menu-content {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .mobile-cta {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .mobile-language-option {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+    min-height: 44px;
+  }
+  
+  .mobile-language-title {
+    font-size: 0.875rem;
+    padding: 0 1.25rem;
+  }
+}
+
+/* Small devices (large phones, 640px and down) */
+@media (max-width: 640px) {
+  .navbar.kubric-style {
+    padding: 0 18px;
+    top: 10px;
+  }
+  
+  .navbar-content {
+    padding: 12px 18px;
+  }
+  
+  .logo-text {
+    font-size: 22px;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
 @media (max-width: 768px) {
   .desktop-only {
-    display: none;
+    display: none !important;
   }
   
   .mobile-only {
-    display: block;
+    display: block !important;
   }
   
   .navbar.kubric-style {
@@ -406,7 +593,7 @@
   }
   
   .navbar-content {
-    padding: 12px 0;
+    padding: 14px 20px;
   }
   
   .navbar-actions {
@@ -416,5 +603,454 @@
   
   .navbar-logo {
     margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Ensure glass container is hidden on mobile */
+  .navbar-center {
+    display: none;
+  }
+  
+  /* Touch-friendly interactions */
+  .mobile-nav-link,
+  .mobile-language-option,
+  .mobile-cta,
+  .mobile-menu-toggle {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Large tablets and small laptops */
+@media (max-width: 1024px) {
+  .navbar.kubric-style {
+    padding: 0 32px;
+  }
+  
+  .navbar-logo {
+    margin-left: -80px;
+    margin-right: 80px;
+  }
+  
+  .navbar-actions {
+    margin-right: -80px;
+  }
+  
+  .btn.btn-primary {
+    left: 25px;
+  }
+  
+  .language-switcher {
+    left: 100px;
+  }
+}
+
+/* MacBook Specific Optimizations */
+
+/* MacBook Air 13" & 15" (1440x900) */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .navbar.kubric-style {
+    padding: 0 2rem;
+    top: 16px;
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+  
+  .navbar-content {
+    padding: 14px 24px;
+    border-radius: 18px;
+  }
+  
+  .navbar-logo {
+    margin-left: -120px;
+    margin-right: 60px;
+  }
+  
+  .logo-text {
+    font-size: 23px;
+    font-weight: 600;
+  }
+  
+  .nav-glass-container {
+    padding: 6px;
+    gap: 2px;
+    border-radius: 14px;
+  }
+  
+  .nav-glass-link {
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 10px;
+  }
+  
+  .btn.btn-primary {
+    height: 56px;
+    font-size: 16px;
+    padding: 0 28px;
+    left: 30px;
+    border-radius: 10px;
+  }
+  
+  .language-switcher {
+    left: 120px;
+  }
+  
+  .language-toggle-btn {
+    height: 42px;
+    padding: 0 16px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  
+  .navbar-actions {
+    margin-right: -120px;
+    gap: 12px;
+  }
+  
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+}
+
+/* MacBook Pro 14" (1512x982) */
+@media (min-width: 1441px) and (max-width: 1512px) {
+  .navbar.kubric-style {
+    padding: 0 2.5rem;
+    top: 18px;
+  }
+  
+  .container {
+    max-width: 1300px;
+  }
+  
+  .navbar-content {
+    padding: 16px 28px;
+    border-radius: 20px;
+  }
+  
+  .navbar-logo {
+    margin-left: -140px;
+    margin-right: 80px;
+  }
+  
+  .logo-text {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  
+  .nav-glass-container {
+    padding: 8px;
+    gap: 4px;
+    border-radius: 16px;
+  }
+  
+  .nav-glass-link {
+    font-size: 15px;
+    padding: 12px 20px;
+    border-radius: 12px;
+  }
+  
+  .btn.btn-primary {
+    height: 62px;
+    font-size: 17px;
+    padding: 0 30px;
+    left: 40px;
+    border-radius: 12px;
+  }
+  
+  .language-switcher {
+    left: 140px;
+  }
+  
+  .language-toggle-btn {
+    height: 46px;
+    padding: 0 18px;
+    font-size: 14px;
+    border-radius: 9px;
+  }
+  
+  .navbar-actions {
+    margin-right: -140px;
+    gap: 14px;
+  }
+  
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+}
+
+/* MacBook Pro 16" (1728x1117) */
+@media (min-width: 1513px) and (max-width: 1728px) {
+  .navbar.kubric-style {
+    padding: 0 3rem;
+    top: 20px;
+  }
+  
+  .container {
+    max-width: 1400px;
+  }
+  
+  .navbar-content {
+    padding: 18px 32px;
+    border-radius: 22px;
+  }
+  
+  .navbar-logo {
+    margin-left: -160px;
+    margin-right: 100px;
+    height: 70px;
+  }
+  
+  .logo-text {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  
+  .nav-glass-container {
+    padding: 10px;
+    gap: 6px;
+    border-radius: 18px;
+  }
+  
+  .nav-glass-link {
+    font-size: 16px;
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-weight: 500;
+  }
+  
+  .btn.btn-primary {
+    height: 70px;
+    font-size: 18px;
+    padding: 0 36px;
+    left: 50px;
+    border-radius: 14px;
+    font-weight: 600;
+  }
+  
+  .language-switcher {
+    left: 160px;
+  }
+  
+  .language-toggle-btn {
+    height: 50px;
+    padding: 0 20px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+  
+  .navbar-actions {
+    margin-right: -160px;
+    gap: 16px;
+    height: 70px;
+  }
+  
+  .theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+}
+
+/* Large Desktop (1920x1080+) */
+@media (min-width: 1729px) and (max-width: 1920px) {
+  .navbar.kubric-style {
+    padding: 0 4rem;
+    top: 24px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+  
+  .navbar-content {
+    padding: 20px 36px;
+    border-radius: 24px;
+  }
+  
+  .navbar-logo {
+    margin-left: -200px;
+    margin-right: 120px;
+    height: 74px;
+  }
+  
+  .logo-text {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  .nav-glass-container {
+    padding: 12px;
+    gap: 8px;
+    border-radius: 20px;
+  }
+  
+  .nav-glass-link {
+    font-size: 17px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-weight: 500;
+  }
+  
+  .btn.btn-primary {
+    height: 74px;
+    font-size: 19px;
+    padding: 0 40px;
+    left: 60px;
+    border-radius: 16px;
+    font-weight: 600;
+  }
+  
+  .language-switcher {
+    left: 200px;
+  }
+  
+  .language-toggle-btn {
+    height: 52px;
+    padding: 0 22px;
+    font-size: 16px;
+    border-radius: 11px;
+  }
+  
+  .navbar-actions {
+    margin-right: -200px;
+    gap: 18px;
+    height: 74px;
+  }
+  
+  .theme-toggle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+  }
+}
+
+/* 4K and Ultra-wide Displays (2560px+) */
+@media (min-width: 2560px) {
+  .navbar.kubric-style {
+    padding: 0 5rem;
+    top: 28px;
+  }
+  
+  .container {
+    max-width: 1800px;
+  }
+  
+  .navbar-content {
+    padding: 24px 40px;
+    border-radius: 28px;
+  }
+  
+  .navbar-logo {
+    margin-left: -240px;
+    margin-right: 140px;
+    height: 80px;
+  }
+  
+  .logo-text {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .nav-glass-container {
+    padding: 14px;
+    gap: 10px;
+    border-radius: 24px;
+  }
+  
+  .nav-glass-link {
+    font-size: 19px;
+    padding: 18px 28px;
+    border-radius: 18px;
+    font-weight: 500;
+  }
+  
+  .btn.btn-primary {
+    height: 80px;
+    font-size: 21px;
+    padding: 0 44px;
+    left: 80px;
+    border-radius: 18px;
+    font-weight: 700;
+  }
+  
+  .language-switcher {
+    left: 240px;
+  }
+  
+  .language-toggle-btn {
+    height: 56px;
+    padding: 0 24px;
+    font-size: 17px;
+    border-radius: 12px;
+  }
+  
+  .navbar-actions {
+    margin-right: -240px;
+    gap: 20px;
+    height: 80px;
+  }
+  
+  .theme-toggle-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+}
+
+/* Retina Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .navbar-content {
+    border-width: 0.5px;
+  }
+  
+  .nav-glass-container {
+    border-width: 0.5px;
+  }
+  
+  .btn.btn-primary {
+    border-width: 0.5px;
+  }
+  
+  .language-toggle-btn {
+    border-width: 0.5px;
+  }
+  
+  .theme-toggle-btn {
+    border-width: 0.5px;
+  }
+  
+  .logo-text {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Hardware acceleration for smooth animations on MacBooks */
+@media (min-width: 1280px) {
+  .navbar.kubric-style,
+  .nav-glass-container,
+  .mobile-menu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .nav-glass-link,
+  .btn.btn-primary,
+  .language-toggle-btn,
+  .theme-toggle-btn {
+    will-change: background-color, transform;
   }
 }

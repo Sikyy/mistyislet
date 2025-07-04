@@ -4,7 +4,7 @@
   color: #ffffff;
   font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: var(--navbar-height, 80px);
 }
 
 /* Container */
@@ -284,7 +284,7 @@
   
   .brand-hero-section,
   .story-section {
-    padding: 2rem 0;
+    padding: 4rem 0;
     min-height: 80vh;
   }
   
@@ -302,7 +302,7 @@
   .hero-title,
   .story-title,
   .section-title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
     margin-bottom: 2rem;
   }
   
@@ -315,6 +315,10 @@
     gap: 3rem;
   }
   
+  .timeline-track::before {
+    display: none;
+  }
+  
   .timeline-marker {
     width: 60px;
     height: 60px;
@@ -323,20 +327,803 @@
   .timeline-year {
     font-size: 0.9rem;
   }
+  
+  .mission-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .mission-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .mission-content p {
+    font-size: 0.95rem;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .brand-story-page {
+    padding-top: 70px;
+  }
+  
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
+  }
+  
+  .brand-hero-section,
+  .story-section {
+    padding: 3rem 0;
+    min-height: 75vh;
   }
   
   .hero-title,
   .story-title,
   .section-title {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description,
+  .story-description,
+  .section-description {
+    margin-top: 1.5rem;
+  }
+  
+  .hero-description p,
+  .story-description p,
+  .section-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .timeline-section,
+  .mission-section {
+    padding: 3rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .timeline-item {
+    padding: 0 0.5rem;
+  }
+  
+  .timeline-marker {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-year {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .timeline-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+  
+  .mission-grid {
+    gap: 1.5rem;
+  }
+  
+  .mission-item {
+    padding: 1.25rem 0.75rem;
+  }
+  
+  .mission-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 1rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mission-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-story-page {
+    padding-top: 65px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .brand-hero-section,
+  .story-section {
+    padding: 2.5rem 0;
+    min-height: 70vh;
+  }
+
+  .hero-title,
+  .story-title,
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle,
+  .story-subtitle,
+  .section-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description,
+  .story-description,
+  .section-description {
+    margin-top: 1rem;
+  }
+  
+  .hero-description p,
+  .story-description p,
+  .section-description p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .timeline-section,
+  .mission-section {
+    padding: 2.5rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .timeline-track {
+    gap: 2rem;
+  }
+  
+  .timeline-item {
+    padding: 0 0.25rem;
+  }
+  
+  .timeline-marker {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .timeline-year {
+    font-size: 0.75rem;
+  }
+  
+  .timeline-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.85rem;
+  }
+  
+  .mission-grid {
+    gap: 1.25rem;
+  }
+  
+  .mission-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .mission-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .mission-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+/* MacBook Air 13" & 15" (1440x900) */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .brand-story-page {
+    padding-top: 80px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    padding: 0 1.5rem;
+  }
+  
+  /* Hero Section */
+  .brand-hero-section {
+    min-height: 85vh;
+    padding: 4rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(3.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-description p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+  
+  /* Story Section */
+  .story-section {
+    padding: 4rem 0;
+  }
+  
+  .story-title {
+    font-size: clamp(2.8rem, 4.5vw, 3.5rem);
+    margin-bottom: 2rem;
+  }
+  
+  /* Mission Grid */
+  .mission-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .mission-item {
+    padding: 2rem;
+  }
+  
+  .mission-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mission-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Timeline */
+  .timeline-track {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 900px;
+  }
+  
+  .timeline-marker {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-year {
+    font-size: 1rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* MacBook Pro 14" (1512x982) */
+@media (min-width: 1441px) and (max-width: 1512px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 2rem;
+  }
+  
+  /* Enhanced Hero */
+  .brand-hero-section {
+    min-height: 90vh;
+    padding: 5rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(3.8rem, 5.5vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+  }
+  
+  .hero-description p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+  
+  /* Enhanced Story */
+  .story-section {
+    padding: 5rem 0;
+  }
+  
+  .story-title {
+    font-size: clamp(3.2rem, 5vw, 4rem);
+    margin-bottom: 2.5rem;
+  }
+  
+  .story-subtitle {
+    font-size: 1.15rem;
+  }
+  
+  .story-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  /* Enhanced Mission */
+  .mission-section {
+    padding: 5rem 0;
+  }
+  
+  .mission-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+  
+  .mission-item {
+    padding: 2.5rem;
+  }
+  
+  .mission-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 2rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .mission-content p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+  
+  /* Enhanced Timeline */
+  .timeline-section {
+    padding: 5rem 0;
   }
   
   .timeline-track {
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
+  }
+  
+  .timeline-marker {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-year {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+  
+  .section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+}
+
+/* MacBook Pro 16" (1728x1117) */
+@media (min-width: 1513px) and (max-width: 1728px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 2.5rem;
+  }
+  
+  /* Premium Hero Experience */
+  .brand-hero-section {
+    min-height: 95vh;
+    padding: 6rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(4.5rem, 6vw, 5.5rem);
+    line-height: 1;
+    margin-bottom: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+  
+  .hero-description p {
+    font-size: 1.2rem;
+    line-height: 1.75;
+  }
+  
+  /* Premium Story */
+  .story-section {
+    padding: 6rem 0;
+  }
+  
+  .story-title {
+    font-size: clamp(3.8rem, 5.5vw, 4.5rem);
+    margin-bottom: 3rem;
+  }
+  
+  .story-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .story-description p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+  
+  /* Premium Mission */
+  .mission-section {
+    padding: 6rem 0;
+  }
+  
+  .mission-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 5rem;
+  }
+  
+  .mission-item {
+    padding: 3rem 2.5rem;
+  }
+  
+  .mission-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 2.5rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mission-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  /* Premium Timeline */
+  .timeline-section {
+    padding: 6rem 0;
+  }
+  
+  .timeline-track {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+    max-width: 1200px;
+  }
+  
+  .timeline-marker {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 2.5rem;
+  }
+  
+  .timeline-year {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .timeline-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  /* Enhanced Section Spacing */
+  .section-header {
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
+  
+  .section-subtitle {
+    font-size: 1.15rem;
+  }
+}
+
+/* Large Desktop (1920x1080+) */
+@media (min-width: 1729px) and (max-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 3rem;
+  }
+  
+  /* Ultra-wide Hero */
+  .brand-hero-section {
+    min-height: 100vh;
+    padding: 8rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(5rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.75;
+    margin-bottom: 3.5rem;
+    max-width: 700px;
+  }
+  
+  .hero-description p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  
+  /* Ultra Story */
+  .story-section {
+    padding: 8rem 0;
+  }
+  
+  .story-title {
+    font-size: clamp(4.5rem, 6vw, 5.5rem);
+    margin-bottom: 3.5rem;
+  }
+  
+  .story-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Five-column mission */
+  .mission-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3.5rem;
+    margin-top: 6rem;
+  }
+  
+  .mission-item {
+    padding: 3.5rem 3rem;
+  }
+  
+  .mission-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 3rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .mission-content p {
+    font-size: 1.2rem;
+    line-height: 1.75;
+  }
+  
+  /* Enhanced Timeline */
+  .timeline-track {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4rem;
+    max-width: 1400px;
+  }
+  
+  .timeline-marker {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 3rem;
+  }
+  
+  .timeline-year {
+    font-size: 1.3rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .timeline-description {
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+  
+  /* Section Enhancements */
+  .mission-section,
+  .timeline-section {
+    padding: 8rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 5rem;
+  }
+  
+  .section-title {
+    font-size: clamp(3.5rem, 6vw, 4.5rem);
+  }
+}
+
+/* 4K and Ultra-wide Displays (2560px+) */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1800px;
+    padding: 0 4rem;
+  }
+  
+  /* 4K Hero Experience */
+  .brand-hero-section {
+    min-height: 100vh;
+    padding: 10rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(6rem, 8vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    max-width: 800px;
+  }
+  
+  .hero-description p {
+    font-size: 1.5rem;
+    line-height: 1.85;
+  }
+  
+  /* 4K Story */
+  .story-section {
+    padding: 10rem 0;
+  }
+  
+  .story-title {
+    font-size: clamp(5.5rem, 7vw, 7rem);
+    margin-bottom: 4rem;
+  }
+  
+  .story-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .story-description p {
+    font-size: 1.4rem;
+    line-height: 1.85;
+  }
+  
+  /* Six-column mission for 4K */
+  .mission-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4rem;
+    margin-top: 8rem;
+  }
+  
+  .mission-item {
+    padding: 4rem 3.5rem;
+  }
+  
+  .mission-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 3.5rem;
+  }
+  
+  .mission-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .mission-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  
+  /* Ultra Timeline */
+  .timeline-track {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5rem;
+    max-width: 1600px;
+  }
+  
+  .timeline-marker {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 3.5rem;
+  }
+  
+  .timeline-year {
+    font-size: 1.5rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  /* Ultra Sections */
+  .mission-section,
+  .timeline-section {
+    padding: 10rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 6rem;
+  }
+  
+  .section-title {
+    font-size: clamp(4rem, 7vw, 5.5rem);
+  }
+  
+  .section-subtitle {
+    font-size: 1.4rem;
   }
 } 

@@ -60,8 +60,6 @@
   font-weight: 400;
 }
 
-
-
 .search-filters {
   display: flex;
   flex-direction: column;
@@ -229,8 +227,6 @@
   margin-bottom: 12px;
 }
 
-
-
 .brand-categories h4 {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
@@ -253,8 +249,6 @@
   font-weight: 400;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
 
 .brand-footer {
   display: flex;
@@ -692,8 +686,6 @@
   font-size: 0.9rem;
 }
 
-
-
 /* Filter Actions */
 .filter-actions {
   padding-top: 20px;
@@ -957,7 +949,189 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+
+/* Extra Small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .products-page {
+    padding-top: 80px;
+  }
+
+  .products-header {
+    padding: 40px 16px;
+  }
+
+  .page-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    margin-bottom: 12px;
+  }
+
+  .page-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .search-filters {
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .search-bar {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .category-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    min-height: 40px;
+  }
+
+  .products-main {
+    padding: 30px 16px;
+  }
+
+  .filter-toggle-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .filters-sidebar {
+    padding: 20px 16px;
+  }
+
+  .filter-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .category-item,
+  .brand-item,
+  .price-item {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .brand-card {
+    padding: 20px 16px;
+  }
+
+  .brand-logo {
+    width: 80px !important;
+    height: 50px !important;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .brand-description {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .category-tag {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .contact-btn {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    min-height: 40px;
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .partner-card {
+    padding: 20px 16px 16px;
+    min-height: 180px;
+  }
+
+  .partner-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .partner-logo {
+    width: 100px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .partner-name {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .partner-description {
+    font-size: 0.8rem;
+    max-width: 180px;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
+  }
+
+  .products-cta .cta-actions .btn {
+    max-width: 260px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small devices (large phones, 640px and down) */
+@media (max-width: 640px) {
+  .products-header {
+    padding: 50px 20px;
+  }
+
+  .search-filters {
+    gap: 16px;
+  }
+
+  .products-main {
+    padding: 40px 20px;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .partner-card {
+    padding: 22px 18px 18px;
+  }
+
+  .partner-logo {
+    width: 110px !important;
+    height: 70px !important;
+    min-height: 70px !important;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
   .products-layout {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -976,65 +1150,47 @@
     z-index: 1000;
     max-height: 100vh;
     border-radius: 0;
-    background: #0a0a0a;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: none;
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 30px 24px;
   }
 
   .filters-sidebar.show-mobile {
     transform: translateY(0);
   }
 
-  .partners-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 0 8px;
-  }
-
-  /* Medium screen adjustments */
-  .partner-card {
-    padding: 28px 20px 20px;
-  }
-
-  .partner-logo {
-    width: 140px !important;
-    height: 90px !important;
-    min-height: 90px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-
-@media (max-width: 768px) {
   .products-main {
-    padding: 40px 0;
+    padding: 50px 24px;
   }
 
   .filter-section {
-    margin-bottom: 25px;
-  }
-
-  .filters-sidebar {
-    padding: 25px;
+    margin-bottom: 28px;
   }
 
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .partners-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0;
   }
 
   .category-item {
-    padding: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
   }
 
   .brand-item,
   .price-item {
-    padding: 10px 0;
+    padding: 12px 18px;
+    border-radius: 10px;
   }
   
   .cta-content h2 {
@@ -1052,34 +1208,650 @@
   
   .products-cta .cta-actions .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
+    padding: 14px 28px;
+    font-size: 1.1rem;
   }
 
   /* Mobile Partner Cards */
   .partner-card {
-    padding: 24px 16px 20px;
-    min-height: 200px;
+    padding: 26px 20px 22px;
+    min-height: 220px;
+    border-radius: 16px;
   }
 
   .partner-badge {
     font-size: 0.7rem;
     padding: 4px 12px;
-    top: 12px;
+    top: 14px;
+    border-radius: 8px;
   }
 
   .partner-logo {
-    width: 120px !important;
-    height: 80px !important;
-    min-height: 80px !important;
+    width: 130px !important;
+    height: 85px !important;
+    min-height: 85px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .partner-name {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
   }
 
   .partner-description {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    max-width: 220px;
+  }
+}
+
+/* Large devices (small laptops, 1024px and down) */
+@media (max-width: 1024px) {
+  .products-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mobile-filter-toggle {
+    display: block;
+  }
+
+  .filters-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    max-height: 100vh;
+    border-radius: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: none;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .filters-sidebar.show-mobile {
+    transform: translateY(0);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  /* Medium screen adjustments */
+  .partner-card {
+    padding: 30px 24px 24px;
+  }
+
+  .partner-logo {
+    width: 150px !important;
+    height: 95px !important;
+    min-height: 95px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+} 
+
+/* MacBook Specific Optimizations */
+
+/* MacBook Air 13" & 15" (1440x900) */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .products-page {
+    padding-top: 80px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    padding: 0 1.5rem;
+  }
+  
+  /* Hero Section */
+  .products-hero-section {
+    min-height: 85vh;
+    padding: 4rem 0;
+  }
+  
+  .products-hero-title {
+    font-size: clamp(3.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .products-hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  
+  .products-hero-description p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+  
+  /* Products Grid */
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .product-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .product-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-price {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-features li {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+  
+  /* Partners Section */
+  .partners-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .partner-card {
+    padding: 1.5rem;
+  }
+  
+  .partner-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .partner-name {
+    font-size: 1.2rem;
+  }
+  
+  .partner-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* MacBook Pro 14" (1512x982) */
+@media (min-width: 1441px) and (max-width: 1512px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 2rem;
+  }
+  
+  /* Enhanced Hero */
+  .products-hero-section {
+    min-height: 90vh;
+    padding: 5rem 0;
+  }
+  
+  .products-hero-title {
+    font-size: clamp(3.8rem, 5.5vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 2rem;
+  }
+  
+  .products-hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.65;
+  }
+  
+  .products-hero-description p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+  
+  /* Enhanced Product Grid */
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+  
+  .product-card {
+    padding: 2.5rem 2rem;
+  }
+  
+  .product-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .product-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .product-features li {
+    font-size: 1rem;
+    padding: 0.6rem 0;
+  }
+  
+  .btn-product {
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+  }
+  
+  /* Enhanced Partners */
+  .partners-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .partner-card {
+    padding: 2rem;
+  }
+  
+  .partner-logo {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .partner-name {
+    font-size: 1.3rem;
+  }
+  
+  .partner-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  
+  /* Section Spacing */
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+}
+
+/* MacBook Pro 16" (1728x1117) */
+@media (min-width: 1513px) and (max-width: 1728px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 2.5rem;
+  }
+  
+  /* Premium Hero Experience */
+  .products-hero-section {
+    min-height: 95vh;
+    padding: 6rem 0;
+  }
+  
+  .products-hero-title {
+    font-size: clamp(4.5rem, 6vw, 5.5rem);
+    line-height: 1;
+    margin-bottom: 2.5rem;
+  }
+  
+  .products-hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  
+  .products-hero-description p {
+    font-size: 1.2rem;
+    line-height: 1.75;
+  }
+  
+  /* Enhanced Product Layout */
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 5rem;
+  }
+  
+  .product-card {
+    padding: 3rem 2.5rem;
+  }
+  
+  .product-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  
+  .product-price {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .product-features li {
+    font-size: 1.05rem;
+    padding: 0.7rem 0;
+  }
+  
+  .btn-product {
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Premium Partners Grid */
+  .partners-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+  }
+  
+  .partner-card {
+    padding: 2.5rem;
+  }
+  
+  .partner-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .partner-name {
+    font-size: 1.4rem;
+  }
+  
+  .partner-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  /* Enhanced Section Spacing */
+  .section {
+    padding: 6rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
+  
+  .section-subtitle {
+    font-size: 1.15rem;
+  }
+  
+  /* Enhanced Sidebar */
+  .products-sidebar {
+    width: 320px;
+    padding: 2.5rem;
+  }
+  
+  .filter-group h3 {
+    font-size: 1.2rem;
+  }
+  
+  .filter-option {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Large Desktop (1920x1080+) */
+@media (min-width: 1729px) and (max-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 3rem;
+  }
+  
+  /* Ultra-wide Hero */
+  .products-hero-section {
+    min-height: 100vh;
+    padding: 8rem 0;
+  }
+  
+  .products-hero-title {
+    font-size: clamp(5rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    margin-bottom: 3rem;
+  }
+  
+  .products-hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.75;
+    margin-bottom: 3.5rem;
+  }
+  
+  .products-hero-description p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  
+  /* Five-column product grid */
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3.5rem;
+    margin-top: 6rem;
+  }
+  
+  .product-card {
+    padding: 3.5rem 3rem;
+  }
+  
+  .product-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .product-description {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+  
+  .product-price {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+  
+  .btn-product {
+    padding: 1.5rem 3.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Enhanced Partners */
+  .partners-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3.5rem;
+  }
+  
+  .partner-card {
+    padding: 3rem;
+  }
+  
+  .partner-logo {
+    width: 110px;
+    height: 110px;
+  }
+  
+  /* Section Enhancements */
+  .section {
+    padding: 8rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 5rem;
+  }
+  
+  .section-title {
+    font-size: clamp(3.5rem, 6vw, 4.5rem);
+  }
+}
+
+/* 4K and Ultra-wide Displays (2560px+) */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1800px;
+    padding: 0 4rem;
+  }
+  
+  /* 4K Hero Experience */
+  .products-hero-section {
+    min-height: 100vh;
+    padding: 10rem 0;
+  }
+  
+  .products-hero-title {
+    font-size: clamp(6rem, 8vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 4rem;
+  }
+  
+  .products-hero-subtitle {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+  }
+  
+  .products-hero-description p {
+    font-size: 1.5rem;
+    line-height: 1.85;
+  }
+  
+  /* Six-column layouts for 4K */
+  .products-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4rem;
+    margin-top: 8rem;
+  }
+  
+  .product-card {
+    padding: 4rem 3.5rem;
+  }
+  
+  .product-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .product-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 3.5rem;
+  }
+  
+  .product-price {
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .product-features li {
+    font-size: 1.2rem;
+    padding: 0.9rem 0;
+  }
+  
+  .btn-product {
+    padding: 2rem 4rem;
+    font-size: 1.4rem;
+  }
+  
+  /* Ultra Partners Grid */
+  .partners-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4rem;
+  }
+  
+  .partner-card {
+    padding: 3.5rem;
+  }
+  
+  .partner-logo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .partner-name {
+    font-size: 1.6rem;
+  }
+  
+  .partner-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+  
+  /* Ultra Sections */
+  .section {
+    padding: 10rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 6rem;
+  }
+  
+  .section-title {
+    font-size: clamp(4rem, 7vw, 5.5rem);
+  }
+  
+  .section-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  /* Enhanced Sidebar for 4K */
+  .products-sidebar {
+    width: 380px;
+    padding: 3rem;
+  }
+  
+  .filter-group h3 {
+    font-size: 1.4rem;
+  }
+  
+  .filter-option {
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Retina Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .products-hero-title,
+  .section-title,
+  .product-title,
+  .partner-name {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .product-card,
+  .partner-card {
+    border-width: 0.5px;
+  }
+  
+  .btn-product,
+  .filter-option {
+    border-width: 0.5px;
   }
 } 

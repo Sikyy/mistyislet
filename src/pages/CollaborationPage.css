@@ -4,7 +4,7 @@
   color: #ffffff;
   font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: var(--navbar-height, 80px);
 }
 
 /* Container */
@@ -463,7 +463,7 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .collaboration-hero-section {
@@ -474,37 +474,311 @@
   .contact-section {
     padding: 4rem 0;
   }
+  
+  .section {
+    padding: 4rem 0;
+  }
 
   .hero-title,
   .section-title {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-subtitle,
+  .section-subtitle {
+    font-size: 0.9rem;
   }
 
   .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .types-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .type-card {
+    padding: 1.5rem;
+  }
+  
+  .type-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .process-timeline {
+    padding: 0 1rem;
   }
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+
+  .contact-form-container {
+    padding: 2rem;
+  }
+  
+  .btn-submit {
+    padding: 1rem 2.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .collaboration-page {
+    padding-top: 70px;
+  }
+  
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .collaboration-hero-section {
+    min-height: 75vh;
+    padding: 3rem 0;
+  }
+
+  .contact-section {
+    padding: 3rem 0;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description p,
+  .section-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .types-grid {
+    gap: 1.25rem;
+  }
+  
+  .type-card {
+    padding: 1.25rem;
+  }
+  
+  .type-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .type-title {
+    font-size: 1.1rem;
+  }
+  
+  .type-description {
+    font-size: 0.95rem;
+  }
+  
+  .advantages-grid {
+    gap: 1.25rem;
+  }
+  
+  .advantage-item {
+    padding: 1.25rem;
+  }
+  
+  .advantage-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .advantage-title {
+    font-size: 1.1rem;
+  }
+  
+  .advantage-description {
+    font-size: 0.95rem;
+  }
+
+  .form-row {
+    gap: 1.25rem;
   }
 
   .contact-form-container {
     padding: 1.5rem;
   }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn-submit {
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .collaboration-page {
+    padding-top: 65px;
+  }
+  
   .container {
     padding: 0 1rem;
   }
 
+  .collaboration-hero-section {
+    min-height: 70vh;
+    padding: 2.5rem 0;
+  }
+
+  .contact-section {
+    padding: 2.5rem 0;
+  }
+  
+  .section {
+    padding: 2.5rem 0;
+  }
+
   .hero-title,
   .section-title {
-    font-size: clamp(1.8rem, 12vw, 2.5rem);
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle,
+  .section-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description,
+  .section-description {
+    margin-top: 1rem;
+  }
+  
+  .hero-description p,
+  .section-description p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .types-grid {
+    gap: 1rem;
+  }
+  
+  .type-card {
+    padding: 1rem;
+  }
+  
+  .type-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .type-title {
+    font-size: 1rem;
+  }
+  
+  .type-description {
+    font-size: 0.9rem;
+  }
+  
+  .type-features h4 {
+    font-size: 0.85rem;
+  }
+  
+  .type-features li {
+    font-size: 0.85rem;
+  }
+  
+  .advantages-grid {
+    gap: 1rem;
+  }
+  
+  .advantage-item {
+    padding: 1rem;
+  }
+  
+  .advantage-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .advantage-title {
+    font-size: 1rem;
+  }
+  
+  .advantage-description {
+    font-size: 0.9rem;
+  }
+  
+  .process-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .process-title {
+    font-size: 1rem;
+  }
+  
+  .process-description {
+    font-size: 0.85rem;
+  }
+
+  .form-row {
+    gap: 1rem;
   }
 
   .contact-form-container {
     padding: 1rem;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-group textarea {
+    min-height: 100px;
+  }
+  
+  .btn-submit {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
   }
 } 
