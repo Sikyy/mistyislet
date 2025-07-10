@@ -857,6 +857,7 @@ html[lang="zh"] .hero-main-title {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
+  justify-content: center;
 }
 
 /* Left Side - Main Content */
@@ -1050,6 +1051,7 @@ html[lang="zh"] .hero-main-title {
   margin: 0 auto;
   padding: 0 40px;
   margin-top: 100px;
+  justify-content: center;
 }
 
 /* Left Side - Main Insight */
@@ -1565,6 +1567,7 @@ html[lang="zh"] .hero-main-title {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 0 16px;
+    justify-content: center;
   }
 
   .market-main-insight {
@@ -1742,6 +1745,7 @@ html[lang="zh"] .hero-main-title {
     gap: 60px;
     min-height: auto;
     padding: 0 24px;
+    justify-content: center;
   }
 
   .market-main-insight {
@@ -1789,6 +1793,7 @@ html[lang="zh"] .hero-main-title {
     gap: 60px;
     min-height: auto;
     padding: 0 24px;
+    justify-content: center;
   }
 
   .features-main-content {
@@ -2454,6 +2459,7 @@ html[lang="zh"] .hero-main-title {
     gap: 50px;
     min-height: auto;
     padding: 0 15px;
+    justify-content: center;
   }
 
   .market-main-insight {
@@ -2501,6 +2507,7 @@ html[lang="zh"] .hero-main-title {
     gap: 50px;
     min-height: auto;
     padding: 0 15px;
+    justify-content: center;
   }
 
   .features-main-content {
