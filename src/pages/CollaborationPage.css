@@ -1,0 +1,816 @@
+/* Minimal Black Style Collaboration Page */
+.collaboration-page {
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  padding-top: var(--navbar-height, 80px);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section - Matching BrandStoryPage and PartnersPage */
+.collaboration-hero-section {
+  min-height: 133.33vh;
+  display: flex;
+  align-items: center;
+  background: #000000;
+  position: relative;
+}
+
+.hero-content {
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 300;
+  color: #ffffff;
+  margin: 2rem 0;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  margin-top: 2rem;
+  max-width: 500px;
+}
+
+.hero-description p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Section Styles */
+.section {
+  padding: 8rem 0;
+  background: #000000;
+}
+
+.section.types-section {
+  background: #000000;
+}
+
+.section.process-section {
+  background: #000000;
+  min-height: 133.33vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.section.process-section .container {
+  width: 100%;
+}
+
+.section.advantages-section {
+  background: #000000;
+}
+
+.section.contact-section {
+  background: #000000;
+  min-height: 133.33vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+/* Section Headers - Unified Style */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-description p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Types Grid */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.type-card {
+  background: none;
+  border: 1px solid #333333;
+  border-radius: 0;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.type-card:hover {
+  border-color: #666666;
+  transform: none;
+  box-shadow: none;
+}
+
+.type-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.type-icon {
+  width: 60px;
+  height: 60px;
+  background: #333333;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.type-title {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 400;
+}
+
+.type-description {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.type-features {
+  margin-bottom: 1.5rem;
+}
+
+.type-features h4 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+
+.type-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.type-features li {
+  color: #cccccc;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.type-features li::before {
+  content: '·';
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+}
+
+.type-suitable {
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.type-suitable strong {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* Process Timeline */
+.process-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.process-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.process-item:last-child {
+  margin-bottom: 0;
+}
+
+.process-step {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.process-content {
+  flex: 1;
+}
+
+.process-title {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.process-description {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.process-duration {
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+/* Advantages Grid */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.advantage-item {
+  text-align: center;
+  padding: 2rem;
+}
+
+.advantage-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  color: #ffffff;
+}
+
+.advantage-title {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.advantage-description {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.advantage-stats {
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+/* Contact Form */
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #000000;
+  border: none;
+  border-radius: 0;
+  padding: 4rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form-container:hover {
+  background: #000000;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  padding: 0.75rem 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #555555;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.form-submit {
+  margin-top: 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-submit {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-width: 200px;
+}
+
+.btn-submit:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-success {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+.btn-error {
+  background: #F44336;
+  color: #ffffff;
+}
+
+.btn-success:hover, .btn-error:hover {
+  transform: none;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: #333333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: #444444;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title,
+  .section-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .contact-form-container {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .collaboration-hero-section {
+    min-height: 80vh;
+    padding: 4rem 0;
+  }
+
+  .contact-section {
+    padding: 4rem 0;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-subtitle,
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .types-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .type-card {
+    padding: 1.5rem;
+  }
+  
+  .type-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .process-timeline {
+    padding: 0 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form-container {
+    padding: 2.5rem;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 640px) {
+  .collaboration-page {
+    padding-top: 70px;
+  }
+  
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .collaboration-hero-section {
+    min-height: 75vh;
+    padding: 3rem 0;
+  }
+
+  .contact-section {
+    padding: 3rem 0;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description p,
+  .section-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .types-grid {
+    gap: 1.25rem;
+  }
+  
+  .type-card {
+    padding: 1.25rem;
+  }
+  
+  .type-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .type-title {
+    font-size: 1.1rem;
+  }
+  
+  .type-description {
+    font-size: 0.95rem;
+  }
+  
+  .advantages-grid {
+    gap: 1.25rem;
+  }
+  
+  .advantage-item {
+    padding: 1.25rem;
+  }
+  
+  .advantage-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .advantage-title {
+    font-size: 1.1rem;
+  }
+  
+  .advantage-description {
+    font-size: 0.95rem;
+  }
+
+  .form-row {
+    gap: 2rem;
+  }
+
+  .contact-form-container {
+    padding: 2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 0.875rem 2rem;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .collaboration-page {
+    padding-top: 65px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+
+  .collaboration-hero-section {
+    min-height: 70vh;
+    padding: 2.5rem 0;
+  }
+
+  .contact-section {
+    padding: 2.5rem 0;
+  }
+  
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle,
+  .section-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description,
+  .section-description {
+    margin-top: 1rem;
+  }
+  
+  .hero-description p,
+  .section-description p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .types-grid {
+    gap: 1rem;
+  }
+  
+  .type-card {
+    padding: 1rem;
+  }
+  
+  .type-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .type-title {
+    font-size: 1rem;
+  }
+  
+  .type-description {
+    font-size: 0.9rem;
+  }
+  
+  .type-features h4 {
+    font-size: 0.85rem;
+  }
+  
+  .type-features li {
+    font-size: 0.85rem;
+  }
+  
+  .advantages-grid {
+    gap: 1rem;
+  }
+  
+  .advantage-item {
+    padding: 1rem;
+  }
+  
+  .advantage-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .advantage-title {
+    font-size: 1rem;
+  }
+  
+  .advantage-description {
+    font-size: 0.9rem;
+  }
+  
+  .process-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .process-title {
+    font-size: 1rem;
+  }
+  
+  .process-description {
+    font-size: 0.85rem;
+  }
+
+  .form-row {
+    gap: 1rem;
+  }
+
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+  
+  .form-group label {
+    font-size: 0.8rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .form-group textarea {
+    min-height: 100px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+    min-width: unset;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+} 
