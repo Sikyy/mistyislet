@@ -66,6 +66,7 @@
 }
 
 .section.types-section {
+  min-height: 133.33vh;
   background: #000000;
 }
 
@@ -82,6 +83,7 @@
 }
 
 .section.advantages-section {
+  min-height: 133.33vh;
   background: #000000;
 }
 

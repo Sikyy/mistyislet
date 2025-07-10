@@ -118,6 +118,7 @@
 
 /* Achievements Section */
 .achievements-section {
+  min-height: 133vh;
   padding: 8rem 0;
   background: #000000;
   position: relative;
@@ -182,8 +183,9 @@
 
 /* PARTNERSHIPS Section - Improved */
 .partners-tabs-section {
+  min-height: 133vh;
   padding: 8rem 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
   position: relative;
 }
 
@@ -809,6 +811,7 @@
 
 /* TESTIMONIALS Section - Enhanced */
 .testimonials-section {
+  min-height: 133vh;
   padding: 8rem 0;
   background: #000000;
   position: relative;
